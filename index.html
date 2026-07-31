@@ -479,7 +479,20 @@ img { max-width: 100%; display: block; }
 .cine--ripple .cine-img { background-image: url('images/ring-pulse-ripple.jpg'); }
 .cine--hand .cine-img { background-image: url('images/ring-gold-hand.jpg'); }
 .cine--stone .cine-img { background-image: url('images/offer-stone.jpg'); background-position: 50% 42%; }
-.cine--box .cine-img { background-image: url('images/offer-packaging.jpg'); background-position: 55% center; }
+.cine--box {
+  margin-bottom: 0;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: none;
+}
+.cine--box .cine-img { background-image: url('images/offer-packaging.jpg'); background-position: 60% center; }
+/* CTA band beneath the clean product frame */
+.cta-band {
+  text-align: center;
+  padding: 54px 6vw 64px;
+}
+.cta-band .label { margin-bottom: 24px; }
+.cta-band .cta-note { margin-top: 16px; }
 /* light breaks: ink type on warm imagery, honey ping */
 .cine--light .cine-caption { color: var(--ink); }
 .cine--light .cine-caption .label { color: var(--brown); }
@@ -1167,17 +1180,18 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ================= CINEMATIC : the box, ready to ship ================= -->
+<!-- ================= CINEMATIC : the box, clean frame ================= -->
 <section class="cine cine--box cine--light" data-parallax>
   <div class="cine-img"></div>
   <div class="cine-ping"></div>
-  <div class="cine-caption">
-    <div class="label rv">the ring &middot; in the box</div>
-    <span class="cta-emit rv rv-d1">
-      <a class="btn--pill" href="https://{{shop_domain}}/discount/CORY?redirect=/products/pulse-ring&utm_source=cory&utm_medium=landing&utm_campaign=break-autopilot" data-track="ring-buy-break">Order now &middot; free two-day shipping</a>
-    </span>
-    <div class="cta-note rv rv-d2">two-day shipping included &middot; a $45 value</div>
-  </div>
+</section>
+<!-- CTA band below the image: nothing printed on the product -->
+<section class="cta-band">
+  <div class="label rv">the ring &middot; in the box</div>
+  <span class="cta-emit rv rv-d1">
+    <a class="btn--pill" href="https://{{shop_domain}}/discount/CORY?redirect=/products/pulse-ring&utm_source=cory&utm_medium=landing&utm_campaign=break-autopilot" data-track="ring-buy-break">Order now &middot; free two-day shipping</a>
+  </span>
+  <div class="cta-note rv rv-d2">two-day shipping included &middot; a $45 value</div>
 </section>
 
 <!-- ================= OFFER : the ring, in daylight ================= -->
