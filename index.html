@@ -608,36 +608,32 @@ img { max-width: 100%; display: block; }
     rgba(235,231,212,0.55) 0%, rgba(235,231,212,0.78) 60%, var(--cream) 100%);
 }
 .pause-inner { position: relative; z-index: 2; }
-.pause .label { margin-bottom: 34px; color: var(--brown); }
-.pause-stage {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
+.pause .label { margin-bottom: 26px; color: var(--brown); }
+.pause-quote {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--ink);
+  max-width: 680px;
+  margin: 0 auto 22px;
+  text-wrap: balance;
 }
-.pause-dot {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--honey);
-  opacity: .85;
-  animation: breathe calc(var(--beat) * 3) ease-in-out infinite;
-}
-@keyframes breathe {
-  0%   { transform: scale(0.55); opacity: .5; }
-  45%  { transform: scale(1.5); opacity: .85; }
-  55%  { transform: scale(1.5); opacity: .85; }
-  100% { transform: scale(0.55); opacity: .5; }
+.pause-attr {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--brown);
+  margin-top: 20px;
 }
 .pause p {
   font-size: 17px;
   line-height: 1.8;
   color: var(--brown);
-  max-width: 480px;
+  max-width: 520px;
   margin: 0 auto;
 }
-.pause-dot { box-shadow: 0 6px 24px rgba(66,61,50,0.25); }
 
 /* the week lives on your phone; the ring never will */
 .week-illo { margin-top: 20px; max-width: 300px; }
@@ -914,11 +910,10 @@ img { max-width: 100%; display: block; }
   .js .rv { opacity: 1; transform: none; transition: none; }
   .pulse-ring, .hero-bgimg, .host-photo::after, .hero-scrollcue .line,
   .vf-pulse, .cta-emit::before, .cine.pinged .cine-ping,
-  .pause-dot, .cine.pinged .cine-caption h2,
+  .cine.pinged .cine-caption h2,
   .flower-cycle span, .flower-svg circle.next { animation: none; }
   .flower-cycle span { opacity: 0; }
   .flower-cycle span:last-child { opacity: 1; }
-  .pause-dot { transform: scale(1); }
   .cine-img { inset: 0; }
   html { scroll-behavior: auto; }
   .sticky-join { transition: none; }
@@ -1107,15 +1102,12 @@ img { max-width: 100%; display: block; }
   <div class="pause-bg"></div>
   <div class="pause-veil"></div>
   <div class="pause-inner">
-    <div class="label rv">try one now</div>
-    <div class="pause-stage rv rv-d1" aria-hidden="true">
-      <div class="pause-dot"></div>
-    </div>
-    <p class="rv rv-d2">
-      The dot breathes every nine seconds. Breathe with it once.<br>
-      Out longer than in. That's the whole practice.<br>
-      The week is seven days of this.
-    </p>
+    <div class="label rv">atomic habits</div>
+    <blockquote class="pause-quote rv rv-d1">
+      &ldquo;Habits are the compound interest of self-improvement.&rdquo;
+    </blockquote>
+    <p class="rv rv-d2">One breath compounds. A thousand small presences become a life fully lived.</p>
+    <div class="pause-attr rv rv-d2">james clear</div>
   </div>
 </section>
 
