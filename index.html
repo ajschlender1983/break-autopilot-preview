@@ -486,6 +486,8 @@ img { max-width: 100%; display: block; }
 .cine--light .cine-caption h2 { color: var(--ink); text-shadow: 0 2px 24px rgba(249,246,229,0.55); }
 .cine--light .cine-ping { border-color: rgba(201,162,39,0.6); }
 .cine--light .cine-caption .cta-emit { margin-top: 30px; }
+.cine--light .cine-caption .cta-note { color: var(--brown); text-shadow: 0 1px 10px rgba(249,246,229,0.9), 0 0 22px rgba(249,246,229,0.8); }
+.cine--light .cine-caption .label { text-shadow: 0 1px 10px rgba(249,246,229,0.9), 0 0 22px rgba(249,246,229,0.8); }
 .cine--ripple .cine-shade { position: absolute; inset: 0; background: rgba(10,10,12,0.42); }
 .cine-caption {
   position: absolute; inset: 0;
@@ -1165,13 +1167,16 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ================= CINEMATIC : the ring ================= -->
-<section class="cine cine--stone cine--light" data-parallax>
+<!-- ================= CINEMATIC : the box, ready to ship ================= -->
+<section class="cine cine--box cine--light" data-parallax>
   <div class="cine-img"></div>
   <div class="cine-ping"></div>
   <div class="cine-caption">
-    <div class="label rv">the ring</div>
-    <h2 class="rv rv-d1">Wear the practice.</h2>
+    <div class="label rv">the ring &middot; in the box</div>
+    <span class="cta-emit rv rv-d1">
+      <a class="btn--pill" href="https://{{shop_domain}}/discount/CORY?redirect=/products/pulse-ring&utm_source=cory&utm_medium=landing&utm_campaign=break-autopilot" data-track="ring-buy-break">Order now &middot; free two-day shipping</a>
+    </span>
+    <div class="cta-note rv rv-d2">two-day shipping included &middot; a $45 value</div>
   </div>
 </section>
 
@@ -1216,7 +1221,7 @@ img { max-width: 100%; display: block; }
 </section>
 
 <!-- ================= CINEMATIC : the send-off ================= -->
-<section class="cine cine--box cine--light" data-parallax>
+<section class="cine cine--stone cine--light" data-parallax>
   <div class="cine-img"></div>
   <div class="cine-ping"></div>
   <div class="cine-caption">
