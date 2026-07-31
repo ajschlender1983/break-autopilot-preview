@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Break Autopilot — with Cory Allen · Pulse</title>
-<meta name="description" content="A free seven-day live experience with Cory Allen and friends. Daily prompts, live calls, one small practice at a time. From Pulse. No ring required.">
+<title>Be Present Together — Unify &amp; Pulse · with Cory Allen</title>
+<meta name="description" content="Unify &amp; Pulse: Be Present Together. A free seven-day live experience with Cory Allen and friends. Each day, one theme, one practice. No ring required.">
 <!-- PLACEHOLDER: set absolute URLs before publish so WhatsApp/social shares unfurl -->
-<meta property="og:title" content="Break Autopilot — a free week with Cory Allen">
+<meta property="og:title" content="Unify &amp; Pulse: Be Present Together — a free week with Cory Allen">
 <meta property="og:description" content="Seven days, live. Daily prompts, a 30-minute call each day, a small group. Free to join.">
 <meta property="og:image" content="{{page_url}}/images/hero-unify-poster.jpg">
 <meta property="og:url" content="{{page_url}}">
@@ -268,8 +268,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 26px;
   text-wrap: balance;
 }
-/* the enemy word reads as static, not as the brand */
-.hero h1 em { font-style: normal; color: rgba(249,246,229,0.42); }
+.hero h1 em { font-style: normal; color: var(--honey); }
 .hero-sub {
   font-size: clamp(17px, 2vw, 21px);
   font-weight: 300;
@@ -807,14 +806,13 @@ img { max-width: 100%; display: block; }
   opacity: 0;
 }
 /* the number arrives after the wave passes */
-.js .flower-count .num, .js .flower-count .of, .js .flower-count .of2 {
+.js .flower-count .num, .js .flower-count .of {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity .9s ease, transform .9s cubic-bezier(.19,1,.22,1);
 }
 .flower-stage.counted .flower-count .num,
-.flower-stage.counted .flower-count .of,
-.flower-stage.counted .flower-count .of2 { opacity: 1; transform: none; }
+.flower-stage.counted .flower-count .of { opacity: 1; transform: none; }
 .flower-key {
   margin-top: 28px;
   font-family: var(--mono);
@@ -855,7 +853,7 @@ img { max-width: 100%; display: block; }
   background: radial-gradient(closest-side,
     var(--cream) 55%, rgba(235,231,212,0) 100%);
 }
-.flower-count .num, .flower-count .of, .flower-count .of2 { position: relative; }
+.flower-count .num, .flower-count .of { position: relative; }
 .flower-count .num {
   font-weight: 600;
   font-size: clamp(44px, 7vw, 64px);
@@ -864,7 +862,6 @@ img { max-width: 100%; display: block; }
   line-height: 1;
 }
 .flower-count .of { font-family: var(--mono); font-size: 13px; color: var(--ink); margin-top: 10px; }
-.flower-count .of2 { font-family: var(--mono); font-size: 11.5px; color: var(--brown); margin-top: 5px; }
 
 /* ============================================================
    OFFER — the ring, in its box, in daylight
@@ -1008,7 +1005,7 @@ img { max-width: 100%; display: block; }
   .flower-stage.settled .fl-front circle { animation: none; }
   .flower-stage.bloomed .fl-front circle { opacity: 1; }
   .fl-svg circle { transition: none; }
-  .js .flower-count .num, .js .flower-count .of, .js .flower-count .of2 { opacity: 1; transform: none; transition: none; }
+  .js .flower-count .num, .js .flower-count .of { opacity: 1; transform: none; transition: none; }
   .cine-img { inset: 0; }
   html { scroll-behavior: auto; }
   .sticky-join { transition: none; }
@@ -1046,10 +1043,10 @@ img { max-width: 100%; display: block; }
     </div>
   </div>
   <div class="hero-inner">
-    <div class="label label--light hero-kicker rv">free &middot; seven days &middot; live on whatsapp &middot; late september</div>
-    <h1 class="rv rv-h1">Break <em>Autopilot</em></h1>
+    <div class="label label--light hero-kicker rv">unify &amp; pulse present &middot; free &middot; live on whatsapp &middot; late september</div>
+    <h1 class="rv rv-h1">Be Present <em>Together</em></h1>
     <p class="hero-sub rv rv-h2">
-      You've been on autopilot so long it feels like weather. One week, live, opened by Cory Allen and carried by six more teachers. From Pulse, makers of the mindfulness ring. No ring required.
+      You've been on autopilot so long it feels like weather. One week to break it, live, opened by Cory Allen and carried by six more teachers. From Pulse, makers of the mindfulness ring. No ring required.
     </p>
     <span class="cta-emit rv rv-h3">
       <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">Join the week, free</a>
@@ -1141,7 +1138,7 @@ img { max-width: 100%; display: block; }
         <img src="images/cory-allen.jpg" alt="">
         <span class="label">hosted by cory allen &middot; live call &middot; 30 minutes</span>
       </div>
-      <h3>Break the input stream.</h3>
+      <h3>Present for the morning.</h3>
       <!-- DRAFT PROMPT — written in Cory's register; needs his sign-off before publish -->
       <p class="day-prompt">
         &ldquo;Before the first scroll of the day, sit for two minutes and count what is already reaching you. The hum of the room. Light through the blind. Your own breath. You may find the moment is full without your phone&rsquo;s help. We begin there.&rdquo;
@@ -1153,8 +1150,8 @@ img { max-width: 100%; display: block; }
   <div class="day rv">
     <div class="day-num">each<br>morning</div>
     <div>
-      <h3>A short prompt from that day's teacher.</h3>
-      <p>A few minutes of guidance to set the day's single intention. It takes minutes and asks nothing else of your day.</p>
+      <h3>One theme, each day.</h3>
+      <p>A few minutes of guidance from that day's teacher, each day present for one thing. It takes minutes and asks nothing else of your day.</p>
       <p>Each prompt includes a phone-free way to practice the day's interruption yourself. No ring needed.</p>
       <!-- VIDEO PLACEHOLDER: 1-minute practice prompt — swap for real thumbnail/embed -->
       <div class="video-frame video-frame--mini" role="img" aria-label="Placeholder for a one-minute morning practice preview">
@@ -1265,7 +1262,7 @@ img { max-width: 100%; display: block; }
   <div class="label rv">the pulse community</div>
   <h2 class="rv">Join people already practicing.</h2>
   <p class="flower-sub rv rv-d1">
-    This batch is two thousand rings. Five hundred sixteen are already on hands.
+    This batch is two thousand rings, and the batch is filling.
   </p>
   <!-- PLACEHOLDER DATA: wire data-claimed to the real batch count before publish -->
   <div class="flower-stage rv rv-d2" data-batch="2000" data-claimed="516">
@@ -1279,7 +1276,6 @@ img { max-width: 100%; display: block; }
       <!-- initial values present so no-JS still shows the truth -->
       <div class="num" id="flowerNum">1,484</div>
       <div class="of">rings remaining in this batch</div>
-      <div class="of2"><span id="onHandsNum">516</span> already on hands</div>
     </div>
   </div>
   <div class="flower-key rv rv-d3">faint gold, the millions practicing &middot; bright gold, already on hands &middot; open, still unclaimed</div>
@@ -1345,7 +1341,7 @@ img { max-width: 100%; display: block; }
   <div class="cine-img"></div>
   <div class="cine-ping"></div>
   <div class="cine-caption">
-    <div class="label rv">break autopilot &middot; late september</div>
+    <div class="label rv">be present together &middot; late september</div>
     <h2 class="rv rv-d1">See you inside.</h2>
     <span class="cta-emit rv rv-d2">
       <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-final">Join the week, free</a>
@@ -1360,7 +1356,7 @@ img { max-width: 100%; display: block; }
 
 <!-- ================= STICKY JOIN BAR ================= -->
 <div class="sticky-join" id="stickyJoin" aria-hidden="true">
-  <span class="sj-text">break autopilot &middot; free week &middot; cory opens day one</span>
+  <span class="sj-text">be present together &middot; free week &middot; cory opens day one</span>
   <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-sticky">Join free</a>
 </div>
 
@@ -1594,27 +1590,23 @@ img { max-width: 100%; display: block; }
   var midSorted = midCircles.slice().sort(function (m, n) { return m.d - n.d; });
 
   var numEl = document.getElementById('flowerNum');
-  var handsEl = document.getElementById('onHandsNum');
   numEl.textContent = remaining.toLocaleString('en-US');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function settle(instant) {
     stage.classList.add('counted');
-    if (instant) {
-      handsEl.textContent = claimed.toLocaleString('en-US');
-      stage.classList.add('settled');
-      return;
-    }
-    /* the claimed count arrives upward: the many joining, never stock draining */
-    var dur = 1400, t0 = null;
+    if (instant) { stage.classList.add('settled'); return; }
+    /* a rapid fall from the whole batch to what remains */
+    var dur = 800, t0 = null;
     function step(ts) {
       if (!t0) t0 = ts;
       var pr = Math.min(1, (ts - t0) / dur);
-      var ease = pr < 0.5 ? 4 * pr * pr * pr : 1 - Math.pow(-2 * pr + 2, 3) / 2;
-      handsEl.textContent = Math.round(claimed * ease).toLocaleString('en-US');
+      var ease = 1 - Math.pow(1 - pr, 4);
+      numEl.textContent = Math.round(batch - (batch - remaining) * ease).toLocaleString('en-US');
       if (pr < 1) requestAnimationFrame(step);
       else stage.classList.add('settled');
     }
+    numEl.textContent = batch.toLocaleString('en-US');
     requestAnimationFrame(step);
   }
 
