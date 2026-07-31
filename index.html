@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be Present Together — Unify &amp; Pulse · with Cory Allen</title>
-<meta name="description" content="Unify &amp; Pulse: Be Present Together. A free seven-day live experience with Cory Allen and friends. Each day, one theme, one practice. No ring required.">
+<title>Be Present Together — Unify &amp; Pulse</title>
+<meta name="description" content="Unify &amp; Pulse: Be Present Together. A free seven-day live experience with seven guides, one theme each day. No ring required.">
 <!-- PLACEHOLDER: set absolute URLs before publish so WhatsApp/social shares unfurl -->
-<meta property="og:title" content="Unify &amp; Pulse: Be Present Together — a free week with Cory Allen">
+<meta property="og:title" content="Unify &amp; Pulse: Be Present Together — a free live week, seven guides">
 <meta property="og:description" content="Seven days, live. Daily prompts, a 30-minute call each day, a small group. Free to join.">
 <meta property="og:image" content="{{page_url}}/images/hero-unify-poster.jpg">
 <meta property="og:url" content="{{page_url}}">
@@ -308,7 +308,42 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
-   CORY — a letter from the host
+   GUIDES — seven days, seven voices
+   ============================================================ */
+.guides { max-width: 1000px; margin: 10px auto 0; padding: 0 6vw 10px; text-align: center; }
+.guides > .label { display: block; margin-bottom: 44px; }
+.guides-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(26px, 4vw, 44px) clamp(22px, 3.4vw, 40px);
+}
+.guide { width: 190px; }
+.guide-ph, .guide img {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 14px;
+  border: 2px solid rgba(201,162,39,0.5);
+  box-shadow: var(--shadow-sm);
+}
+.guide-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(157deg, #F7F2E1 0%, #EFE8CF 100%);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--honey-deep);
+}
+.guide .day-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+.guide h3 { font-size: 18px; letter-spacing: -0.03em; margin-bottom: 6px; }
+.guide .theme { font-family: var(--mono); font-size: 12.5px; color: var(--honey-deep); line-height: 1.5; }
+.guide .note { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+/* ============================================================
+   CORY — a letter from the host (retired for the general page)
    ============================================================ */
 .host {
   position: relative;
@@ -1037,16 +1072,13 @@ img { max-width: 100%; display: block; }
       </svg>
       <span class="logo">unify</span>
     </div>
-    <div class="cory-chip">
-      <img src="images/cory-allen.jpg" alt="Cory Allen">
-      <div class="label label--light">with cory allen</div>
-    </div>
+    <div class="label label--light">seven days &middot; seven guides</div>
   </div>
   <div class="hero-inner">
     <div class="label label--light hero-kicker rv">unify &amp; pulse present &middot; free &middot; live on whatsapp &middot; late september</div>
     <h1 class="rv rv-h1">Be Present <em>Together</em></h1>
     <p class="hero-sub rv rv-h2">
-      You've been on autopilot so long it feels like weather. One week to break it, live, opened by Cory Allen and carried by six more teachers. From Pulse, makers of the mindfulness ring. No ring required.
+      You've been on autopilot so long it feels like weather. One week to break it, live, with seven guides and one theme each day. From Pulse, makers of the mindfulness ring. No ring required.
     </p>
     <span class="cta-emit rv rv-h3">
       <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">Join the week, free</a>
@@ -1062,7 +1094,7 @@ img { max-width: 100%; display: block; }
 <!-- ================= INTRO : recognition ================= -->
 <section class="intro">
   <div class="intro-inner">
-    <div class="label rv">the premise</div>
+    <div class="label rv">from pulse &middot; break autopilot</div>
     <h2 class="rv">What you've been calling anxiety may be overstimulation.</h2>
     <p class="rv rv-d1">
       By mid-morning you've met more inputs than your grandparents did in a week. The mind copes the only way it can: it goes on autopilot. The days keep happening. You just stop being in them.
@@ -1073,47 +1105,60 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ================= CORY : the host ================= -->
-<section class="host">
-  <div class="host-card rv">
-    <div class="host-photo">
+<!-- ================= GUIDES : seven days, seven voices ================= -->
+<!-- PLACEHOLDER PHOTOS: adam/patrick/aubrey/jason are monograms until real headshots land;
+     emily is a graded video still, swap when a proper photo is available -->
+<section class="guides">
+  <span class="label rv">your guides &middot; one each day</span>
+  <div class="guides-grid rv rv-d1">
+    <div class="guide">
       <img src="images/cory-allen.jpg" alt="Cory Allen">
+      <div class="day-tag">day one</div>
+      <h3>Cory Allen</h3>
+      <div class="theme">be present for the morning</div>
+      <div class="note">opens the week &middot; live call</div>
     </div>
-    <div class="host-body">
-      <div class="label">day one &middot; your host</div>
-      <h2>Cory opens the week.</h2>
-      <p>
-        You know his voice from <em>The Astral Hustle</em> and his book <em>Now Is the Way</em>. For a decade he has asked the clearest teachers alive one question: how do you actually stay present? This week begins where his answer begins. The problem is volume, and volume can be lowered.
-      </p>
-      <p>
-        He opens the week on day one and hosts its first live call. Thirty minutes, everyone welcome to speak.
-      </p>
-      <!-- DRAFT QUOTE — written for Cory's approval; replace with his own words before publish -->
-      <blockquote class="host-quote">
-        &ldquo;I interviewed teachers about presence for ten years and still missed most of my own days. The fix was embarrassingly small. A tap. A look up. Again, until being here got ordinary.&rdquo;
-        <footer>— Cory Allen</footer>
-      </blockquote>
-      <!-- VIDEO PLACEHOLDER: Cory's announcement video — swap for the real embed once recorded -->
-      <div class="host-video">
-        <div class="video-frame" role="img" aria-label="Placeholder for Cory's welcome video, arriving with the week">
-          <img class="vf-face" src="images/cory-allen.jpg" alt="">
-          <div class="vf-pulse"></div>
-          <div class="vf-play" aria-hidden="true"></div>
-          <div class="vf-label">cory's invitation &middot; 60 seconds &middot; arrives with the week</div>
-        </div>
-      </div>
-      <div class="host-links">
-        <a href="https://coryallen.com?utm_source=pulse&utm_campaign=break-autopilot" target="_blank" rel="noopener">coryallen.com</a>
-        <a href="https://coryallen.com/podcast?utm_source=pulse&utm_campaign=break-autopilot" target="_blank" rel="noopener">the astral hustle</a>
-        <a href="https://www.instagram.com/heycoryallen" target="_blank" rel="noopener">@heycoryallen</a>
-        <a href="https://coryallen.com/book?utm_source=pulse&utm_campaign=break-autopilot" target="_blank" rel="noopener">now is the way</a>
-      </div>
+    <div class="guide">
+      <img src="images/brent-freeman.jpg" alt="Brent Freeman">
+      <div class="day-tag">day two</div>
+      <h3>Brent Freeman</h3>
+      <div class="theme">be present for joy</div>
+    </div>
+    <div class="guide">
+      <img src="images/emily-fletcher.jpg" alt="Emily Fletcher">
+      <div class="day-tag">day three</div>
+      <h3>Emily Fletcher</h3>
+      <div class="theme">be present for pleasure</div>
+    </div>
+    <div class="guide">
+      <div class="guide-ph" aria-hidden="true">AS</div>
+      <div class="day-tag">day four</div>
+      <h3>Adam Schlender</h3>
+      <div class="theme">be present for expansion</div>
+    </div>
+    <div class="guide">
+      <div class="guide-ph" aria-hidden="true">P</div>
+      <div class="day-tag">day five</div>
+      <h3>Patrick</h3>
+      <div class="theme">be present for peace</div>
+    </div>
+    <div class="guide">
+      <div class="guide-ph" aria-hidden="true">AM</div>
+      <div class="day-tag">day six</div>
+      <h3>Aubrey Marcus</h3>
+      <div class="theme">be present for service</div>
+    </div>
+    <div class="guide">
+      <div class="guide-ph" aria-hidden="true">JS</div>
+      <div class="day-tag">day seven</div>
+      <h3>Jason Silva</h3>
+      <div class="theme">be present for awe</div>
     </div>
   </div>
 </section>
 
 <div class="host-cta rv">
-  <a href="{{whatsapp_invite_link}}" data-track="join-after-host">Cory opens day one &middot; join the week free</a>
+  <a href="{{whatsapp_invite_link}}" data-track="join-after-guides">seven guides, one week &middot; join free</a>
 </div>
 
 <!-- ================= CINEMATIC : the question ================= -->
@@ -1143,7 +1188,7 @@ img { max-width: 100%; display: block; }
       <p class="day-prompt">
         &ldquo;Before the first scroll of the day, sit for two minutes and count what is already reaching you. The hum of the room. Light through the blind. Your own breath. You may find the moment is full without your phone&rsquo;s help. We begin there.&rdquo;
       </p>
-      <p>Days two through seven bring a new teacher each morning, six voices Cory trusts.</p>
+      <p>Each day after brings a new guide and a new theme, joy through awe.</p>
     </div>
   </div>
 
@@ -1185,7 +1230,7 @@ img { max-width: 100%; display: block; }
   <!-- PLACEHOLDER LOGISTICS: fill real dates/times before publish -->
   <div class="week-logistics rv">
     {{campaign_start_date}} &ndash; {{campaign_end_date}} &middot; daily call at {{call_time_with_timezone}}<br>
-    replays shared in the group if you miss one &middot; six more teachers, announced day by day
+    replays shared in the group if you miss one &middot; a new guide and theme each morning
   </div>
 </section>
 
@@ -1291,7 +1336,7 @@ img { max-width: 100%; display: block; }
 <section class="cta-band">
   <div class="label rv">the ring &middot; in the box</div>
   <span class="cta-emit rv rv-d1">
-    <a class="btn--pill" href="https://{{shop_domain}}/discount/CORY?redirect=/products/pulse-ring&utm_source=cory&utm_medium=landing&utm_campaign=break-autopilot" data-track="ring-buy-break">Order now &middot; free two-day shipping</a>
+    <a class="btn--pill" href="https://{{shop_domain}}/discount/{{discount_code}}?redirect=/products/pulse-ring&utm_medium=landing&utm_campaign=be-present-together" data-track="ring-buy-break">Order now &middot; free two-day shipping</a>
   </span>
   <div class="cta-note rv rv-d2">two-day shipping included &middot; a $45 value</div>
 </section>
@@ -1303,7 +1348,7 @@ img { max-width: 100%; display: block; }
       <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
     </div>
     <div class="offer-copy">
-      <div class="label">for cory's readers</div>
+      <div class="label">for the be present week</div>
       <h2>Wear the practice for 21 days.</h2>
       <p>
         The Pulse ring hums gently a few times an hour. A small, private signal to come back to where you are. One soft tap, then it leaves you alone. That is all it does.
@@ -1314,12 +1359,12 @@ img { max-width: 100%; display: block; }
       <!-- PLACEHOLDER PRICING: confirm real figures with Johan before publish -->
       <div class="offer-price"><s>${{ring_price}}</s> <strong>${{ring_price_discounted}} for Cory's readers</strong></div>
       <div class="offer-code" id="codeChip" role="button" tabindex="0" aria-label="Copy discount code CORY">
-        code <strong>CORY</strong> &middot; $70 off + free two-day shipping <span class="copied">&middot; copied</span>
+        code <strong>{{discount_code}}</strong> &middot; $70 off + free two-day shipping <span class="copied">&middot; copied</span>
       </div>
       <br>
       <!-- Shopify discount deep link: /discount/CODE auto-applies and persists in cart -->
       <span class="cta-emit">
-        <a class="btn--pill" href="https://{{shop_domain}}/discount/CORY?redirect=/products/pulse-ring&utm_source=cory&utm_medium=landing&utm_campaign=break-autopilot" data-track="ring-buy">Begin your 21 days</a>
+        <a class="btn--pill" href="https://{{shop_domain}}/discount/{{discount_code}}?redirect=/products/pulse-ring&utm_medium=landing&utm_campaign=be-present-together" data-track="ring-buy">Begin your 21 days</a>
       </span>
       <div class="terms">21-day trial &middot; money-back guarantee &middot; free sizing exchanges</div>
       <!-- PLACEHOLDER DATES: wire om-fill width + dates to real logistics before publish -->
@@ -1356,7 +1401,7 @@ img { max-width: 100%; display: block; }
 
 <!-- ================= STICKY JOIN BAR ================= -->
 <div class="sticky-join" id="stickyJoin" aria-hidden="true">
-  <span class="sj-text">be present together &middot; free week &middot; cory opens day one</span>
+  <span class="sj-text">be present together &middot; free week &middot; seven guides</span>
   <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-sticky">Join free</a>
 </div>
 
