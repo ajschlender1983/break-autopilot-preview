@@ -677,6 +677,21 @@ img { max-width: 100%; display: block; }
   color: rgba(249,246,229,0.55);
   margin-top: 10px;
 }
+/* merged: the flower field lives inside the dark world */
+.unify-merged { margin: 56px 0; }
+.unify-merged .flower-sub { color: rgba(249,246,229,0.78); margin: 44px auto 50px; }
+.unify-merged .flower-stage { max-width: 1100px; }
+.unify-merged .fl-back circle { stroke: rgba(201,162,39,0.12); }
+.unify-merged .fl-back circle.lit { stroke: rgba(201,162,39,0.4); }
+.unify-merged .fl-mid circle { stroke: rgba(249,246,229,0.14); }
+.unify-merged .fl-mid circle.lit { stroke: var(--honey); }
+.unify-merged .fl-front circle { stroke: rgba(249,246,229,0.6); }
+.unify-merged .flower-count::before {
+  background: radial-gradient(closest-side, #12141a 55%, rgba(18,20,26,0) 100%);
+}
+.unify-merged .flower-count .num { color: var(--cream-warm); }
+.unify-merged .flower-count .of { color: rgba(249,246,229,0.75); }
+.unify-merged .flower-key { color: rgba(249,246,229,0.5); margin-top: 32px; }
 
 /* ============================================================
    FLOWER OF LIFE — the precious few
@@ -1118,21 +1133,6 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ================= UNIFY : the global many ================= -->
-<!-- VERIFY STATS with Patrick / Unify before publish -->
-<section class="unify-break">
-  <svg class="unify-field" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
-  <div class="unify-inner">
-    <div class="label rv"><svg class="unify-mark-sm" viewBox="0 0 100 100" aria-hidden="true"><g class="unifyPetalsG"></g></svg> in partnership with unify</div>
-    <h2 class="rv rv-d1">Around the world, people practice together, on one breath.</h2>
-  </div>
-  <div class="unify-stats rv rv-d2">
-      <div class="unify-stat"><div class="num" data-count="4000000">0</div><div class="what">people meditating in sync</div></div>
-      <div class="unify-stat"><div class="num" data-count="150">0</div><div class="what">countries, one moment</div></div>
-      <div class="unify-stat"><div class="num" data-count="10">0</div><div class="what">years of global gatherings</div></div>
-  </div>
-</section>
-
 <!-- ================= JOIN : primary CTA ================= -->
 <section class="join" id="join">
   <div class="join-inner">
@@ -1171,30 +1171,36 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ================= FLOWER : the circle you'd be joining ================= -->
-<section class="flower">
-  <div class="flower-inner">
-  <div class="label rv">the current batch</div>
-  <h2 class="rv">Made in a single batch.</h2>
-  <p class="flower-sub rv rv-d1">
-    This batch is two thousand rings, made in a single run.
+<!-- ================= UNIFY x PULSE : the many, and what remains ================= -->
+<!-- VERIFY STATS with Patrick / Unify before publish -->
+<section class="unify-break unify-merged">
+  <div class="unify-inner">
+    <div class="label rv"><svg class="unify-mark-sm" viewBox="0 0 100 100" aria-hidden="true"><g class="unifyPetalsG"></g></svg> in partnership with unify</div>
+    <h2 class="rv rv-d1">Around the world, people practice together, on one breath.</h2>
+  </div>
+  <div class="unify-stats rv rv-d2">
+      <div class="unify-stat"><div class="num" data-count="4000000">0</div><div class="what">people meditating in sync</div></div>
+      <div class="unify-stat"><div class="num" data-count="150">0</div><div class="what">countries, one moment</div></div>
+      <div class="unify-stat"><div class="num" data-count="10">0</div><div class="what">years of global gatherings</div></div>
+  </div>
+  <p class="flower-sub rv rv-d2">
+    Two thousand of them wear a Pulse ring. This is what remains.
   </p>
-  <!-- PLACEHOLDER DATA: wire data-claimed to the real batch count before publish -->
-  <div class="flower-stage rv rv-d2" data-batch="2000" data-claimed="516">
+  <!-- PLACEHOLDER DATA: wire data-claimed to the real count before publish -->
+  <div class="flower-stage rv rv-d3" data-batch="2000" data-claimed="516">
     <div class="flower-glow"></div>
     <svg class="fl-svg fl-back" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
     <svg class="fl-svg fl-mid" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
-    <svg class="fl-svg fl-front" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid slice" aria-label="A wide field of circles: faint gold for the millions practicing, bright gold for rings on hands, large open circles for the rings that remain">
+    <svg class="fl-svg fl-front" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid slice" aria-label="A wide field of circles: faint gold for the wider practice, bright gold for rings on hands, large open circles for the rings that remain">
       <circle class="fl-wave" cx="500" cy="320" r="0"></circle>
     </svg>
     <div class="flower-count">
       <!-- initial values present so no-JS still shows the truth -->
       <div class="num" id="flowerNum">1,484</div>
-      <div class="of">rings remaining in this batch</div>
+      <div class="of">rings remaining</div>
     </div>
   </div>
   <div class="flower-key rv rv-d3">faint gold, the wider practice &middot; bright gold, already on hands &middot; open, not yet spoken for</div>
-  </div>
 </section>
 
 <!-- ================= CINEMATIC : the box, clean frame ================= -->
@@ -1359,8 +1365,9 @@ img { max-width: 100%; display: block; }
   var hero = document.querySelector('.hero');
   var v = document.getElementById('heroVideo');
   if (!hero || !v) return;
-  /* where the eclipse's black disc sits within the video frame (fraction of intrinsic size) */
-  var EX = 0.506, EY = 0.24;
+  /* where the floating ring sits within the video frame (fraction of intrinsic size) —
+     the product itself is the pulse emitter */
+  var EX = 0.50, EY = 0.52;
   function place() {
     var vw = v.videoWidth || 1600, vh = v.videoHeight || 900;
     var cw = hero.clientWidth, ch = hero.clientHeight;
