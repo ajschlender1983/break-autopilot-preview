@@ -279,17 +279,38 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
 }
 .hero .btn--pill { box-shadow: 0 14px 44px rgba(227,244,125,0.22); }
-.hero-scrollcue {
-  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+.hero-stats {
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
   z-index: 3;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3.5vw, 44px);
+  padding: 0 6vw;
+  white-space: nowrap;
 }
-.hero-scrollcue .line {
-  width: 1px; height: 44px;
-  background: linear-gradient(rgba(249,246,229,0), rgba(249,246,229,0.6));
-  animation: cue var(--beat) ease-in-out infinite;
+.hs-item { text-align: center; }
+.hs-num {
+  font-weight: 600;
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--cream-warm);
+  line-height: 1.2;
 }
-@keyframes cue { 0%,100% { transform: scaleY(.4); transform-origin: top; opacity:.4; } 50% { transform: scaleY(1); opacity: 1; } }
+.hs-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(249,246,229,0.55);
+  margin-top: 4px;
+}
+.hs-div { width: 1px; height: 30px; background: rgba(249,246,229,0.2); }
+@media (max-width: 640px) {
+  .hero-stats { gap: 16px; }
+  .hs-num { font-size: 15px; }
+  .hs-label { font-size: 10.5px; letter-spacing: 0.05em; }
+}
 
 /* ============================================================
    INTRO — waking up into cream
@@ -943,7 +964,7 @@ img { max-width: 100%; display: block; }
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .js .rv { opacity: 1; transform: none; transition: none; }
-  .pulse-ring, .hero-bgimg, .host-photo::after, .hero-scrollcue .line,
+  .pulse-ring, .hero-bgimg,
   .vf-pulse, .cta-emit::before, .cine.pinged .cine-ping,
   .cine.pinged .cine-caption h2,
   .flower-stage.settled .fl-front circle { animation: none; }
@@ -994,9 +1015,13 @@ img { max-width: 100%; display: block; }
     </span>
     <div class="cta-note cta-note--light rv rv-h3">free &middot; opens a private whatsapp group</div>
   </div>
-  <div class="hero-scrollcue" aria-hidden="true">
-    <div class="label label--light">begin</div>
-    <div class="line"></div>
+  <!-- PLACEHOLDER: set data-start to the real ISO datetime before publish -->
+  <div class="hero-stats" data-start="{{campaign_start_iso}}">
+    <div class="hs-item"><div class="hs-num" id="heroCountdown">late september</div><div class="hs-label">until day one</div></div>
+    <div class="hs-div"></div>
+    <div class="hs-item"><div class="hs-num">1,484</div><div class="hs-label">rings remaining</div></div>
+    <div class="hs-div"></div>
+    <div class="hs-item"><div class="hs-num">7</div><div class="hs-label">guides, one each day</div></div>
   </div>
 </header>
 
@@ -1024,49 +1049,49 @@ img { max-width: 100%; display: block; }
       <img src="images/cory-allen.jpg" alt="Cory Allen">
       <div class="day-tag">day one</div>
       <h3>Cory Allen</h3>
-      <div class="theme">be present for the morning</div>
+      <div class="theme">pause for the morning</div>
       <div class="note">opens the week &middot; the astral hustle</div>
     </div>
     <div class="guide">
       <img src="images/brent-freeman.jpg" alt="Brent Freeman">
       <div class="day-tag">day two</div>
       <h3>Brent Freeman</h3>
-      <div class="theme">be present for joy</div>
+      <div class="theme">pause for joy</div>
       <div class="note">the alchemy of joy</div>
     </div>
     <div class="guide">
       <img src="images/emily-fletcher.jpg" alt="Emily Fletcher">
       <div class="day-tag">day three</div>
       <h3>Emily Fletcher</h3>
-      <div class="theme">be present for pleasure</div>
+      <div class="theme">pause for pleasure</div>
       <div class="note">ziva meditation</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">RA</div>
       <div class="day-tag">day four</div>
       <h3>Radha Agrawal</h3>
-      <div class="theme">be present for expansion</div>
+      <div class="theme">pause for expansion</div>
       <div class="note">belong center</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">P</div>
       <div class="day-tag">day five</div>
       <h3>Patrick</h3>
-      <div class="theme">be present for peace</div>
+      <div class="theme">pause for peace</div>
       <div class="note">founder of unify</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">AM</div>
       <div class="day-tag">day six</div>
       <h3>Aubrey Marcus</h3>
-      <div class="theme">be present for service</div>
+      <div class="theme">pause for service</div>
       <div class="note">own the day</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">JS</div>
       <div class="day-tag">day seven</div>
       <h3>Jason Silva</h3>
-      <div class="theme">be present for awe</div>
+      <div class="theme">pause for awe</div>
       <div class="note">shots of awe</div>
     </div>
   </div>
@@ -1098,7 +1123,7 @@ img { max-width: 100%; display: block; }
         <img src="images/cory-allen.jpg" alt="">
         <span class="label">hosted by cory allen &middot; live call &middot; 30 minutes</span>
       </div>
-      <h3>Present for the morning.</h3>
+      <h3>Pause for the morning.</h3>
       <!-- DRAFT PROMPT — written in Cory's register; needs his sign-off before publish -->
       <p class="day-prompt">
         &ldquo;Before the first scroll of the day, sit for two minutes and count what is already reaching you. The hum of the room. Light through the blind. Your own breath. You may find the moment is full without your phone&rsquo;s help. We begin there.&rdquo;
@@ -1381,6 +1406,27 @@ img { max-width: 100%; display: block; }
   v.addEventListener('loadedmetadata', place);
   window.addEventListener('resize', place, { passive: true });
   place();
+})();
+
+/* ---------- hero countdown: a quiet timer to day one ---------- */
+(function () {
+  var bar = document.querySelector('.hero-stats');
+  var el = document.getElementById('heroCountdown');
+  if (!bar || !el) return;
+  var t = Date.parse(bar.getAttribute('data-start'));
+  if (isNaN(t)) return;   /* placeholder date: leave the fallback text */
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var d = t - Date.now();
+    if (d <= 0) { el.textContent = 'day one is here'; return; }
+    var days = Math.floor(d / 86400000);
+    var h = Math.floor(d % 86400000 / 3600000);
+    var m = Math.floor(d % 3600000 / 60000);
+    var sec = Math.floor(d % 60000 / 1000);
+    el.textContent = days + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(sec) + 's';
+    setTimeout(tick, 1000);
+  }
+  tick();
 })();
 
 /* ---------- hero entrance: one composed first breath ---------- */
