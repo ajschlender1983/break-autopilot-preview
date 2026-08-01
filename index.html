@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be Present Together — Unify &amp; Pulse</title>
+<title>Be Present Together &middot; Unify &amp; Pulse</title>
 <meta name="description" content="Unify &amp; Pulse: Be Present Together. A free seven-day live experience with seven guides, one theme each day. No ring required.">
 <!-- PLACEHOLDER: set absolute URLs before publish so WhatsApp/social shares unfurl -->
-<meta property="og:title" content="Unify &amp; Pulse: Be Present Together — a free live week, seven guides">
+<meta property="og:title" content="Unify &amp; Pulse: Be Present Together, a free live week with seven guides">
 <meta property="og:description" content="Seven days, live. Daily prompts, a 30-minute call each day, a small group. Free to join.">
 <meta property="og:image" content="{{page_url}}/images/hero-unify-poster.jpg">
 <meta property="og:url" content="{{page_url}}">
@@ -33,7 +33,7 @@
   --brown:        #423D32;
   --body:         #474234;
   --accent:       #E3F47D;
-  --accent-text:  #101828;
+  --accent-text:  #0C0D11;
   --honey:        #C9A227;
   --honey-deep:   #8A6D14;
   --muted:        #6E6857;
@@ -182,9 +182,9 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.sticky-join .btn--pill { padding: 10px 26px; font-size: 13.5px; box-shadow: var(--shadow-sm); white-space: nowrap; }
+.sticky-join .btn--pill { padding: 10px 26px; font-size: 13px; box-shadow: var(--shadow-sm); white-space: nowrap; }
 @media (max-width: 480px) {
-  .sticky-join .sj-text { font-size: 11.5px; max-width: 55vw; }
+  .sticky-join .sj-text { font-size: 12px; max-width: 55vw; }
 }
 
 /* ============================================================
@@ -239,6 +239,7 @@ img { max-width: 100%; display: block; }
   padding: 0 2px;
 }
 .brandline .unify-mark { width: 30px; height: 30px; display: block; }
+.unify-mark, .unify-mark-sm { filter: saturate(0.55) brightness(1.05); opacity: 0.9; }
 /* stylized Cory chip, top right */
 .cory-chip { display: flex; align-items: center; gap: 11px; }
 .cory-chip img {
@@ -260,7 +261,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 26px;
   letter-spacing: 0.14em;
   color: rgba(249,246,229,0.75);
-  text-shadow: 0 1px 16px rgba(12,13,17,0.65);
+  text-shadow: 0 1px 12px rgba(12,13,17,0.9), 0 0 28px rgba(12,13,17,0.6);
 }
 .hero h1 {
   font-size: clamp(52px, 9.5vw, 124px);
@@ -310,7 +311,7 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    GUIDES — seven days, seven voices
    ============================================================ */
-.guides { max-width: 1000px; margin: 10px auto 0; padding: 0 6vw 10px; text-align: center; }
+.guides { max-width: 1000px; margin: 16px auto 0; padding: 0 6vw 16px; text-align: center; }
 .guides > .label { display: block; margin-bottom: 44px; }
 .guides-grid {
   display: flex;
@@ -319,6 +320,9 @@ img { max-width: 100%; display: block; }
   gap: clamp(26px, 4vw, 44px) clamp(22px, 3.4vw, 40px);
 }
 .guide { width: 190px; }
+.guide img, .featured-head img {
+  filter: sepia(0.45) saturate(0.85) contrast(1.05) brightness(1.03) hue-rotate(-6deg);
+}
 .guide-ph, .guide img {
   width: 96px; height: 96px;
   border-radius: 50%;
@@ -337,78 +341,14 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.02em;
   color: var(--honey-deep);
 }
-.guide .day-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
+.guide .day-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
 .guide h3 { font-size: 18px; letter-spacing: -0.03em; margin-bottom: 6px; }
-.guide .theme { font-family: var(--mono); font-size: 12.5px; color: var(--honey-deep); line-height: 1.5; }
-.guide .note { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 6px; }
+.guide .theme { font-family: var(--mono); font-size: 12px; color: var(--honey-deep); line-height: 1.5; }
+.guide .note { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 6px; }
 
 /* ============================================================
    CORY — a letter from the host (retired for the general page)
    ============================================================ */
-.host {
-  position: relative;
-  max-width: 1000px;
-  margin: 10px auto 0;
-  padding: 0 6vw 10px;
-}
-.host-card {
-  position: relative;
-  background: var(--cream-warm);
-  border-radius: 28px;
-  box-shadow: var(--shadow-lg);
-  padding: clamp(36px, 5vw, 64px);
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: clamp(28px, 4vw, 56px);
-  align-items: start;
-  overflow: hidden;
-}
-.host-photo { position: relative; }
-.host-photo img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(201,162,39,0.35);
-  box-shadow: var(--shadow-md);
-}
-.host-photo::after {
-  content: "";
-  position: absolute; inset: -18%;
-  border-radius: 50%;
-  border: 1.5px solid rgba(201,162,39,0.25);
-  animation: halo calc(var(--beat) * 2) ease-in-out infinite;
-}
-@keyframes halo { 0%,100% { transform: scale(.96); opacity:.5; } 50% { transform: scale(1.04); opacity: 1; } }
-.host-body .label { margin-bottom: 16px; }
-.host-body h2 { font-size: clamp(28px, 3.6vw, 42px); margin-bottom: 18px; }
-.host-body p { font-size: 17px; line-height: 1.7; color: var(--body); max-width: 560px; }
-.host-body p + p { margin-top: 14px; }
-.host-quote {
-  margin: 26px 0 0;
-  padding: 20px 24px;
-  border-left: 2px solid var(--honey);
-  background: rgba(201,162,39,0.06);
-  border-radius: 0 12px 12px 0;
-  font-size: 18px;
-  line-height: 1.65;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.host-quote footer { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
-.host-links { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
-.host-links a {
-  font-family: var(--mono);
-  font-size: 12px;
-  text-decoration: none;
-  color: var(--brown);
-  border: 1.5px solid rgba(66,61,50,0.22);
-  border-radius: 100px;
-  padding: 8px 18px;
-  transition: border-color .25s ease, background .25s ease, transform .25s ease;
-}
-.host-links a:hover { border-color: var(--honey); background: rgba(201,162,39,0.08); transform: translateY(-1px); }
-
 /* ---------- video placeholders: warm poster frames, honest about status ---------- */
 .video-frame {
   position: relative;
@@ -519,7 +459,7 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 16 / 9;
   max-height: none;
 }
-.cine--box .cine-img { background-image: url('images/offer-packaging.jpg'); background-position: 60% center; }
+.cine--box .cine-img { background-image: url('images/offer-packaging.jpg'); background-position: 60% center; filter: sepia(0.16) saturate(0.95) brightness(1.04) contrast(0.98); }
 /* CTA band beneath the clean product frame */
 .cta-band {
   text-align: center;
@@ -628,7 +568,7 @@ img { max-width: 100%; display: block; }
 .day-num {
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--honey);
+  color: var(--honey-deep);
   padding-top: 6px;
 }
 .day h3 { font-size: clamp(22px, 2.8vw, 30px); margin-bottom: 12px; }
@@ -645,60 +585,6 @@ img { max-width: 100%; display: block; }
   color: var(--brown);
   text-align: center;
 }
-
-/* ============================================================
-   PAUSE — the page performs the product, once, over still water
-   ============================================================ */
-.pause {
-  position: relative;
-  text-align: center;
-  padding: 100px 6vw 90px;
-  overflow: hidden;
-}
-.pause-bg {
-  position: absolute; inset: 0;
-  background: url('images/pause-pond.jpg') center 62% / cover no-repeat;
-}
-.pause-veil {
-  position: absolute; inset: 0;
-  background: radial-gradient(80% 90% at 50% 50%,
-    rgba(235,231,212,0.55) 0%, rgba(235,231,212,0.78) 60%, var(--cream) 100%);
-}
-.pause-inner { position: relative; z-index: 2; }
-.pause .label { margin-bottom: 26px; color: var(--brown); }
-.pause-quote {
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.15;
-  color: var(--ink);
-  max-width: 680px;
-  margin: 0 auto 22px;
-  text-wrap: balance;
-}
-.pause-attr {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: var(--brown);
-  margin-top: 20px;
-}
-.pause p {
-  font-size: 17px;
-  line-height: 1.8;
-  color: var(--brown);
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-/* the week lives on your phone; the ring never will */
-.week-illo { margin-top: 20px; max-width: 300px; }
-.week-illo img {
-  border-radius: 14px;
-  box-shadow: var(--shadow-md);
-}
-.week-illo .label { margin-top: 12px; }
 
 /* ============================================================
    JOIN — primary CTA with a visible path
@@ -725,7 +611,7 @@ img { max-width: 100%; display: block; }
   padding: 20px 20px 22px;
   box-shadow: var(--shadow-sm);
 }
-.join-step .label { color: var(--honey); margin-bottom: 10px; }
+.join-step .label { color: var(--honey-deep); margin-bottom: 10px; }
 .join-step p { font-size: 14.5px; line-height: 1.55; color: var(--body); }
 
 /* ============================================================
@@ -733,10 +619,10 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .unify-break {
   position: relative;
-  background: var(--void);
+  background: radial-gradient(90% 80% at 50% 40%, var(--void-soft), var(--void));
   color: var(--cream-warm);
   text-align: center;
-  padding: 110px 6vw 120px;
+  padding: 112px 6vw 112px;
   overflow: hidden;
   margin: 56px 0 0;
 }
@@ -750,6 +636,8 @@ img { max-width: 100%; display: block; }
   stroke: rgba(201,162,39,0.2);
   stroke-width: 1;
 }
+.unify-field { animation: field-breath calc(var(--beat) * 4) ease-in-out infinite; }
+@keyframes field-breath { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
 .unify-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
 .unify-break .label {
   color: rgba(249,246,229,0.6);
@@ -903,7 +791,7 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .offer {
   position: relative;
-  padding: 20px 6vw 90px;
+  padding: 24px 6vw 96px;
 }
 .offer-card {
   position: relative;
@@ -944,7 +832,7 @@ img { max-width: 100%; display: block; }
   height: 100%;
   width: 0;
   border-radius: 4px;
-  background: linear-gradient(90deg, var(--honey), #E0B036);
+  background: linear-gradient(90deg, var(--honey-deep), var(--honey));
   transition: width 1.8s cubic-bezier(.19,1,.22,1) .3s;
 }
 /* PLACEHOLDER: 62% = position of today between campaign announce and order-by date */
@@ -1003,7 +891,13 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer { text-align: center; padding: 30px 6vw 110px; }
+.footer {
+  text-align: center;
+  border-top: 1px solid rgba(66,61,50,0.12);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 6vw 110px;
+}
 .footer p { font-family: var(--mono); font-size: 12px; color: rgba(66,61,50,0.6); line-height: 2; }
 .footer a { color: rgba(66,61,50,0.6); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -1078,7 +972,7 @@ img { max-width: 100%; display: block; }
     <div class="label label--light hero-kicker rv">unify &amp; pulse present &middot; free &middot; live on whatsapp &middot; late september</div>
     <h1 class="rv rv-h1">Be Present <em>Together</em></h1>
     <p class="hero-sub rv rv-h2">
-      You've been on autopilot so long it feels like weather. One week to break it, live, with seven guides and one theme each day. From Pulse, makers of the mindfulness ring. No ring required.
+      You've been on autopilot so long it feels like weather. Seven days of being present, live, with seven guides and one theme each day. From Pulse, makers of the mindfulness ring. No ring required.
     </p>
     <span class="cta-emit rv rv-h3">
       <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">Join the week, free</a>
@@ -1100,7 +994,7 @@ img { max-width: 100%; display: block; }
       By mid-morning you've met more inputs than your grandparents did in a week. The mind copes the only way it can: it goes on autopilot. The days keep happening. You just stop being in them.
     </p>
     <p class="rv rv-d2">
-      This week turns the volume back down. Seven days, one small practice at a time, together.
+      This week is an invitation to turn the volume back down. Seven days, one small practice at a time, together.
     </p>
   </div>
 </section>
@@ -1116,43 +1010,49 @@ img { max-width: 100%; display: block; }
       <div class="day-tag">day one</div>
       <h3>Cory Allen</h3>
       <div class="theme">be present for the morning</div>
-      <div class="note">opens the week &middot; live call</div>
+      <div class="note">opens the week &middot; the astral hustle</div>
     </div>
     <div class="guide">
       <img src="images/brent-freeman.jpg" alt="Brent Freeman">
       <div class="day-tag">day two</div>
       <h3>Brent Freeman</h3>
       <div class="theme">be present for joy</div>
+      <div class="note">the alchemy of joy</div>
     </div>
     <div class="guide">
       <img src="images/emily-fletcher.jpg" alt="Emily Fletcher">
       <div class="day-tag">day three</div>
       <h3>Emily Fletcher</h3>
       <div class="theme">be present for pleasure</div>
+      <div class="note">ziva meditation</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">AS</div>
       <div class="day-tag">day four</div>
       <h3>Adam Schlender</h3>
       <div class="theme">be present for expansion</div>
+      <div class="note">pulse</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">P</div>
       <div class="day-tag">day five</div>
       <h3>Patrick</h3>
       <div class="theme">be present for peace</div>
+      <div class="note">founder of unify</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">AM</div>
       <div class="day-tag">day six</div>
       <h3>Aubrey Marcus</h3>
       <div class="theme">be present for service</div>
+      <div class="note">own the day</div>
     </div>
     <div class="guide">
       <div class="guide-ph" aria-hidden="true">JS</div>
       <div class="day-tag">day seven</div>
       <h3>Jason Silva</h3>
       <div class="theme">be present for awe</div>
+      <div class="note">shots of awe</div>
     </div>
   </div>
 </section>
@@ -1188,38 +1088,22 @@ img { max-width: 100%; display: block; }
       <p class="day-prompt">
         &ldquo;Before the first scroll of the day, sit for two minutes and count what is already reaching you. The hum of the room. Light through the blind. Your own breath. You may find the moment is full without your phone&rsquo;s help. We begin there.&rdquo;
       </p>
-      <p>Each day after brings a new guide and a new theme, joy through awe.</p>
-    </div>
-  </div>
-
-  <div class="day rv">
-    <div class="day-num">each<br>morning</div>
-    <div>
-      <h3>One theme, each day.</h3>
-      <p>A few minutes of guidance from that day's teacher, each day present for one thing. It takes minutes and asks nothing else of your day.</p>
-      <p>Each prompt includes a phone-free way to practice the day's interruption yourself. No ring needed.</p>
-      <!-- VIDEO PLACEHOLDER: 1-minute practice prompt — swap for real thumbnail/embed -->
-      <div class="video-frame video-frame--mini" role="img" aria-label="Placeholder for a one-minute morning practice preview">
-        <div class="vf-pulse"></div>
-        <div class="vf-play" aria-hidden="true"></div>
-        <div class="vf-label">morning practice &middot; one minute</div>
-      </div>
+      <p>Six more guides follow, one each morning: joy, pleasure, expansion, peace, service, awe.</p>
     </div>
   </div>
 
   <div class="day rv">
     <div class="day-num">each<br>day</div>
     <div>
-      <h3>A live 30-minute integration call.</h3>
-      <p>That day's teacher holds space to talk through what actually came up. Real conversation, cameras optional.</p>
-    </div>
-  </div>
-
-  <div class="day rv">
-    <div class="day-num">all<br>week</div>
-    <div>
-      <h3>One small thread, all seven days.</h3>
-      <p>A private WhatsApp group. The same small room of people, noticing out loud together.</p>
+      <h3>The shape of each day.</h3>
+      <p>A short prompt from that day's guide in the morning, pointed at one theme. A live 30-minute call to talk through what came up. And one small WhatsApp thread, the same room of people all week.</p>
+      <p>Each prompt includes a phone-free way to practice the day's theme yourself. No ring required.</p>
+      <!-- VIDEO PLACEHOLDER: 1-minute practice prompt — swap for real thumbnail/embed -->
+      <div class="video-frame video-frame--mini" role="img" aria-label="Placeholder for a one-minute morning practice preview">
+        <div class="vf-pulse"></div>
+        <div class="vf-play" aria-hidden="true"></div>
+        <div class="vf-label">morning practice &middot; one minute</div>
+      </div>
       <div class="week-illo">
         <img src="images/week-phone.jpg" alt="An illustrated hand hovering over a phone, deciding whether to pick it up">
         <div class="label">the week lives on your phone. the ring, on purpose, never will.</div>
@@ -1234,17 +1118,18 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- ================= PAUSE : try one now ================= -->
-<section class="pause">
-  <div class="pause-bg"></div>
-  <div class="pause-veil"></div>
-  <div class="pause-inner">
-    <div class="label rv">atomic habits</div>
-    <blockquote class="pause-quote rv rv-d1">
-      &ldquo;Habits are the compound interest of self-improvement.&rdquo;
-    </blockquote>
-    <p class="rv rv-d2">One breath compounds. A thousand small presences become a life fully lived.</p>
-    <div class="pause-attr rv rv-d2">james clear</div>
+<!-- ================= UNIFY : the global many ================= -->
+<!-- VERIFY STATS with Patrick / Unify before publish -->
+<section class="unify-break">
+  <svg class="unify-field" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+  <div class="unify-inner">
+    <div class="label rv"><svg class="unify-mark-sm" viewBox="0 0 100 100" aria-hidden="true"><g class="unifyPetalsG"></g></svg> in partnership with unify</div>
+    <h2 class="rv rv-d1">Around the world, people practice together, on one breath.</h2>
+  </div>
+  <div class="unify-stats rv rv-d2">
+      <div class="unify-stat"><div class="num" data-count="4000000">0</div><div class="what">people meditating in sync</div></div>
+      <div class="unify-stat"><div class="num" data-count="150">0</div><div class="what">countries, one moment</div></div>
+      <div class="unify-stat"><div class="num" data-count="10">0</div><div class="what">years of global gatherings</div></div>
   </div>
 </section>
 
@@ -1253,12 +1138,12 @@ img { max-width: 100%; display: block; }
   <div class="join-inner">
     <h2 class="rv">Seven days. No cost. No ring required.</h2>
     <p class="rv rv-d1">
-      The prompts, the live calls with Cory and the other teachers, the group. All of it is free.
+      Seven guides. Seven live calls. Seven mornings. All of it free, in one small room of people noticing out loud together.
     </p>
     <div class="join-steps rv rv-d2">
       <div class="join-step">
         <div class="label">01 &middot; tap join</div>
-        <p>A private WhatsApp group opens. That's the whole room.</p>
+        <p>A private WhatsApp group opens. No app, no account, nothing new to install.</p>
       </div>
       <div class="join-step">
         <div class="label">02 &middot; first morning</div>
@@ -1281,33 +1166,18 @@ img { max-width: 100%; display: block; }
   <div class="cine-img"></div>
   <div class="cine-ping"></div>
   <div class="cine-caption">
-    <div class="label rv">the instrument</div>
-    <h2 class="rv rv-d1">No screen, on purpose. The pulse is the product.</h2>
-  </div>
-</section>
-
-<!-- ================= UNIFY : the global many ================= -->
-<!-- VERIFY STATS with Patrick / Unify before publish -->
-<section class="unify-break">
-  <svg class="unify-field" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
-  <div class="unify-inner">
-    <div class="label rv"><svg class="unify-mark-sm" viewBox="0 0 100 100" aria-hidden="true"><g class="unifyPetalsG"></g></svg> in partnership with unify</div>
-    <h2 class="rv rv-d1">Millions practice together, on one breath.</h2>
-  </div>
-  <div class="unify-stats rv rv-d2">
-      <div class="unify-stat"><div class="num" data-count="4000000">0</div><div class="what">people, meditating in sync</div></div>
-      <div class="unify-stat"><div class="num" data-count="150">0</div><div class="what">countries, one moment</div></div>
-      <div class="unify-stat"><div class="num" data-count="10">0</div><div class="what">years of global gatherings</div></div>
+    <div class="label rv">when the week ends</div>
+    <h2 class="rv rv-d1">Seven days end. The tap on your finger doesn't.</h2>
   </div>
 </section>
 
 <!-- ================= FLOWER : the circle you'd be joining ================= -->
 <section class="flower">
   <div class="flower-inner">
-  <div class="label rv">the pulse community</div>
-  <h2 class="rv">Join people already practicing.</h2>
+  <div class="label rv">the current batch</div>
+  <h2 class="rv">Made in a single batch.</h2>
   <p class="flower-sub rv rv-d1">
-    This batch is two thousand rings, and the batch is filling.
+    This batch is two thousand rings, made in a single run.
   </p>
   <!-- PLACEHOLDER DATA: wire data-claimed to the real batch count before publish -->
   <div class="flower-stage rv rv-d2" data-batch="2000" data-claimed="516">
@@ -1323,7 +1193,7 @@ img { max-width: 100%; display: block; }
       <div class="of">rings remaining in this batch</div>
     </div>
   </div>
-  <div class="flower-key rv rv-d3">faint gold, the millions practicing &middot; bright gold, already on hands &middot; open, still unclaimed</div>
+  <div class="flower-key rv rv-d3">faint gold, the wider practice &middot; bright gold, already on hands &middot; open, not yet spoken for</div>
   </div>
 </section>
 
@@ -1332,33 +1202,29 @@ img { max-width: 100%; display: block; }
   <div class="cine-img"></div>
   <div class="cine-ping"></div>
 </section>
-<!-- CTA band below the image: nothing printed on the product -->
-<section class="cta-band">
-  <div class="label rv">the ring &middot; in the box</div>
-  <span class="cta-emit rv rv-d1">
-    <a class="btn--pill" href="https://{{shop_domain}}/discount/{{discount_code}}?redirect=/products/pulse-ring&utm_medium=landing&utm_campaign=be-present-together" data-track="ring-buy-break">Order now &middot; free two-day shipping</a>
-  </span>
-  <div class="cta-note rv rv-d2">two-day shipping included &middot; a $45 value</div>
-</section>
+<!-- quiet bridge into the offer: one lime buy-action per world -->
+<div class="host-cta rv">
+  <a href="#offer" data-track="ring-see-offer">the ring, in the box &middot; free two-day shipping, a $45 value &middot; see the offer</a>
+</div>
 
 <!-- ================= OFFER : the ring, in daylight ================= -->
-<section class="offer">
+<section class="offer" id="offer">
   <div class="offer-card rv">
     <div class="pulse-field">
       <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
     </div>
     <div class="offer-copy">
       <div class="label">for the be present week</div>
-      <h2>Wear the practice for 21 days.</h2>
+      <h2>Wear the practice for 21 days, on us if it fails you.</h2>
       <p>
-        The Pulse ring hums gently a few times an hour. A small, private signal to come back to where you are. One soft tap, then it leaves you alone. That is all it does.
+        The Pulse ring hums gently a few times an hour. A small, private signal to come back to where you are. No screen, on purpose. The pulse is the product.
       </p>
       <p>
-        Wear it for 21 days. If it hasn't earned its place on your hand, send it back for a full refund, with free exchanges on sizing along the way.
+        Wear it for 21 days. If it hasn't earned its place on your hand, send it back for a full refund, with free exchanges on sizing along the way. And if you want scores, streaks, and graphs, other rings will serve you better. This one only asks where you are.
       </p>
       <!-- PLACEHOLDER PRICING: confirm real figures with Johan before publish -->
-      <div class="offer-price"><s>${{ring_price}}</s> <strong>${{ring_price_discounted}} for Cory's readers</strong></div>
-      <div class="offer-code" id="codeChip" role="button" tabindex="0" aria-label="Copy discount code CORY">
+      <div class="offer-price"><s>${{ring_price}}</s> <strong>${{ring_price_discounted}} for the be present week</strong></div>
+      <div class="offer-code" id="codeChip" role="button" tabindex="0" aria-label="Copy discount code">
         code <strong>{{discount_code}}</strong> &middot; $70 off + free two-day shipping <span class="copied">&middot; copied</span>
       </div>
       <br>
@@ -1388,6 +1254,7 @@ img { max-width: 100%; display: block; }
   <div class="cine-caption">
     <div class="label rv">be present together &middot; late september</div>
     <h2 class="rv rv-d1">See you inside.</h2>
+    <div class="cta-note rv rv-d1" style="color: var(--brown)">with or without the ring</div>
     <span class="cta-emit rv rv-d2">
       <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-final">Join the week, free</a>
     </span>
