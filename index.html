@@ -1422,9 +1422,8 @@ img { max-width: 100%; display: block; }
     var days = Math.floor(d / 86400000);
     var h = Math.floor(d % 86400000 / 3600000);
     var m = Math.floor(d % 3600000 / 60000);
-    var sec = Math.floor(d % 60000 / 1000);
-    el.textContent = days + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(sec) + 's';
-    setTimeout(tick, 1000);
+    el.textContent = days + 'd ' + pad(h) + 'h ' + pad(m) + 'm';
+    setTimeout(tick, 30000);   /* minutes-level: calm, still alive */
   }
   tick();
 })();
