@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/hero-loop-poster.jpg">
+<link rel="preload" as="image" href="images/hero-ring-poster.jpg">
 <!-- ANALYTICS: add Plausible/Fathom snippet before publish; CTAs carry data-track attrs -->
 <style>
 /* ============================================================
@@ -160,14 +160,14 @@ img { max-width: 100%; display: block; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('images/hero-loop-poster.jpg') center 30% / cover no-repeat;
+  background: url('images/hero-ring-poster.jpg') center 40% / cover no-repeat;
   opacity: 0.66;
 }
 .hero-video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center 30%;
-  opacity: 0.66;
+  object-fit: cover; object-position: center 40%;
+  opacity: 0.8;
 }
 .hero-veil {
   position: absolute; inset: 0;
@@ -195,6 +195,22 @@ img { max-width: 100%; display: block; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
   padding: 40px 6vw 120px;
+}
+.hero-lockup {
+  font-family: var(--mono);
+  font-size: clamp(13px, 1.5vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  color: rgba(201,162,39,0.95);
+  text-shadow: 0 1px 18px rgba(12,13,17,0.8);
+  margin-bottom: 22px;
+}
+.hero-line {
+  font-size: clamp(17px, 2vw, 21px);
+  color: rgba(249,246,229,0.92);
+  text-shadow: 0 1px 16px rgba(12,13,17,0.75);
+  margin: 6px 0 14px;
 }
 .hero-kicker { font-size: 13.5px; margin-bottom: 26px; text-shadow: 0 1px 12px rgba(12,13,17,0.9), 0 0 28px rgba(12,13,17,0.6); color: rgba(249,246,229,0.78); }
 .hero h1 {
@@ -484,6 +500,53 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 .practice-prompt .label { margin-top: 12px; }
 .practice-img img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-md); }
 .practice-img .label { text-align: center; margin-top: 14px; }
+.practice-stage {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  max-width: 380px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.practice-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.pb-card {
+  position: absolute;
+  width: min(52%, 170px);
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--cream-warm);
+  text-shadow: 0 1px 14px rgba(12,13,17,0.9);
+  background: rgba(12,13,17,0.38);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 12px;
+  padding: 10px 13px;
+  animation: pb-glow calc(var(--beat) * 3) ease-in-out infinite;
+}
+.pb-card span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--honey);
+  margin-bottom: 4px;
+}
+.pb-1 { left: 5%; top: 5%; }
+.pb-2 { right: 5%; top: 5%; text-align: right; }
+.pb-3 { left: 5%; bottom: 5%; }
+.pb-2 { animation-delay: var(--beat); }
+.pb-3 { animation-delay: calc(var(--beat) * 2); }
+@keyframes pb-glow {
+  0%, 4% { filter: brightness(1.45); }
+  14%, 100% { filter: brightness(1); }
+}
 @media (max-width: 820px) { .practice-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
@@ -620,7 +683,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 <!-- ================= HERO : the autopilot world ================= -->
 <header class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
-  <video class="hero-video" id="heroVideo" src="images/hero-loop.mp4" poster="images/hero-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <video class="hero-video" id="heroVideo" src="images/hero-ring-loop.mp4" poster="images/hero-ring-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="pulse-field" aria-hidden="true">
     <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
@@ -634,9 +697,10 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     <div class="label label--light">september 21&ndash;27 &middot; austin + everywhere</div>
   </div>
   <div class="hero-inner">
-    <div class="label label--light hero-kicker rv">the days keep happening, and you keep missing them</div>
+    <div class="hero-lockup rv">BREAK AUTOPILOT</div>
     <h1 class="rv rv-d1">Be Present <em>Together</em></h1>
-    <div class="hero-one rv rv-d1">ONE WEEK &middot; ONE THEME &middot; ONE HOST: CORY ALLEN</div>
+    <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
+    <div class="hero-one rv rv-d2">ONE WEEK &middot; ONE THEME &middot; ONE HOST: CORY ALLEN</div>
     <div class="hero-cta-row rv rv-d3">
       <span class="cta-emit">
         <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">Join the week, free</a>
@@ -676,7 +740,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
           <figure class="sf"><img decoding="async" src="images/world/w2.jpg" alt="An evening living room lit only by phone glow" loading="lazy"></figure>
           <figure class="sf"><img decoding="async" src="images/world/w3.jpg" alt="A woman at a desk dissolving at the edges into grey static" loading="lazy"></figure>
           <figure class="sf"><img decoding="async" src="images/world/w4.jpg" alt="A commuter looking up from her phone, warmth returning to her face" loading="lazy"></figure>
-          <figure class="sf sf-final"><img decoding="async" src="images/world/w5-split.jpg" alt="One kitchen split in two: the same woman in cool blue autopilot hunched over her phone, and warm and present with her coffee, looking up" loading="lazy"></figure>
+          <figure class="sf sf-final"><img decoding="async" src="images/world/w5-split-rings.jpg" alt="One kitchen split in two: the same woman in cool blue autopilot hunched over her phone, and warm and present with her coffee, a gold ring on her finger" loading="lazy"></figure>
         </div>
       </div>
       <p class="filmstrip-cap">
@@ -810,7 +874,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
       <h2 class="rv rv-d1">A few minutes that give the day back.</h2>
       <p class="lead rv rv-d2">
         Each morning, a short prompt from Cory lands where your friends already
-        talk. One theme all week, so the practice gets deeper instead of wider.
+        talk. No app, no account, nothing to install. One theme all week, so the practice gets deeper instead of wider.
       </p>
       <p class="lead rv rv-d2">
         Each day, a live 30-minute call to say what you noticed and hear what
@@ -825,8 +889,13 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
       </div>
     </div>
     <div class="practice-img rv rv-d2">
-      <img decoding="async" src="images/week-phone.jpg" alt="An illustrated hand hovering over a phone, deciding whether to pick it up" loading="lazy">
-      <div class="label">the week lives on your phone. no app, no account, nothing to install.</div>
+      <div class="practice-stage">
+        <video class="practice-video" src="images/practice-loop.mp4" poster="images/practice-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="An illustrated hand wearing the glowing gold ring, gentle rings of light rippling outward"></video>
+        <div class="pb-card pb-1"><span>Pulse</span>A gentle vibration finds you.</div>
+        <div class="pb-card pb-2"><span>Pause</span>One breath, right where you are.</div>
+        <div class="pb-card pb-3"><span>Practice</span>Presence becomes rhythm.</div>
+      </div>
+      <div class="label">pulse &middot; pause &middot; practice &middot; the loop that carries the week</div>
     </div>
   </div>
 </section>
