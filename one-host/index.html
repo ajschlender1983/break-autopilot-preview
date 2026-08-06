@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/world/w2.jpg">
+<link rel="preload" as="image" href="images/hero-loop-poster.jpg">
 <!-- ANALYTICS: add Plausible/Fathom snippet before publish; CTAs carry data-track attrs -->
 <style>
 /* ============================================================
@@ -160,8 +160,14 @@ img { max-width: 100%; display: block; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('images/world/w2.jpg') center 30% / cover no-repeat;
-  opacity: 0.62;
+  background: url('images/hero-loop-poster.jpg') center 30% / cover no-repeat;
+  opacity: 0.66;
+}
+.hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  opacity: 0.66;
 }
 .hero-veil {
   position: absolute; inset: 0;
@@ -190,7 +196,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   padding: 40px 6vw 120px;
 }
-.hero-kicker { margin-bottom: 26px; text-shadow: 0 1px 12px rgba(12,13,17,0.9), 0 0 28px rgba(12,13,17,0.6); color: rgba(249,246,229,0.78); }
+.hero-kicker { font-size: 13.5px; margin-bottom: 26px; text-shadow: 0 1px 12px rgba(12,13,17,0.9), 0 0 28px rgba(12,13,17,0.6); color: rgba(249,246,229,0.78); }
 .hero h1 {
   font-size: clamp(46px, 8vw, 96px);
   color: var(--cream-warm);
@@ -234,9 +240,10 @@ img { max-width: 100%; display: block; }
 .strip-clock div { text-align: left; }
 .strip-clock b {
   display: block;
-  font-size: clamp(20px, 2.6vw, 30px);
+  font-size: clamp(24px, 3vw, 38px);
   font-weight: 600;
-  color: var(--cream-warm);
+  color: var(--honey);
+  text-shadow: 0 0 22px rgba(201,162,39,0.35);
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
@@ -613,6 +620,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 <!-- ================= HERO : the autopilot world ================= -->
 <header class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
+  <video class="hero-video" id="heroVideo" src="images/hero-loop.mp4" poster="images/hero-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="pulse-field" aria-hidden="true">
     <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
@@ -623,17 +631,12 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
       <span class="amp">&amp;</span>
       <span class="logo">unify</span>
     </div>
-    <div class="label label--light">a free live week &middot; late september</div>
+    <div class="label label--light">september 21&ndash;27 &middot; austin + everywhere</div>
   </div>
   <div class="hero-inner">
-    <div class="label label--light hero-kicker rv">unify &amp; pulse present &middot; hosted by cory allen</div>
+    <div class="label label--light hero-kicker rv">the days keep happening, and you keep missing them</div>
     <h1 class="rv rv-d1">Be Present <em>Together</em></h1>
-    <div class="hero-one rv rv-d1">ONE WEEK &middot; ONE THEME &middot; ONE HOST</div>
-    <p class="hero-sub rv rv-d2">
-      You know the feeling: the days keep happening, and you keep missing them.
-      For one week, Cory Allen holds a single theme with you, live, a few minutes
-      at a time. You may be surprised how much of your life is still here.
-    </p>
+    <div class="hero-one rv rv-d1">ONE WEEK &middot; ONE THEME &middot; ONE HOST: CORY ALLEN</div>
     <div class="hero-cta-row rv rv-d3">
       <span class="cta-emit">
         <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">Join the week, free</a>
@@ -642,7 +645,8 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     </div>
   </div>
   <!-- countdown strip: kickoff -> week -> full circle, one clock, phase-aware -->
-  <div class="strip" data-kickoff="{{kickoff_iso}}" data-close="{{closing_iso}}">
+  <!-- PENCILED proof-of-concept dates: Sept 21 kickoff, Sept 27 full circle, 7pm CT — confirm before publish -->
+  <div class="strip" data-kickoff="2026-09-22T00:00:00Z" data-close="2026-09-28T00:00:00Z">
     <div class="strip-inner">
       <div>
         <p class="strip-kicker" id="cdLabel">Countdown to the kickoff ceremony</p>
@@ -650,7 +654,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
           <div><b>&mdash;</b><i>days</i></div>
         </div>
       </div>
-      <p class="strip-where" id="cdWhere">Austin, in person &middot; live everywhere else<br>date announced with your invite</p>
+      <p class="strip-where" id="cdWhere">Austin, in person &middot; live everywhere else<br>September 21 &middot; 7:00 pm CT</p>
     </div>
   </div>
 </header>
@@ -965,7 +969,7 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     return;
   }
   var STATES = [
-    { t: kickoff, label: 'Countdown to the kickoff ceremony', where: 'Austin, in person · live everywhere else' },
+    { t: kickoff, label: 'Countdown to the kickoff ceremony', where: 'Austin, in person · live everywhere · September 21, 7:00 pm CT' },
     { t: isNaN(close) ? kickoff + 6 * 864e5 : close, label: 'The week is running · full circle in', where: 'One theme, one pause at a time' }
   ];
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
@@ -987,13 +991,25 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       return;
     }
     var d = st.t - now;
-    var days = Math.floor(d / 864e5), h = Math.floor(d % 864e5 / 36e5), m = Math.floor(d % 36e5 / 6e4);
-    clock.replaceChildren(cell(days, 'days'), cell(pad(h), 'hrs'), cell(pad(m), 'min'));
+    var days = Math.floor(d / 864e5), h = Math.floor(d % 864e5 / 36e5), m = Math.floor(d % 36e5 / 6e4), sec = Math.floor(d % 6e4 / 1000);
+    clock.replaceChildren(cell(days, 'days'), cell(pad(h), 'hrs'), cell(pad(m), 'min'), cell(pad(sec), 'sec'));
     labelEl.textContent = st.label;
     whereEl.textContent = st.where;
-    setTimeout(tick, 30000);   /* minutes-level: calm, still alive */
+    setTimeout(tick, 1000);   /* the totality-counter beat */
   }
   tick();
+})();
+
+/* ---------- hero video: reduced-motion + offscreen pause ---------- */
+(function () {
+  var v = document.getElementById('heroVideo');
+  if (!v) return;
+  if (REDUCED) { v.removeAttribute('autoplay'); v.pause(); v.style.display = 'none'; return; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
+    }, { rootMargin: '80px' }).observe(v);
+  }
 })();
 
 /* ---------- copy the code ---------- */
