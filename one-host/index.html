@@ -256,6 +256,38 @@ img { max-width: 100%; display: block; }
 }
 .cine-problem-video--auto { object-position: center center; }
 .cine-solution .cine-problem-video { object-position: center 64%; }
+/* the instrument, standing alone on rock, parallaxed */
+.ring-still {
+  position: relative;
+  height: clamp(540px, 86vh, 780px);
+  overflow: hidden;
+  background: var(--void);
+}
+.ring-still-bg {
+  position: absolute; inset: -9% 0;
+  background: var(--void) url('images/duo-ring.jpg') center 45% / contain no-repeat;
+  will-change: transform;
+  transform: scale(1.06);
+}
+.ring-still-veil {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(80% 65% at 50% 50%, rgba(12,13,17,0.14) 0%, rgba(12,13,17,0.5) 80%),
+    linear-gradient(180deg, rgba(12,13,17,0.55) 0%, rgba(12,13,17,0.1) 30%, rgba(12,13,17,0.1) 70%, rgba(12,13,17,0.55) 100%);
+}
+.ring-still-caption {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 0 6vw;
+}
+.ring-still-caption .label { margin-bottom: 16px; }
+.ring-still-caption h2 {
+  color: var(--cream-warm);
+  font-size: clamp(30px, 4.6vw, 54px);
+  text-shadow: 0 3px 40px rgba(0,0,0,0.85);
+}
 /* stacked solution line: One / pulse. / brings you back to life. */
 .solution-stack {
   display: flex;
@@ -1054,9 +1086,6 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 </header>
 
 <!-- ================= PROBLEM CINE : autopilot at dinner ================= -->
-<div class="cine-duo">
-  <div class="cine-duo-bg" aria-hidden="true"></div>
-  <div class="cine-duo-veil" aria-hidden="true"></div>
 <section class="cine-problem" aria-label="An illustrated commuter world, everyone lit by their own phone">
   <video class="cine-problem-video cine-problem-video--auto" src="images/hero-loop.mp4" poster="images/hero-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="cine-problem-veil" aria-hidden="true"></div>
@@ -1066,27 +1095,6 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   </div>
 </section>
 
-<!-- between the films: the instrument, fully seen -->
-<div class="duo-reveal">
-  <div class="duo-reveal-caption">
-    <div class="label label--light rv">the instrument</div>
-    <h2 class="rv rv-d1">The World&rsquo;s First<br>Awareness Ring.</h2>
-  </div>
-</div>
-
-<!-- ================= SOLUTION CINE : the dinner, hands held ================= -->
-<section class="cine-problem cine-solution" aria-label="A candlelit dinner, two hands held across the table, the gold ring catching the light">
-  <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
-  <div class="cine-problem-veil" aria-hidden="true"></div>
-  <div class="cine-problem-caption">
-    <h2 class="rv solution-stack">
-      <span class="sol-line">One</span>
-      <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span>
-      <span class="sol-line">brings you back to life.</span>
-    </h2>
-  </div>
-</section>
-</div>
 
 <!-- ================= MOMENT : the illustrated turn ================= -->
 <section class="moment">
@@ -1175,6 +1183,16 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   </div>
 </section>
 
+<!-- ================= RING STILL : the instrument, fully seen ================= -->
+<section class="ring-still" aria-label="The gold Pulse ring standing on dark wet rock, backlit">
+  <div class="ring-still-bg" aria-hidden="true"></div>
+  <div class="ring-still-veil" aria-hidden="true"></div>
+  <div class="ring-still-caption">
+    <div class="label label--light rv">the instrument</div>
+    <h2 class="rv rv-d1">The World&rsquo;s First<br>Awareness Ring.</h2>
+  </div>
+</section>
+
 <!-- ================= ARC : four moments ================= -->
 <section class="arc">
   <div class="wrap">
@@ -1209,6 +1227,19 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <p>On the last evening you return to where you began, share the Pulse moment that stayed with you, and choose what comes with you. Life is always happening right here. The week is how you remember that.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= SOLUTION CINE : the dinner, hands held ================= -->
+<section class="cine-problem cine-solution" aria-label="A candlelit dinner, two hands held across the table, the gold ring catching the light">
+  <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <div class="cine-problem-veil" aria-hidden="true"></div>
+  <div class="cine-problem-caption">
+    <h2 class="rv solution-stack">
+      <span class="sol-line">One</span>
+      <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span>
+      <span class="sol-line">brings you back to life.</span>
+    </h2>
   </div>
 </section>
 
@@ -1465,7 +1496,7 @@ document.querySelectorAll('video[autoplay]').forEach(function (v) {
 
 /* ---------- duo backdrop parallax: the ring drifts behind the films ---------- */
 (function () {
-  var duo = document.querySelector('.cine-duo'), bg = document.querySelector('.cine-duo-bg');
+  var duo = document.querySelector('.ring-still'), bg = document.querySelector('.ring-still-bg');
   if (!duo || !bg || REDUCED) return;
   var ticking = false;
   function frame() {
