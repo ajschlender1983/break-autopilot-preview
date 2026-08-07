@@ -769,7 +769,79 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   margin: 2px 0 16px;
   box-shadow: var(--shadow-sm);
 }
-.arc-head { text-align: center; max-width: 640px; margin: 0 auto clamp(40px, 6vw, 64px); }
+.arc-head { text-align: center; max-width: 860px; margin: 0 auto clamp(40px, 6vw, 64px); }
+/* the week, drawn: two dated pulses with practice running between */
+.week-shape {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 34px);
+  margin: 30px 0 26px;
+}
+.ws-beat { flex: 0 0 auto; max-width: 15rem; }
+.ws-mark { display: flex; justify-content: center; color: var(--honey); margin: 0 0 12px; }
+.ws-mark svg { width: clamp(34px, 4vw, 44px); height: auto; display: block; }
+.ws-ring {
+  transform-origin: 22px 22px;
+  animation: ws-out calc(var(--beat) * 3) cubic-bezier(.19,1,.22,1) infinite;
+}
+@keyframes ws-out {
+  0%      { transform: scale(.6); opacity: 0; }
+  8%      { opacity: .6; }
+  55%     { transform: scale(1.5); opacity: 0; }
+  100%    { transform: scale(1.5); opacity: 0; }
+}
+.ws-word {
+  font-weight: 600;
+  font-size: clamp(24px, 3.6vw, 44px);
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  background: linear-gradient(100deg, var(--honey-deep) 6%, var(--honey) 58%, var(--ink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ws-date {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.ws-span {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 15rem;
+  padding-top: clamp(16px, 2.4vw, 24px);
+  color: var(--honey);
+}
+.ws-line { width: 100%; height: 22px; display: block; }
+.ws-span-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+@media (max-width: 720px) {
+  .week-shape { flex-direction: column; align-items: center; gap: 18px; }
+  .ws-beat, .ws-span { max-width: none; width: 100%; padding-top: 0; }
+  .ws-span { display: flex; flex-direction: column; align-items: center; }
+  .ws-line { display: none; }
+  .ws-span::before {
+    content: "";
+    width: 1.5px; height: 34px;
+    background: linear-gradient(var(--honey), rgba(201,162,39,0.15));
+    margin-bottom: 10px;
+  }
+  .ws-span::after {
+    content: "";
+    width: 1.5px; height: 34px;
+    background: linear-gradient(rgba(201,162,39,0.15), var(--honey));
+    margin-top: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) { .ws-ring { animation: none; opacity: .45; } }
 .arc-head .label { margin-bottom: 20px; }
 .arc-head h2 { margin-bottom: 18px; }
 .arc-grid {
@@ -1295,7 +1367,36 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="wrap">
     <div class="arc-head">
       <div class="label rv">the shape of the week</div>
-      <h2 class="rv rv-d1">Four moments, one circle.</h2>
+      <div class="week-shape rv rv-d1" role="img" aria-label="The first pulse on Monday September 21, five mornings of practice between, and the closing circle on Friday September 25">
+        <div class="ws-beat">
+          <span class="ws-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="22" cy="22" r="3.2" fill="currentColor" stroke="none"/>
+              <circle cx="22" cy="22" r="10"/>
+              <circle class="ws-ring" cx="22" cy="22" r="17" opacity=".45"/>
+            </svg>
+          </span>
+          <div class="ws-word">The First Pulse</div>
+          <div class="ws-date">mon &middot; sept 21</div>
+        </div>
+        <div class="ws-span">
+          <svg class="ws-line" viewBox="0 0 240 24" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 12 Q30 2 60 12 T120 12 T180 12 T240 12" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+          </svg>
+          <div class="ws-span-label">five mornings of practice</div>
+        </div>
+        <div class="ws-beat">
+          <span class="ws-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="22" cy="22" r="17"/>
+              <circle cx="22" cy="22" r="10" opacity=".5"/>
+              <circle cx="22" cy="22" r="3.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <div class="ws-word">The Closing Circle</div>
+          <div class="ws-date">fri &middot; sept 25</div>
+        </div>
+      </div>
       <p class="lead rv rv-d2">A pulse together to open it. A week of practice to live it. A pulse to bring it all home.</p>
     </div>
     <div class="arc-grid">
