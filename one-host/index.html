@@ -370,11 +370,27 @@ img { max-width: 100%; display: block; }
 }
 .hero h1 em { font-style: normal; color: var(--honey); }
 .hero-one {
-  font-family: var(--mono);
-  font-size: clamp(13px, 1.6vw, 16px);
-  letter-spacing: 0.14em;
-  color: rgba(249,246,229,0.85);
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 7px;
   margin-bottom: 26px;
+}
+.ho-week, .ho-host {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.22em;
+  color: rgba(249,246,229,0.7);
+}
+.ho-theme {
+  font-weight: 600;
+  font-size: clamp(30px, 4.2vw, 46px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(100deg, var(--cream-warm) 10%, var(--honey) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 20px rgba(0,0,0,0.6));
 }
 .hero-sub {
   font-size: clamp(17px, 2vw, 20px);
@@ -613,15 +629,27 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 .work-tile--book span { color: rgba(15,46,63,0.72); }
 .work-tile--book .work-art { box-shadow: inset 0 0 0 1.5px rgba(17,51,68,0.25); }
 a.work-tile--book:hover { border-color: rgba(15,46,63,0.45); filter: brightness(1.04); }
-/* the podcast answers in its own pale-lavender register */
+/* the astral hustle answers in the void register */
 .work-tile--pod {
-  background: #D9DAE3;
-  border-color: rgba(26,28,34,0.16);
+  background: var(--void);
+  border-color: rgba(201,162,39,0.3);
 }
-.work-tile--pod b { color: var(--ink); }
-.work-tile--pod span { color: rgba(26,28,34,0.62); }
-.work-tile--pod .work-link { color: rgba(26,28,34,0.85); }
-a.work-tile--pod:hover { border-color: rgba(26,28,34,0.4); filter: brightness(1.03); }
+.work-tile--pod b { color: var(--cream-warm); }
+.work-tile--pod > div:last-child span { color: rgba(249,246,229,0.6); }
+.work-tile--pod .work-link { color: var(--honey); }
+a.work-tile--pod:hover { border-color: rgba(201,162,39,0.65); filter: brightness(1.08); }
+.work-art--pod {
+  background: linear-gradient(160deg, #17171d, #232013);
+  border: 1px solid rgba(201,162,39,0.35);
+}
+.work-art--pod span {
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--honey);
+}
 .work-art--pod {
   background: linear-gradient(160deg, #17171d, #232013);
   background: radial-gradient(circle at 50% 42%, #3A404A, var(--ink));
@@ -995,7 +1023,11 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
     <div class="hero-lockup rv">BREAK AUTOPILOT</div>
     <h1 class="rv rv-d1">The Weekly <em>Pulse</em></h1>
     <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
-    <div class="hero-one rv rv-d2">WEEK ONE &middot; PRESENCE &middot; YOUR HOST: CORY ALLEN</div>
+    <div class="hero-one rv rv-d2">
+      <span class="ho-week">week one</span>
+      <span class="ho-theme">Presence</span>
+      <span class="ho-host">with cory allen</span>
+    </div>
     <div class="hero-cta-row rv rv-d3">
       <span class="cta-emit">
         <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">I&rsquo;m here for it</a>
@@ -1091,7 +1123,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
           <div class="presence-word">Presence</div>
         </div>
         <div class="host-hero-bottom">
-          <h2>Your host: Cory Allen</h2>
+          <h2>With Cory Allen</h2>
           <div class="label label--light">meditation teacher &middot; author &middot; the astral hustle</div>
         </div>
       </div>
@@ -1125,11 +1157,10 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
             <span class="work-link">read the book &rarr;</span>
           </div>
         </a>
-        <!-- VERIFY with Cory: The Astral Hustle appears renamed to "And Then It Hit Me" on Apple -->
-        <a class="work-tile work-tile--pod" href="https://podcasts.apple.com/us/podcast/and-then-it-hit-me-with-cory-allen/id1033011814" target="_blank" rel="noopener" data-track="cory-pod">
-          <img class="work-art" src="images/cory-podcast.jpg" alt="And Then It Hit Me podcast cover: black serif type on pale lavender">
+        <a class="work-tile work-tile--pod" href="https://www.cory-allen.com/theastralhustle" target="_blank" rel="noopener" data-track="cory-pod">
+          <div class="work-art work-art--pod" aria-hidden="true"><span>THE<br>ASTRAL<br>HUSTLE</span></div>
           <div>
-            <b>And Then It Hit Me</b>
+            <b>The Astral Hustle</b>
             <span>his podcast &middot; ten years of conversations on attention</span><!-- VERIFY: swap to the Adam episode link once confirmed -->
             <span class="work-link">hear the show &rarr;</span>
           </div>
