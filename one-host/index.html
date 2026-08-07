@@ -400,6 +400,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 .filmstrip.turned .cap-a { opacity: 0; }
 .filmstrip.turned .cap-b { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
+  .js .rv .presence-word { opacity: 1; animation: none; }
   .pulse-word { animation: none; }
   .pw-ring { display: none; }
   .filmstrip-track { width: 100%; flex-wrap: wrap; gap: 6px; }
@@ -411,6 +412,59 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 /* ============================================================
    HOST — building up Cory
    ============================================================ */
+/* host hero: the face fills the frame */
+.host-hero {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  height: clamp(460px, 64vh, 620px);
+  margin-bottom: 26px;
+}
+.host-face {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: sepia(0.32) saturate(1.05) contrast(1.05) brightness(1.04);
+}
+.host-hero-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(12,13,17,0.52) 0%, rgba(12,13,17,0.08) 34%, rgba(12,13,17,0.06) 55%, rgba(12,13,17,0.6) 100%);
+}
+.host-hero-top {
+  position: absolute; left: 0; right: 0; top: clamp(22px, 4vw, 40px);
+  text-align: center;
+}
+.host-hero-top .label { margin-bottom: 6px; }
+.presence-word {
+  font-weight: 600;
+  font-size: clamp(54px, 9.6vw, 108px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: linear-gradient(100deg, var(--cream-warm) 8%, var(--honey) 55%, var(--honey-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 26px rgba(0,0,0,0.55));
+}
+/* the word arrives: blur settles, tracking closes, like a breath landing */
+.js .rv .presence-word { opacity: 0; }
+.js .rv.in .presence-word {
+  animation: presence-in 1.5s cubic-bezier(.19,1,.22,1) 0.25s both;
+}
+@keyframes presence-in {
+  from { opacity: 0; letter-spacing: 0.16em; filter: blur(7px) drop-shadow(0 3px 26px rgba(0,0,0,0.55)); transform: translateY(12px); }
+  to   { opacity: 1; letter-spacing: -0.03em; filter: blur(0) drop-shadow(0 3px 26px rgba(0,0,0,0.55)); transform: none; }
+}
+.host-hero-bottom {
+  position: absolute; left: 0; right: 0; bottom: clamp(20px, 3.5vw, 34px);
+  text-align: center;
+}
+.host-hero-bottom h2 { color: var(--cream-warm); text-shadow: 0 2px 24px rgba(0,0,0,0.7); margin-bottom: 6px; }
+@media (max-width: 560px) {
+  .host-hero { height: min(78vh, 560px); border-radius: 14px; }
+  .host-face { object-position: center 10%; }
+}
+
 .host { padding: clamp(60px, 9vw, 110px) 0; }
 .host-card {
   max-width: 880px; margin: 0 auto;
@@ -789,7 +843,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
       <span class="amp">&amp;</span>
       <span class="logo">unify</span>
     </div>
-    <div class="label label--light">september 21&ndash;27 &middot; austin + everywhere</div>
+    <div class="label label--light">september 21&ndash;25 &middot; austin + everywhere</div>
   </div>
   <div class="hero-inner">
     <div class="hero-lockup rv">BREAK AUTOPILOT</div>
@@ -804,8 +858,8 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     </div>
   </div>
   <!-- countdown strip: kickoff -> week -> full circle, one clock, phase-aware -->
-  <!-- PENCILED proof-of-concept dates: Sept 21 kickoff, Sept 27 full circle, 7pm CT — confirm before publish -->
-  <div class="strip" data-kickoff="2026-09-22T00:00:00Z" data-close="2026-09-28T00:00:00Z">
+  <!-- PENCILED proof-of-concept dates: kickoff Monday Sept 21, full circle Friday Sept 25, 7pm CT — confirm before publish -->
+  <div class="strip" data-kickoff="2026-09-22T00:00:00Z" data-close="2026-09-26T00:00:00Z">
     <div class="strip-inner">
       <div>
         <p class="strip-kicker" id="cdLabel">Countdown to the kickoff ceremony</p>
@@ -873,12 +927,24 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 <section class="host">
   <div class="wrap">
     <div class="host-card rv">
-      <div class="host-head">
-        <div class="host-photo"><img src="images/cory-allen.jpg" alt="Cory Allen"></div>
-        <div>
-          <h2>Your host: Cory Allen</h2>
-          <div class="label">meditation teacher &middot; author &middot; the astral hustle</div>
+      <div class="host-hero rv">
+        <img class="host-face" src="images/cory-allen.jpg" alt="Cory Allen">
+        <div class="host-hero-veil" aria-hidden="true"></div>
+        <div class="host-hero-top">
+          <div class="label label--light">week one</div>
+          <div class="presence-word">Presence</div>
         </div>
+        <div class="host-hero-bottom">
+          <h2>Your host: Cory Allen</h2>
+          <div class="label label--light">meditation teacher &middot; author &middot; the astral hustle</div>
+        </div>
+      </div>
+      <!-- DRAFT quote in Cory's voice — replace with his own words before publish -->
+      <div class="host-quote">
+        &ldquo;I spent years trying to think my way into presence. What actually
+        worked was smaller: one honest pause, returned to often, until being
+        here stopped feeling like an event.&rdquo;
+        <div class="label">cory allen &middot; draft, pending his sign-off</div>
       </div>
       <div class="host-body">
         <p>
@@ -892,13 +958,6 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
           He opens the week in person, holds the theme each morning, and leads a
           live call every day. Each call is a real conversation, and you are in it.
         </p>
-      </div>
-      <!-- DRAFT quote in Cory's voice — replace with his own words before publish -->
-      <div class="host-quote">
-        &ldquo;I spent years trying to think my way into presence. What actually
-        worked was smaller: one honest pause, returned to often, until being
-        here stopped feeling like an event.&rdquo;
-        <div class="label">cory allen &middot; draft, pending his sign-off</div>
       </div>
       <div class="host-work">
         <!-- PLACEHOLDER tiles: swap .work-art for real cover / show art -->
@@ -927,29 +986,29 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     <div class="arc-head">
       <div class="label rv">the shape of the week</div>
       <h2 class="rv rv-d1">Four moments, one circle.</h2>
-      <p class="lead rv rv-d2">The week has a beginning you can feel, a rhythm you can keep, and an ending that closes what it opened.</p>
+      <p class="lead rv rv-d2">A pulse together to open it. A week of practice to live it. A pulse to bring it all home.</p>
     </div>
     <div class="arc-grid">
       <div class="arc-step rv">
-        <div class="num">01 &middot; the shared moment</div>
+        <div class="num">01 &middot; the first pulse &middot; mon, sept 21</div>
         <img class="arc-img" decoding="async" src="images/arc-01-arrive.jpg" alt="An illustrated warm loft at dusk, people settling into a circle of chairs while laptops glow with faces joining remotely" loading="lazy">
         <b>You take your seat.</b>
         <p>One room in Austin, every living room on the call, and the week is suddenly real. Life is happening right here, and everyone came to notice it.</p>
       </div>
       <div class="arc-step rv rv-d1">
-        <div class="num">02 &middot; the kickoff</div>
+        <div class="num">02 &middot; the kickoff &middot; mon, sept 21</div>
         <img class="arc-img" decoding="async" src="images/arc-02-kickoff.jpg" alt="An illustrated speaker on a small warm stage, soft rings of light spreading as he opens the week for a listening circle" loading="lazy">
         <b>Cory sets the theme.</b>
         <p>He opens the week live: why this theme, why now, and the one small practice that brings you back to the present. It starts smaller than you think.</p>
       </div>
       <div class="arc-step rv rv-d2">
-        <div class="num">03 &middot; the practice</div>
+        <div class="num">03 &middot; the practice &middot; every morning</div>
         <img class="arc-img" decoding="async" src="images/week-phone.jpg" alt="An illustrated hand hovering over a phone, deciding whether to pick it up" loading="lazy">
         <b>A pause, every day.</b>
         <p>A few quiet minutes each morning, a live call each day, and a small room of people sharing their Pulse moments: the moments they came back.</p>
       </div>
       <div class="arc-step rv rv-d3">
-        <div class="num">04 &middot; full circle</div>
+        <div class="num">04 &middot; the closing pulse &middot; fri, sept 25</div>
         <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="The same circle of people in one warm evening room, hands raised, honey ripples spreading through the center" loading="lazy">
         <b>The circle closes.</b>
         <p>On the last evening you return to where you began, share the Pulse moment that stayed with you, and choose what comes with you. Life is always happening right here. The week is how you remember that.</p>
@@ -1156,8 +1215,8 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     return;
   }
   var STATES = [
-    { t: kickoff, label: 'Countdown to the kickoff ceremony', where: 'Austin, in person · live everywhere · September 21, 7:00 pm CT' },
-    { t: isNaN(close) ? kickoff + 6 * 864e5 : close, label: 'The week is running · full circle in', where: 'One theme, one pause at a time' }
+    { t: kickoff, label: 'Countdown to the kickoff ceremony', where: 'Austin, in person · live everywhere · Monday, September 21, 7:00 pm CT' },
+    { t: isNaN(close) ? kickoff + 6 * 864e5 : close, label: 'The week is running · full circle in', where: 'The circle closes Friday, September 25, 7:00 pm CT' }
   ];
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function cell(val, unit) {
