@@ -188,6 +188,46 @@ img { max-width: 100%; display: block; }
   font-size: clamp(30px, 4.6vw, 54px);
   text-shadow: 0 3px 40px rgba(0,0,0,0.85);
 }
+.cine-lockup {
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: clamp(30px, 5.4vw, 64px);
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  color: var(--honey);
+  text-shadow: 0 0 34px rgba(201,162,39,0.4), 0 3px 40px rgba(0,0,0,0.85);
+}
+.cine-problem-video--auto { object-position: center center; }
+.cine-solution .cine-problem-video { object-position: center 64%; }
+/* the logotype pulses on the beat: a glow, then a ripple */
+.pulse-word {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  animation: pw-glow var(--beat) ease-out infinite;
+}
+.pw-dot { color: var(--honey); }
+.pw-ring {
+  position: absolute;
+  inset: -6px -16px;
+  border: 1.5px solid rgba(201,162,39,0.75);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  animation: pw-ripple var(--beat) linear infinite;
+}
+@keyframes pw-glow {
+  0%, 100% { text-shadow: 0 3px 40px rgba(0,0,0,0.85); }
+  6%  { text-shadow: 0 0 26px rgba(201,162,39,0.95), 0 0 70px rgba(201,162,39,0.5), 0 3px 40px rgba(0,0,0,0.85); }
+  40% { text-shadow: 0 0 8px rgba(201,162,39,0.25), 0 3px 40px rgba(0,0,0,0.85); }
+}
+@keyframes pw-ripple {
+  0%   { transform: scale(1); opacity: 0; }
+  5%   { opacity: 0.75; }
+  60%  { transform: scale(2.1); opacity: 0.12; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
 
 .hero-bg {
   position: absolute; inset: 0;
@@ -345,6 +385,8 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 .filmstrip.turned .cap-a { opacity: 0; }
 .filmstrip.turned .cap-b { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
+  .pulse-word { animation: none; }
+  .pw-ring { display: none; }
   .filmstrip-track { width: 100%; flex-wrap: wrap; gap: 6px; }
   .filmstrip-track .sf { width: calc(33.33% - 4px); aspect-ratio: 1; }
   .filmstrip.run .filmstrip-track { animation: none; }
@@ -762,11 +804,21 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 </header>
 
 <!-- ================= PROBLEM CINE : autopilot at dinner ================= -->
-<section class="cine-problem" aria-label="A candlelit dinner, one hand scrolling a phone under the table">
+<section class="cine-problem" aria-label="An illustrated commuter world, everyone lit by their own phone">
+  <video class="cine-problem-video cine-problem-video--auto" src="images/hero-loop.mp4" poster="images/hero-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <div class="cine-problem-veil" aria-hidden="true"></div>
+  <div class="cine-problem-caption">
+    <h2 class="rv">It&rsquo;s time to</h2>
+    <div class="cine-lockup rv rv-d1">BREAK AUTOPILOT</div>
+  </div>
+</section>
+
+<!-- ================= SOLUTION CINE : the dinner, hands held ================= -->
+<section class="cine-problem cine-solution" aria-label="A candlelit dinner, two hands held across the table, the gold ring catching the light">
   <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="cine-problem-veil" aria-hidden="true"></div>
   <div class="cine-problem-caption">
-    <h2 class="rv">It&rsquo;s time to break autopilot.</h2>
+    <h2 class="rv">One <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span> brings you back to life.</h2>
   </div>
 </section>
 
@@ -937,7 +989,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     </div>
     <div class="practice-img rv rv-d2">
       <div class="practice-stage">
-        <video class="practice-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A candlelit dinner; a hand wearing the gold ring rests a phone under the table"></video>
+        <video class="practice-video" src="images/practice-loop.mp4" poster="images/practice-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="An illustrated hand wearing the glowing gold ring, gentle rings of light rippling outward"></video>
         <div class="pb-card pb-1"><span>Pulse</span>A gentle vibration finds you.</div>
         <div class="pb-card pb-2"><span>Pause</span>One breath, right where you are.</div>
         <div class="pb-card pb-3"><span>Practice</span>Presence becomes rhythm.</div>
