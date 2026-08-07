@@ -557,9 +557,32 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   text-align: center;
 }
 .host-hero-top .label { margin-bottom: 6px; }
+.hh-presents {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 8px;
+}
+.hh-presents .logo {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: var(--cream-warm);
+  text-shadow: 0 1px 18px rgba(0,0,0,0.6);
+}
+.hh-presents .logo span { color: var(--honey); }
+.hh-word {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(249,246,229,0.75);
+  text-shadow: 0 1px 14px rgba(0,0,0,0.6);
+}
 .presence-word {
   font-weight: 600;
-  font-size: clamp(54px, 9.6vw, 108px);
+  font-size: clamp(44px, 9vw, 104px);
   letter-spacing: -0.03em;
   line-height: 1;
   background: linear-gradient(100deg, var(--cream-warm) 8%, var(--honey) 55%, var(--honey-deep) 100%);
@@ -1161,7 +1184,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <img class="host-face" src="images/cory-allen.jpg" alt="Cory Allen">
         <div class="host-hero-veil" aria-hidden="true"></div>
         <div class="host-hero-top">
-          <div class="label label--light">week one</div>
+          <div class="hh-presents"><span class="logo">pulse<span>.</span></span><span class="hh-word">presents</span></div>
           <div class="presence-word">Presence</div>
         </div>
         <div class="host-hero-bottom">
