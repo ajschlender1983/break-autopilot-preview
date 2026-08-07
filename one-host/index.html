@@ -403,6 +403,14 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
    THE ARC — four moments
    ============================================================ */
 .arc { padding: clamp(50px, 8vw, 100px) 0 clamp(30px, 5vw, 60px); }
+.arc-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 2px 0 16px;
+  box-shadow: var(--shadow-sm);
+}
 .arc-head { text-align: center; max-width: 640px; margin: 0 auto clamp(40px, 6vw, 64px); }
 .arc-head .label { margin-bottom: 20px; }
 .arc-head h2 { margin-bottom: 18px; }
@@ -703,7 +711,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     <div class="hero-one rv rv-d2">ONE WEEK &middot; ONE THEME &middot; ONE HOST: CORY ALLEN</div>
     <div class="hero-cta-row rv rv-d3">
       <span class="cta-emit">
-        <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">Join the week, free</a>
+        <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">I&rsquo;m here for it</a>
       </span>
       <span class="chip chip--light">free to join &middot; live every day &middot; no ring required</span>
     </div>
@@ -814,27 +822,27 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     <div class="arc-grid">
       <div class="arc-step rv">
         <div class="num">01 &middot; the shared moment</div>
-        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="3" fill="currentColor" stroke="none"/><circle cx="17" cy="17" r="8.5"/><circle cx="17" cy="17" r="14" opacity=".45"/></svg>
+        <img class="arc-img" decoding="async" src="images/arc-01-arrive.jpg" alt="An illustrated warm loft at dusk, people settling into a circle of chairs while laptops glow with faces joining remotely" loading="lazy">
         <b>You take your seat.</b>
-        <p>One room in Austin, every living room on the call, and the week is suddenly real. Everyone arrives at once.</p>
+        <p>One room in Austin, every living room on the call, and the week is suddenly real. Life is happening right here, and everyone came to notice it.</p>
       </div>
       <div class="arc-step rv rv-d1">
         <div class="num">02 &middot; the kickoff</div>
-        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M17 5v6M17 23v6M5 17h6M23 17h6"/><circle cx="17" cy="17" r="4.5"/></svg>
+        <img class="arc-img" decoding="async" src="images/arc-02-kickoff.jpg" alt="An illustrated speaker on a small warm stage, soft rings of light spreading as he opens the week for a listening circle" loading="lazy">
         <b>Cory sets the theme.</b>
-        <p>He opens the week live: why this theme, why now, and the one small practice you carry into the first morning.</p>
+        <p>He opens the week live: why this theme, why now, and the one small practice that brings you back to the present. It starts smaller than you think.</p>
       </div>
       <div class="arc-step rv rv-d2">
         <div class="num">03 &middot; the practice</div>
-        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M13.5 10.5v13M20.5 10.5v13"/></svg>
+        <img class="arc-img" decoding="async" src="images/week-phone.jpg" alt="An illustrated hand hovering over a phone, deciding whether to pick it up" loading="lazy">
         <b>A pause, every day.</b>
-        <p>A few quiet minutes each morning, a live call each day, and a small room of people noticing out loud together.</p>
+        <p>A few quiet minutes each morning, a live call each day, and a small room of people sharing their Pulse moments: the moments they came back.</p>
       </div>
       <div class="arc-step rv rv-d3">
         <div class="num">04 &middot; full circle</div>
-        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M17 3a14 14 0 1 1-9.9 4.1"/><path d="M7 3v4.5h4.5"/></svg>
+        <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="The same circle of people in one warm evening room, hands raised, honey ripples spreading through the center" loading="lazy">
         <b>The circle closes.</b>
-        <p>On the last evening you return to where you began, say what you noticed, and choose what comes with you.</p>
+        <p>On the last evening you return to where you began, share the Pulse moment that stayed with you, and choose what comes with you. Life is always happening right here. The week is how you remember that.</p>
       </div>
     </div>
   </div>
@@ -973,7 +981,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     <h2 class="rv rv-d1">Come full circle.</h2>
     <div class="cta-note rv rv-d1">with or without the ring</div>
     <span class="cta-emit rv rv-d2">
-      <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-final">Join the week, free</a>
+      <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-final">I&rsquo;m here for it</a>
     </span>
   </div>
 </section>
@@ -986,7 +994,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 <!-- ================= STICKY JOIN ================= -->
 <div class="sticky-join" id="stickyJoin">
   <span class="sj-text">be present together &middot; one week with cory allen</span>
-  <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-sticky">Join free</a>
+  <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-sticky">I&rsquo;m here for it</a>
 </div>
 
 <script>
