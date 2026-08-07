@@ -164,6 +164,33 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   background: var(--void);
 }
+/* the two films float on a parallaxed beauty shot of the ring */
+.cine-duo {
+  position: relative;
+  padding: clamp(56px, 9vh, 110px) 0;
+  background: var(--void);
+  overflow: hidden;
+}
+.cine-duo-bg {
+  position: absolute; inset: -9% 0;
+  background: url('images/duo-ring.jpg') center 42% / cover no-repeat;
+  will-change: transform;
+  transform: scale(1.06);
+}
+.cine-duo-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(12,13,17,0.72) 0%, rgba(12,13,17,0.18) 26%, rgba(12,13,17,0.18) 74%, rgba(12,13,17,0.72) 100%);
+}
+.cine-duo .cine-problem {
+  width: min(1240px, 94%);
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+}
+.cine-duo .cine-problem + .cine-problem { margin-top: clamp(56px, 9vh, 110px); }
+@media (max-width: 560px) {
+  .cine-duo .cine-problem { border-radius: 14px; }
+}
 .cine-problem-video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -207,7 +234,7 @@ img { max-width: 100%; display: block; }
   gap: 0.12em;
   line-height: 1.08;
 }
-.sol-line { display: block; }
+.sol-line { display: block; font-weight: 300; font-size: 0.78em; letter-spacing: 0; }
 /* the logotype holds the center; it beats, and a perfect circle ripples out */
 .pulse-word {
   position: relative;
@@ -873,6 +900,9 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 </header>
 
 <!-- ================= PROBLEM CINE : autopilot at dinner ================= -->
+<div class="cine-duo">
+  <div class="cine-duo-bg" aria-hidden="true"></div>
+  <div class="cine-duo-veil" aria-hidden="true"></div>
 <section class="cine-problem" aria-label="An illustrated commuter world, everyone lit by their own phone">
   <video class="cine-problem-video cine-problem-video--auto" src="images/hero-loop.mp4" poster="images/hero-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="cine-problem-veil" aria-hidden="true"></div>
@@ -894,6 +924,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     </h2>
   </div>
 </section>
+</div>
 
 <!-- ================= MOMENT : the illustrated turn ================= -->
 <section class="moment">
@@ -1256,6 +1287,24 @@ document.querySelectorAll('video[autoplay]').forEach(function (v) {
     }, { rootMargin: '120px' }).observe(v);
   } else { v.play().catch(function () {}); }
 });
+
+/* ---------- duo backdrop parallax: the ring drifts behind the films ---------- */
+(function () {
+  var duo = document.querySelector('.cine-duo'), bg = document.querySelector('.cine-duo-bg');
+  if (!duo || !bg || REDUCED) return;
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    var r = duo.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    var p = (innerHeight - r.top) / (innerHeight + r.height);
+    bg.style.transform = 'translateY(' + ((p - 0.5) * 76).toFixed(1) + 'px) scale(1.06)';
+  }
+  addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+  }, { passive: true });
+  frame();
+})();
 
 /* ---------- copy the code ---------- */
 (function () {
