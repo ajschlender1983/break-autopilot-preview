@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/hero-brand.jpg">
+<link rel="preload" as="image" href="images/duo-ring.jpg">
 <!-- ANALYTICS: add Plausible/Fathom snippet before publish; CTAs carry data-track attrs -->
 <style>
 /* ============================================================
@@ -265,7 +265,13 @@ img { max-width: 100%; display: block; }
 }
 .ring-still-bg {
   position: absolute; inset: -9% 0;
-  background: var(--void) url('images/duo-ring.jpg') center 45% / contain no-repeat;
+  background: var(--void) url('images/hero-ring-poster.jpg') center 45% / contain no-repeat;
+}
+.ring-still-media {
+  position: absolute; inset: -9% 0;
+  width: 100%; height: 118%;
+  object-fit: contain;
+  background: var(--void);
   will-change: transform;
   transform: scale(1.06);
 }
@@ -335,7 +341,7 @@ img { max-width: 100%; display: block; }
 
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('images/hero-brand.jpg') center 52% / cover no-repeat;
+  background: url('images/duo-ring.jpg') center 42% / cover no-repeat;
   opacity: 0.8;
 }
 .hero-video {
@@ -1089,7 +1095,6 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <span class="cta-emit">
         <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">I&rsquo;m here for it</a>
       </span>
-      <span class="chip chip--light">free to join &middot; live every day &middot; no ring required</span>
     </div>
   </div>
   <!-- countdown strip: kickoff -> week -> full circle, one clock, phase-aware -->
@@ -1217,6 +1222,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 <!-- ================= RING STILL : the instrument, fully seen ================= -->
 <section class="ring-still" aria-label="The gold Pulse ring standing on dark wet rock, backlit">
   <div class="ring-still-bg" aria-hidden="true"></div>
+  <video class="ring-still-media" src="images/hero-ring-loop.mp4" poster="images/hero-ring-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="ring-still-veil" aria-hidden="true"></div>
   <div class="ring-still-caption">
     <div class="label label--light rv">the instrument</div>
@@ -1527,7 +1533,7 @@ document.querySelectorAll('video[autoplay]').forEach(function (v) {
 
 /* ---------- duo backdrop parallax: the ring drifts behind the films ---------- */
 (function () {
-  var duo = document.querySelector('.ring-still'), bg = document.querySelector('.ring-still-bg');
+  var duo = document.querySelector('.ring-still'), bg = document.querySelector('.ring-still-media') || document.querySelector('.ring-still-bg');
   if (!duo || !bg || REDUCED) return;
   var ticking = false;
   function frame() {
