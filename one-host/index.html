@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be Present Together &middot; One Week, One Theme, One Host</title>
+<title>The Weekly Pulse &middot; Week One: Presence, with Cory Allen</title>
 <meta name="description" content="A free live week with Cory Allen. One theme, one small practice at a time, together. From Pulse and Unify. No ring required.">
 <!-- PLACEHOLDER: set absolute URLs before publish so shares unfurl -->
-<meta property="og:title" content="Be Present Together, a free live week with Cory Allen">
+<meta property="og:title" content="The Weekly Pulse &middot; Week One: Presence, hosted live by Cory Allen">
 <meta property="og:description" content="One week. One theme. One host. A kickoff ceremony in Austin and everywhere, a practice each morning, and a closing circle. Free to join.">
 <meta property="og:image" content="{{page_url}}/images/zoom-grid.jpg">
 <meta property="og:url" content="{{page_url}}">
@@ -158,10 +158,41 @@ img { max-width: 100%; display: block; }
   display: flex; flex-direction: column;
   overflow: hidden;
 }
+.cine-problem {
+  position: relative;
+  height: clamp(440px, 78vh, 700px);
+  overflow: hidden;
+  background: var(--void);
+}
+.cine-problem-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 72%;
+}
+.cine-problem-veil {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(85% 70% at 50% 55%, rgba(12,13,17,0.08) 0%, rgba(12,13,17,0.55) 78%, rgba(12,13,17,0.8) 100%),
+    linear-gradient(180deg, rgba(12,13,17,0.5) 0%, rgba(12,13,17,0.12) 40%, rgba(12,13,17,0.66) 100%);
+}
+.cine-problem-caption {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 0 6vw;
+}
+.cine-problem-caption .label { margin-bottom: 18px; }
+.cine-problem-caption h2 {
+  color: var(--cream-warm);
+  font-size: clamp(30px, 4.6vw, 54px);
+  text-shadow: 0 3px 40px rgba(0,0,0,0.85);
+}
+
 .hero-bg {
   position: absolute; inset: 0;
   background: url('images/hero-ring-poster.jpg') center 40% / cover no-repeat;
-  opacity: 0.66;
+  opacity: 0.8;
 }
 .hero-video {
   position: absolute; inset: 0;
@@ -691,7 +722,6 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
 <!-- ================= HERO : the autopilot world ================= -->
 <header class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
-  <video class="hero-video" id="heroVideo" src="images/hero-ring-loop.mp4" poster="images/hero-ring-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="pulse-field" aria-hidden="true">
     <div class="pulse-ring"></div><div class="pulse-ring"></div><div class="pulse-ring"></div>
@@ -706,9 +736,9 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
   </div>
   <div class="hero-inner">
     <div class="hero-lockup rv">BREAK AUTOPILOT</div>
-    <h1 class="rv rv-d1">Be Present <em>Together</em></h1>
+    <h1 class="rv rv-d1">The Weekly <em>Pulse</em></h1>
     <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
-    <div class="hero-one rv rv-d2">ONE WEEK &middot; ONE THEME &middot; ONE HOST: CORY ALLEN</div>
+    <div class="hero-one rv rv-d2">WEEK ONE &middot; PRESENCE &middot; YOUR HOST: CORY ALLEN</div>
     <div class="hero-cta-row rv rv-d3">
       <span class="cta-emit">
         <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-hero">I&rsquo;m here for it</a>
@@ -730,6 +760,16 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     </div>
   </div>
 </header>
+
+<!-- ================= PROBLEM CINE : autopilot at dinner ================= -->
+<section class="cine-problem" aria-label="A candlelit dinner, one hand scrolling a phone under the table">
+  <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <div class="cine-problem-veil" aria-hidden="true"></div>
+  <div class="cine-problem-caption">
+    <div class="label label--light rv">the problem</div>
+    <h2 class="rv rv-d1">It&rsquo;s time to break autopilot.</h2>
+  </div>
+</section>
 
 <!-- ================= MOMENT : the illustrated turn ================= -->
 <section class="moment">
@@ -879,7 +919,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
   <div class="wrap practice-grid">
     <div class="practice-copy">
       <div class="label rv">the practice moment</div>
-      <h2 class="rv rv-d1">A few minutes that give the day back.</h2>
+      <h2 class="rv rv-d1">One pulse brings you back to life.</h2>
       <p class="lead rv rv-d2">
         Each morning, a short prompt from Cory lands where your friends already
         talk. No app, no account, nothing to install. One theme all week, so the practice gets deeper instead of wider.
@@ -898,7 +938,7 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
     </div>
     <div class="practice-img rv rv-d2">
       <div class="practice-stage">
-        <video class="practice-video" src="images/practice-loop.mp4" poster="images/practice-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="An illustrated hand wearing the glowing gold ring, gentle rings of light rippling outward"></video>
+        <video class="practice-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A candlelit dinner; a hand wearing the gold ring rests a phone under the table"></video>
         <div class="pb-card pb-1"><span>Pulse</span>A gentle vibration finds you.</div>
         <div class="pb-card pb-2"><span>Pause</span>One breath, right where you are.</div>
         <div class="pb-card pb-3"><span>Practice</span>Presence becomes rhythm.</div>
@@ -1077,17 +1117,16 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   tick();
 })();
 
-/* ---------- hero video: reduced-motion + offscreen pause ---------- */
-(function () {
-  var v = document.getElementById('heroVideo');
-  if (!v) return;
+/* ---------- videos: reduced-motion + offscreen pause ---------- */
+document.querySelectorAll('video[autoplay]').forEach(function (v) {
   if (REDUCED) { v.removeAttribute('autoplay'); v.pause(); v.style.display = 'none'; return; }
+  v.pause();
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (e) {
       if (e[0].isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
-    }, { rootMargin: '80px' }).observe(v);
-  }
-})();
+    }, { rootMargin: '120px' }).observe(v);
+  } else { v.play().catch(function () {}); }
+});
 
 /* ---------- copy the code ---------- */
 (function () {
