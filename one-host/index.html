@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Weekly Pulse &middot; Week One: Presence, with Cory Allen</title>
+<title>Our Weekly Pulse &middot; Week One: Presence, with Cory Allen</title>
 <meta name="description" content="A free live week with Cory Allen. One theme, one small practice at a time, together. From Pulse and Unify. No ring required.">
 <!-- PLACEHOLDER: set absolute URLs before publish so shares unfurl -->
-<meta property="og:title" content="The Weekly Pulse &middot; Week One: Presence, hosted live by Cory Allen">
+<meta property="og:title" content="Our Weekly Pulse &middot; Week One: Presence, hosted live by Cory Allen">
 <meta property="og:description" content="One week. One theme. One host. A kickoff ceremony in Austin and everywhere, a practice each morning, and a closing circle. Free to join.">
 <meta property="og:image" content="{{page_url}}/images/zoom-grid.jpg">
 <meta property="og:url" content="{{page_url}}">
@@ -410,7 +410,16 @@ img { max-width: 100%; display: block; }
   gap: clamp(16px, 3vw, 40px);
   padding: 18px 0 20px;
 }
-.strip-kicker { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--honey); }
+.strip-kicker {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--honey);
+  display: flex; align-items: baseline; gap: 10px;
+}
+.cd-theme {
+  font-size: clamp(22px, 2.4vw, 30px);
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
 .strip-clock { display: flex; gap: clamp(14px, 2.5vw, 28px); margin-top: 8px; }
 .strip-clock div { text-align: left; }
 .strip-clock b {
@@ -1015,7 +1024,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   </div>
   <div class="hero-inner">
     <div class="hero-lockup rv">BREAK AUTOPILOT</div>
-    <h1 class="rv rv-d1">The Weekly <em>Pulse</em></h1>
+    <h1 class="rv rv-d1">Our Weekly <em>Pulse</em></h1>
     <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
     <div class="hero-one rv rv-d2">
       <span class="ho-week">week one</span>
@@ -1034,7 +1043,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="strip" data-kickoff="2026-09-22T00:00:00Z" data-close="2026-09-26T00:00:00Z">
     <div class="strip-inner">
       <div>
-        <p class="strip-kicker" id="cdLabel">Countdown to the kickoff</p>
+        <p class="strip-kicker" id="cdLabel">Countdown to <span class="ho-theme cd-theme">Presence</span></p>
         <div class="strip-clock" id="cdClock" aria-live="off">
           <div><b>&mdash;</b><i>days</i></div>
         </div>
@@ -1408,11 +1417,11 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (isNaN(kickoff)) {
     /* placeholder date: swap the broken clock for a calm line */
     clock.style.display = 'none';
-    labelEl.textContent = 'Kickoff · late september';
+    labelEl.innerHTML = '<span class="ho-theme cd-theme">Presence</span> · late september';
     return;
   }
   var STATES = [
-    { t: kickoff, label: 'Countdown to the kickoff', where: 'Austin, in person · live everywhere · Monday, September 21, 7:00 pm CT' },
+    { t: kickoff, label: 'Countdown to <span class="ho-theme cd-theme">Presence</span>', where: 'Austin, in person · live everywhere · Monday, September 21, 7:00 pm CT' },
     { t: isNaN(close) ? kickoff + 6 * 864e5 : close, label: 'The week is running · full circle in', where: 'The circle closes Friday, September 25, 7:00 pm CT' }
   ];
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
@@ -1429,14 +1438,14 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     for (var i = 0; i < STATES.length; i++) { if (STATES[i].t - now > 0) { st = STATES[i]; break; } }
     if (!st) {
       clock.replaceChildren(cell('✓', 'complete'));
-      labelEl.textContent = 'The circle has closed';
+      labelEl.innerHTML = 'The circle has closed';
       whereEl.textContent = 'The practice goes with you';
       return;
     }
     var d = st.t - now;
     var days = Math.floor(d / 864e5), h = Math.floor(d % 864e5 / 36e5), m = Math.floor(d % 36e5 / 6e4), sec = Math.floor(d % 6e4 / 1000);
     clock.replaceChildren(cell(days, 'days'), cell(pad(h), 'hrs'), cell(pad(m), 'min'), cell(pad(sec), 'sec'));
-    labelEl.textContent = st.label;
+    labelEl.innerHTML = st.label;
     whereEl.textContent = st.where;
     setTimeout(tick, 1000);   /* the totality-counter beat */
   }
