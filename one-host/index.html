@@ -199,34 +199,49 @@ img { max-width: 100%; display: block; }
 }
 .cine-problem-video--auto { object-position: center center; }
 .cine-solution .cine-problem-video { object-position: center 64%; }
-/* the logotype pulses on the beat: a glow, then a ripple */
+/* stacked solution line: One / pulse. / brings you back to life. */
+.solution-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12em;
+  line-height: 1.08;
+}
+.sol-line { display: block; }
+/* the logotype holds the center; it beats, and a perfect circle ripples out */
 .pulse-word {
   position: relative;
   display: inline-block;
+  font-size: 1.7em;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.045em;
+  margin: 0.04em 0;
   animation: pw-glow var(--beat) ease-out infinite;
 }
 .pw-dot { color: var(--honey); }
 .pw-ring {
   position: absolute;
-  inset: -6px -16px;
+  left: 50%; top: 50%;
+  width: 2.6em; height: 2.6em;
+  margin: -1.3em 0 0 -1.3em;
   border: 1.5px solid rgba(201,162,39,0.75);
-  border-radius: 999px;
+  border-radius: 50%;
   opacity: 0;
   pointer-events: none;
   animation: pw-ripple var(--beat) linear infinite;
+  animation-delay: 0.18s;   /* the ring answers the word's beat */
 }
 @keyframes pw-glow {
-  0%, 100% { text-shadow: 0 3px 40px rgba(0,0,0,0.85); }
-  6%  { text-shadow: 0 0 26px rgba(201,162,39,0.95), 0 0 70px rgba(201,162,39,0.5), 0 3px 40px rgba(0,0,0,0.85); }
+  0%, 100% { transform: scale(1); text-shadow: 0 3px 40px rgba(0,0,0,0.85); }
+  6%  { transform: scale(1.045); text-shadow: 0 0 26px rgba(201,162,39,0.95), 0 0 70px rgba(201,162,39,0.5), 0 3px 40px rgba(0,0,0,0.85); }
+  30% { transform: scale(1); }
   40% { text-shadow: 0 0 8px rgba(201,162,39,0.25), 0 3px 40px rgba(0,0,0,0.85); }
 }
 @keyframes pw-ripple {
-  0%   { transform: scale(1); opacity: 0; }
-  5%   { opacity: 0.75; }
-  60%  { transform: scale(2.1); opacity: 0.12; }
-  100% { transform: scale(2.6); opacity: 0; }
+  0%   { transform: scale(0.55); opacity: 0; }
+  6%   { opacity: 0.8; }
+  60%  { transform: scale(1.9); opacity: 0.14; }
+  100% { transform: scale(2.4); opacity: 0; }
 }
 
 .hero-bg {
@@ -818,7 +833,11 @@ a.work-tile:hover { border-color: rgba(201,162,39,0.55); transform: translateY(-
   <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="cine-problem-veil" aria-hidden="true"></div>
   <div class="cine-problem-caption">
-    <h2 class="rv">One <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span> brings you back to life.</h2>
+    <h2 class="rv solution-stack">
+      <span class="sol-line">One</span>
+      <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span>
+      <span class="sol-line">brings you back to life.</span>
+    </h2>
   </div>
 </section>
 
