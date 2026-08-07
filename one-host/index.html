@@ -605,6 +605,16 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   text-align: center;
 }
 .host-hero-bottom h2 { color: var(--cream-warm); text-shadow: 0 2px 24px rgba(0,0,0,0.7); margin-bottom: 6px; }
+.hh-with {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: rgba(249,246,229,0.7);
+  margin-bottom: 4px;
+}
 @media (max-width: 560px) {
   .host-hero { height: min(78vh, 560px); border-radius: 14px; }
   .host-face { object-position: center 10%; }
@@ -1261,7 +1271,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
           <div class="presence-word">Presence</div>
         </div>
         <div class="host-hero-bottom">
-          <h2>With Cory Allen</h2>
+          <h2><span class="hh-with">with</span> Cory Allen</h2>
           <div class="label label--light">meditation teacher &middot; author &middot; the astral hustle</div>
         </div>
       </div>
