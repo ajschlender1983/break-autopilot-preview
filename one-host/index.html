@@ -167,25 +167,24 @@ img { max-width: 100%; display: block; }
 /* the two films float on a parallaxed beauty shot of the ring */
 .cine-duo {
   position: relative;
-  padding: clamp(56px, 9vh, 110px) 0;
+  padding: 0;
   background: var(--void);
   overflow: hidden;
 }
 .cine-duo-bg {
   position: absolute; inset: -9% 0;
-  background: url('images/duo-ring.jpg') center 42% / cover no-repeat;
+  background: url('images/duo-ring-rock.jpg') center center / cover no-repeat;
   will-change: transform;
   transform: scale(1.06);
 }
 .cine-duo-veil {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(12,13,17,0.72) 0%, rgba(12,13,17,0.45) 26%, rgba(12,13,17,0.45) 74%, rgba(12,13,17,0.72) 100%);
+  background: linear-gradient(180deg, rgba(12,13,17,0.8) 0%, rgba(12,13,17,0.55) 30%, rgba(12,13,17,0.55) 70%, rgba(12,13,17,0.8) 100%);
 }
 .cine-duo .cine-problem {
-  width: min(1240px, 94%);
-  margin: 0 auto;
-  border-radius: 20px;
-  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
 }
 .duo-reveal {
   position: relative;
@@ -195,22 +194,19 @@ img { max-width: 100%; display: block; }
   padding: clamp(48px, 8vh, 90px) 6vw;
   text-align: center;
 }
-.duo-reveal { position: relative; }
-.duo-reveal img {
-  height: clamp(420px, 64vh, 640px);
-  width: auto; max-width: 92vw;
-  object-fit: contain;
-  filter: drop-shadow(0 30px 80px rgba(0,0,0,0.6));
-  -webkit-mask-image: radial-gradient(68% 68% at 50% 50%, #000 44%, transparent 72%);
-  mask-image: radial-gradient(68% 68% at 50% 50%, #000 44%, transparent 72%);
-}
-.duo-reveal-caption {
-  position: absolute; inset: 0;
+.duo-reveal {
+  position: relative;
+  min-height: clamp(460px, 74vh, 680px);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 12px;
   text-align: center;
-  pointer-events: none;
+  padding: 40px 6vw;
+}
+.duo-reveal-caption {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 .duo-reveal-caption .label {
   color: rgba(249,246,229,0.95);
@@ -224,9 +220,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.1;
   text-shadow: 0 3px 34px rgba(0,0,0,0.85), 0 1px 10px rgba(0,0,0,0.7);
 }
-@media (max-width: 560px) {
-  .cine-duo .cine-problem { border-radius: 14px; }
-}
+
 .cine-problem-video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -1065,9 +1059,9 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 
 <!-- between the films: the instrument, fully seen -->
 <div class="duo-reveal">
-  <img decoding="async" src="images/duo-ring-rock.jpg" alt="The gold Pulse ring standing on dark stone, a warm halo tracing its edge" loading="lazy">
   <div class="duo-reveal-caption">
-    <h2 class="rv">The World&rsquo;s First<br>Awareness Ring.</h2>
+    <div class="label label--light rv">the instrument</div>
+    <h2 class="rv rv-d1">The World&rsquo;s First<br>Awareness Ring.</h2>
   </div>
 </div>
 
@@ -1077,7 +1071,9 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="cine-problem-veil" aria-hidden="true"></div>
   <div class="cine-problem-caption">
     <h2 class="rv solution-stack">
+      <span class="sol-line">One</span>
       <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span>
+      <span class="sol-line">brings you back to life.</span>
     </h2>
   </div>
 </section>
