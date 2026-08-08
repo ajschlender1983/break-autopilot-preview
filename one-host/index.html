@@ -321,6 +321,15 @@ img { max-width: 100%; display: block; }
 .pw-dot { color: var(--honey); }
 /* the logotype in the cream register: ink letters, honey dot, honey ripple */
 .practice-mark { line-height: 1; margin-bottom: 4px; }
+/* the practice, stated plainly, ending on the living wordmark */
+.practice-line { line-height: 1.08; }
+.pulse-word--inline {
+  font-size: 1em;
+  letter-spacing: -0.045em;
+  margin: 0;
+  vertical-align: baseline;
+}
+.pulse-word--inline .pw-ring { width: 2.1em; height: 2.1em; margin: -1.05em 0 0 -1.05em; }
 .pulse-word--ink { color: var(--ink); }
 .pulse-word--ink .pw-ring { border-color: rgba(201,162,39,0.55); }
 .pw-ring {
@@ -974,7 +983,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   max-width: 960px; margin: 0 auto;
 }
 .practice-copy .label { margin-bottom: 18px; }
-.practice-copy h2 { margin-bottom: 20px; max-width: 14ch; }
+.practice-copy h2 { margin-bottom: 20px; max-width: 18ch; }
 .practice-copy .lead + .lead { margin-top: 14px; }
 .practice-prompt {
   margin-top: 26px;
@@ -1381,8 +1390,8 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 <section class="practice">
   <div class="wrap practice-grid">
     <div class="practice-copy">
-      <div class="label rv">the practice is becoming present with every pulse</div>
-      <h2 class="rv rv-d1 practice-mark" aria-label="pulse"><span class="pulse-word pulse-word--ink">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span></h2>
+      <div class="label rv">the practice</div>
+      <h2 class="rv rv-d1 practice-line" aria-label="Becoming Present with Every pulse">Becoming Present with Every <span class="pulse-word pulse-word--ink pulse-word--inline">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span></h2>
       <p class="lead rv rv-d2">
         Each morning, a short prompt from Cory lands where your friends already
         talk. No app, no account, nothing to install. One theme all week, so the practice gets deeper instead of wider.
