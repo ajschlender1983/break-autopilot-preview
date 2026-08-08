@@ -307,6 +307,15 @@ img { max-width: 100%; display: block; }
   gap: 0.12em;
   line-height: 1.08;
 }
+.sol-sub {
+  display: block;
+  margin-top: 0.5em;
+  font-size: 0.24em;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: rgba(249,246,229,0.78);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.8);
+}
 .sol-line { display: block; font-weight: 300; font-size: 0.78em; letter-spacing: 0; }
 /* the logotype holds the center; it beats, and a perfect circle ripples out */
 .pulse-word {
@@ -580,14 +589,19 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
    the theme in the display serif. Same scale, so it reads as a single line. */
 .theme-title {
   display: block;
-  line-height: 1.02;
+  line-height: 1.12;
   text-wrap: balance;
 }
-.theme-title .theme-word { display: inline; margin-left: 0.16em; padding-right: 0.06em; }
+.theme-title .theme-word {
+  display: inline;
+  font-size: 1.1em;          /* optical match: the serif's x-height runs short */
+  margin-left: -0.02em;      /* the italic's lean already opens the gap */
+  padding-right: 0.08em;     /* room for the lean at the right edge */
+}
 .ho-herefor, .hh-herefor {
   font-family: var(--font);
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   line-height: 1;
   text-transform: none;
   color: var(--cream-warm);
@@ -600,7 +614,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 .ho-title {
   display: block;
   font-size: clamp(30px, 4.2vw, 46px);
-  line-height: 1.06;
+  line-height: 1.16;
   text-wrap: balance;
 }
 .ho-herefor {
@@ -608,7 +622,12 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   font-size: inherit;
   color: rgba(249,246,229,0.92);
 }
-.ho-title .ho-theme { display: inline; font-size: inherit; margin-left: 0.16em; padding-right: 0.06em; }
+.ho-title .ho-theme {
+  display: inline;
+  font-size: 1.1em;
+  margin-left: -0.02em;
+  padding-right: 0.08em;
+}
 .hh-presents {
   display: flex;
   align-items: baseline;
@@ -833,7 +852,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 /* ============================================================
    THE ARC — four moments
    ============================================================ */
-.arc { padding: clamp(50px, 8vw, 100px) 0 clamp(30px, 5vw, 60px); }
+.arc { padding: clamp(34px, 5vw, 64px) 0 clamp(30px, 5vw, 60px); }
 .arc-img {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -842,18 +861,18 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   margin: 2px 0 16px;
   box-shadow: var(--shadow-sm);
 }
-.arc-head { text-align: center; max-width: 860px; margin: 0 auto clamp(40px, 6vw, 64px); }
+.arc-head { text-align: center; max-width: 960px; margin: 0 auto clamp(30px, 4.5vw, 48px); }
 /* the week, drawn: one aligned object at every width */
 .week-shape {
   display: grid;
-  grid-template-columns: 1fr minmax(52px, 0.72fr) 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr minmax(78px, 0.82fr) 1fr;
+  grid-template-rows: auto auto auto auto;
   align-items: center;
   justify-items: center;
-  column-gap: clamp(10px, 2vw, 22px);
-  row-gap: 6px;
-  max-width: 720px;
-  margin: 26px auto 22px;
+  column-gap: clamp(12px, 2.4vw, 30px);
+  row-gap: 4px;
+  max-width: 940px;
+  margin: 22px auto 8px;
 }
 .ws-mark { grid-row: 1; color: var(--honey); display: flex; }
 .ws-mark--a { grid-column: 1; }
@@ -871,13 +890,14 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 }
 /* the rail sits on the marks' centre line, tying the three columns together */
 .ws-rail { grid-row: 1; grid-column: 2; width: 100%; color: var(--honey); display: block; }
-.ws-rail svg { width: 100%; height: clamp(9px, 1.4vw, 12px); display: block; }
+.ws-rail svg { width: 100%; height: clamp(10px, 1.6vw, 14px); display: block; }
 .ws-word {
   grid-row: 2;
   font-weight: 600;
-  font-size: clamp(19px, 3.2vw, 40px);
+  font-size: clamp(19px, 2.8vw, 36px);
   letter-spacing: -0.03em;
   line-height: 1.06;
+  white-space: nowrap;
   text-wrap: balance;
   align-self: start;
   padding-top: 12px;
@@ -910,6 +930,18 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 }
 .ws-date--a { grid-column: 1; }
 .ws-date--b { grid-column: 3; }
+.ws-note {
+  grid-row: 4;
+  align-self: start;
+  max-width: 22ch;
+  margin: 6px auto 0;
+  font-size: clamp(13px, 1.2vw, 15px);
+  line-height: 1.4;
+  color: var(--body);
+  text-wrap: balance;
+}
+.ws-note--a { grid-column: 1; }
+.ws-note--b { grid-column: 3; }
 @media (prefers-reduced-motion: reduce) { .ws-ring { animation: none; opacity: .45; } }
 .arc-head .label { margin-bottom: 20px; }
 .arc-head h2 { margin-bottom: 18px; }
@@ -986,7 +1018,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 /* ============================================================
    PRACTICE — the week's rhythm
    ============================================================ */
-.practice { padding: clamp(40px, 7vw, 90px) 0; }
+.practice { padding: clamp(40px, 7vw, 90px) 0 clamp(24px, 3.5vw, 44px); }
 .practice-grid {
   display: grid; grid-template-columns: 1.05fr 1fr;
   gap: clamp(30px, 5vw, 60px);
@@ -1428,7 +1460,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="wrap">
     <div class="arc-head">
       <div class="label rv">the shape of the week</div>
-      <div class="week-shape rv rv-d1" role="img" aria-label="The first pulse on Monday September 21, five mornings of practice between, and the closing circle on Friday September 25">
+      <div class="week-shape rv rv-d1" role="img" aria-label="The first pulse opens the week live, a week of practicing joy, then the closing circle where you share your peak Pulse moments">
         <span class="ws-mark ws-mark--a" aria-hidden="true">
           <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="22" cy="22" r="3.2" fill="currentColor" stroke="none"/>
@@ -1449,14 +1481,15 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
           </svg>
         </span>
         <span class="ws-word ws-word--a">The First Pulse</span>
-        <span class="ws-mid">five mornings<br>of practice</span>
+        <span class="ws-mid">a week of<br>practicing joy</span>
         <span class="ws-word ws-word--b">The Closing Circle</span>
         <span class="ws-date ws-date--a">mon &middot; sept 28</span>
+        <span class="ws-note ws-note--a">the week opens, live</span>
         <span class="ws-date ws-date--b">fri &middot; oct 2</span>
+        <span class="ws-note ws-note--b">share your peak Pulse moments</span>
       </div>
       </div>
-      <p class="lead rv rv-d2">A pulse together to open it. A week of practice to live it. A pulse to bring it all home.</p>
-    </div>
+          </div>
     <div class="arc-grid">
       <div class="arc-step rv">
         <div class="num">01 &middot; the first pulse &middot; mon, sept 28</div>
@@ -1523,8 +1556,9 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="cine-problem-veil" aria-hidden="true"></div>
   <div class="cine-problem-caption">
-    <h2 class="rv solution-stack" aria-label="pulse">
+    <h2 class="rv solution-stack" aria-label="pulse brings you back to life">
       <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span>
+      <span class="sol-sub">brings you back to life.</span>
     </h2>
   </div>
 </section>
