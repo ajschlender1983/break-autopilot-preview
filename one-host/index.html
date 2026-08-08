@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23C9A227'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23EBE7D4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/duo-ring.jpg">
 <!-- ANALYTICS: add Plausible/Fathom snippet before publish; CTAs carry data-track attrs -->
 <style>
@@ -589,8 +589,8 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
    the theme in the display serif. Same scale, so it reads as a single line. */
 .theme-title {
   display: block;
-  font-size: clamp(40px, 8.2vw, 94px);
-  line-height: 1.12;
+  font-size: clamp(22px, 4.1vw, 48px);
+  line-height: 1.14;
   text-wrap: balance;
 }
 .theme-title .presence-word {
@@ -599,11 +599,13 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   margin-left: 0;
   padding-right: 0.08em;   /* room for the italic's lean at the right edge */
 }
+/* THEME LOCKUP RULE (template): "Here for" rides the brand sans in light
+   italic; the theme word alone takes the serif italic + gold gradient. */
 .ho-herefor, .hh-herefor {
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: var(--font);
   font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   line-height: 1;
   text-transform: none;
   color: var(--cream-warm);
