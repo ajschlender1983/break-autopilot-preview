@@ -589,26 +589,28 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
    the theme in the display serif. Same scale, so it reads as a single line. */
 .theme-title {
   display: block;
+  font-size: clamp(40px, 8.2vw, 94px);
   line-height: 1.12;
   text-wrap: balance;
 }
 .theme-title .presence-word {
   display: inline;
-  font-size: 1.1em;          /* optical match: the serif's x-height runs short */
-  margin-left: -0.02em;      /* the italic's lean already opens the gap */
-  padding-right: 0.08em;     /* room for the lean at the right edge */
+  font-size: 1em;
+  margin-left: 0;
+  padding-right: 0.08em;   /* room for the italic's lean at the right edge */
 }
 .ho-herefor, .hh-herefor {
-  font-family: var(--font);
-  font-weight: 600;
-  letter-spacing: -0.035em;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1;
   text-transform: none;
   color: var(--cream-warm);
 }
 .hh-herefor {
   display: inline;
-  font-size: clamp(40px, 8.2vw, 94px);
+  font-size: 1em;
   text-shadow: 0 2px 22px rgba(0,0,0,0.6);
 }
 .ho-title {
@@ -624,8 +626,8 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 }
 .ho-title .ho-theme {
   display: inline;
-  font-size: 1.1em;
-  margin-left: -0.02em;
+  font-size: 1em;
+  margin-left: 0;
   padding-right: 0.08em;
 }
 .hh-presents {
