@@ -564,6 +564,25 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   text-align: center;
 }
 .host-hero-top .label { margin-bottom: 6px; }
+/* "here for ___" — the constant half of the theme lockup, echoing the CTA */
+.ho-herefor {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  color: rgba(249,246,229,0.62);
+  margin-bottom: 2px;
+}
+.hh-herefor {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  color: rgba(249,246,229,0.7);
+  text-shadow: 0 1px 14px rgba(0,0,0,0.6);
+  margin-bottom: 2px;
+}
 .hh-presents {
   display: flex;
   align-items: baseline;
@@ -624,7 +643,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 }
 @media (max-width: 560px) {
   .host-hero { height: min(82vh, 620px); border-radius: 14px; }
-  .host-face { object-position: center 16%; }
+  .host-face { object-position: center 14%; }
 }
 
 .host { padding: clamp(60px, 9vw, 110px) 0; }
@@ -1208,6 +1227,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
     <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
     <div class="hero-one rv rv-d2">
       <span class="ho-week">week one</span>
+      <span class="ho-herefor">here for</span>
       <span class="ho-theme">Joy</span>
       <span class="ho-host">with brent freeman</span>
     </div>
@@ -1276,10 +1296,11 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="wrap">
     <div class="host-card rv">
       <div class="host-hero rv">
-        <img class="host-face" src="images/brent-freeman-portrait.jpg" alt="Brent Freeman">
+        <img class="host-face" src="images/brent-freeman-hero.jpg" alt="Brent Freeman">
         <div class="host-hero-veil" aria-hidden="true"></div>
         <div class="host-hero-top">
           <div class="hh-presents"><span class="logo">pulse<span>.</span></span><span class="hh-word">presents</span></div>
+          <div class="hh-herefor">here for</div>
           <div class="theme-word">Joy</div>
         </div>
         <div class="host-hero-bottom">
@@ -1497,7 +1518,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <img decoding="async" src="images/zoom-grid.jpg" alt="An illustrated video-call grid: twelve people in their own warm rooms, each raising a hand in greeting" loading="lazy">
       <!-- Brent's presenter window, composited live over the illustrated room -->
       <div class="kick-presenter" aria-label="Brent Freeman's presenter window">
-        <img src="images/brent-freeman-portrait.jpg" alt="Brent Freeman presenting">
+        <img src="images/brent-freeman-hero.jpg" alt="Brent Freeman presenting">
         <div class="bar"><span class="dot" aria-hidden="true"></span>brent<span class="full"> freeman</span> &middot; <span class="full">hosting </span>live</div>
       </div>
     </div>
