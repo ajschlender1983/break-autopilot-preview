@@ -259,6 +259,9 @@ img { max-width: 100%; display: block; }
 /* the instrument, standing alone on rock, parallaxed */
 .ring-still {
   position: relative;
+  /* width must be explicit: aspect-ratio + max-height would otherwise
+     shrink the section's WIDTH to preserve the ratio, leaving a gap */
+  width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
   max-height: 86vh;
