@@ -1,0 +1,40 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400&family=DM+Serif+Display:ital@1&family=Cormorant+Garamond:ital,wght@1,300;1,600&family=Playfair+Display:ital,wght@1,400;1,700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,700&family=EB+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--cream-warm:#F9F6E5;--honey:#C9A227;--honey-deep:#8A6D14;--mono:'DM Mono',monospace}
+body{margin:0;background:#EBE7D4;font-family:'DM Sans',sans-serif;padding:26px}
+h1{font-size:17px;margin:0 0 20px;color:#1A1C22}
+.card{position:relative;height:210px;border-radius:14px;overflow:hidden;margin-bottom:16px;background:#5b6a68}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:sepia(.32) saturate(1.05) contrast(1.05) brightness(1.04)}
+.veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,17,.52),rgba(12,13,17,.06) 45%,rgba(12,13,17,.6))}
+.top{position:absolute;left:0;right:0;top:24px;text-align:center}
+.presents{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(249,246,229,.8);margin-bottom:6px}
+.title{display:block;line-height:1.14;font-size:clamp(22px,4.1vw,48px);text-shadow:0 2px 22px rgba(0,0,0,.6)}
+.hf{color:var(--cream-warm)}
+.tw{background:linear-gradient(100deg,var(--cream-warm) 4%,var(--honey) 52%,var(--honey-deep) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.tag{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:11px;color:rgba(249,246,229,.9);background:rgba(12,13,17,.5);padding:3px 9px;border-radius:20px}
+
+/* V1 Cormorant Garamond 300 / 600 */
+.v1 .title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,4.8vw,56px)}
+.v1 .hf{font-weight:300}.v1 .tw{font-weight:600}
+/* V2 Playfair Display 400 / 700 */
+.v2 .title{font-family:'Playfair Display',serif;font-style:italic}
+.v2 .hf{font-weight:400}.v2 .tw{font-weight:700}
+/* V3 Fraunces 300 / 700 */
+.v3 .title{font-family:'Fraunces',serif;font-style:italic}
+.v3 .hf{font-weight:300}.v3 .tw{font-weight:700}
+/* V4 EB Garamond 400 / 600 */
+.v4 .title{font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(25px,4.5vw,53px)}
+.v4 .hf{font-weight:400}.v4 .tw{font-weight:600}
+/* V5 DM Sans light italic + DM Serif Display */
+.v5 .title{font-size:clamp(22px,4.1vw,48px)}
+.v5 .hf{font-family:'DM Sans',sans-serif;font-style:italic;font-weight:300;letter-spacing:-.02em}
+.v5 .tw{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400}
+</style>
+<h1>Theme lockup — half width, "Here for" lighter than the theme word</h1>
+<div class="card v1"><img src="cory.jpg"><div class="veil"></div><div class="top"><div class="presents">pulse. presents</div><span class="title"><span class="hf">Here for</span> <span class="tw">Presence</span></span></div><div class="tag">V1 · Cormorant Garamond 300 / 600</div></div>
+<div class="card v2"><img src="cory.jpg"><div class="veil"></div><div class="top"><div class="presents">pulse. presents</div><span class="title"><span class="hf">Here for</span> <span class="tw">Presence</span></span></div><div class="tag">V2 · Playfair Display 400 / 700</div></div>
+<div class="card v3"><img src="cory.jpg"><div class="veil"></div><div class="top"><div class="presents">pulse. presents</div><span class="title"><span class="hf">Here for</span> <span class="tw">Presence</span></span></div><div class="tag">V3 · Fraunces 300 / 700</div></div>
+<div class="card v4"><img src="cory.jpg"><div class="veil"></div><div class="top"><div class="presents">pulse. presents</div><span class="title"><span class="hf">Here for</span> <span class="tw">Presence</span></span></div><div class="tag">V4 · EB Garamond 400 / 600</div></div>
+<div class="card v5"><img src="cory.jpg"><div class="veil"></div><div class="top"><div class="presents">pulse. presents</div><span class="title"><span class="hf">Here for</span> <span class="tw">Presence</span></span></div><div class="tag">V5 · DM Sans 300 italic + DM Serif Display</div></div>
