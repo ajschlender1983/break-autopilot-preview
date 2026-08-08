@@ -319,6 +319,10 @@ img { max-width: 100%; display: block; }
   animation: pw-glow var(--beat) ease-out infinite;
 }
 .pw-dot { color: var(--honey); }
+/* the logotype in the cream register: ink letters, honey dot, honey ripple */
+.practice-mark { line-height: 1; margin-bottom: 4px; }
+.pulse-word--ink { color: var(--ink); }
+.pulse-word--ink .pw-ring { border-color: rgba(201,162,39,0.55); }
 .pw-ring {
   position: absolute;
   left: 50%; top: 50%;
@@ -1342,7 +1346,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="wrap practice-grid">
     <div class="practice-copy">
       <div class="label rv">the practice moment</div>
-      <h2 class="rv rv-d1">One pulse brings you back to life.</h2>
+      <h2 class="rv rv-d1 practice-mark" aria-label="pulse"><span class="pulse-word pulse-word--ink">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span></h2>
       <p class="lead rv rv-d2">
         Each morning, a short prompt from Cory lands where your friends already
         talk. No app, no account, nothing to install. One theme all week, so the practice gets deeper instead of wider.
@@ -1471,10 +1475,8 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <video class="cine-problem-video" src="images/dinner-loop.mp4" poster="images/dinner-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="cine-problem-veil" aria-hidden="true"></div>
   <div class="cine-problem-caption">
-    <h2 class="rv solution-stack">
-      <span class="sol-line">One</span>
+    <h2 class="rv solution-stack" aria-label="pulse">
       <span class="pulse-word">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span>
-      <span class="sol-line">brings you back to life.</span>
     </h2>
   </div>
 </section>
