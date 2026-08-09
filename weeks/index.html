@@ -130,6 +130,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
   margin-bottom: 6px;
   color: var(--cream-warm);
 }
+.next-inner .label--light, .next-host, .next-dates { text-wrap: balance; }
 .next-host { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; color: rgba(249,246,229,0.85); }
 .next-dates { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: rgba(249,246,229,0.6); margin-top: 4px; }
 
@@ -202,7 +203,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
 }
 .week-thumb--illo { object-position: center 30%; }
 .week-meta { flex: 1; min-width: 0; }
-.week-meta .num { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--muted); }
+.week-meta .num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--muted); white-space: nowrap; }
 .week-name { font-size: 18px; line-height: 1.2; margin: 2px 0; }
 .week-name .herefor { color: var(--brown); }
 .week-host { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -228,6 +229,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
 }
 .foot .label { line-height: 2; }
 
+@media (max-width: 420px) { .week-go { padding: 6px 9px; } }
 @media (min-width: 700px) {
   .next-inner { padding: 40px 30px 34px; }
   .week-thumb { width: 64px; height: 64px; }
@@ -251,9 +253,9 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
     <div class="next-bg" aria-hidden="true"></div>
     <div class="next-veil" aria-hidden="true"></div>
     <div class="next-inner">
-      <div class="label label--light">up next &middot; week five &middot; new week every monday</div>
+      <div class="label label--light">up next &middot; week five</div>
       <span class="next-title"><span class="herefor">Here for</span> <span class="themeword themeword--gold">Belonging</span></span>
-      <div class="next-host">with radha agrawal &middot; the belong center</div>
+      <div class="next-host">with radha agrawal</div>
       <div class="next-dates">mon, oct 19 &ndash; fri, oct 23 &middot; live, from anywhere</div>
       <div class="next-clock" id="clock" aria-live="off"></div>
       <span class="btn--pill">I&rsquo;m here for it</span>
@@ -271,7 +273,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
     <a class="week-row" href="../one-host/" data-track="portal-w1">
       <img class="week-thumb" src="images/cory-allen.jpg" alt="Cory Allen">
       <span class="week-meta">
-        <span class="num">week one &middot; sept 21&ndash;25</span>
+        <span class="num">wk 1 &middot; sept 21&ndash;25</span>
         <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Presence</span></span>
         <span class="week-host">with cory allen</span>
       </span>
@@ -281,7 +283,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
     <a class="week-row" href="../joy/" data-track="portal-w2">
       <img class="week-thumb" src="images/brent-freeman-hero.jpg" alt="Brent Freeman">
       <span class="week-meta">
-        <span class="num">week two &middot; sept 28&ndash;oct 2</span>
+        <span class="num">wk 2 &middot; sept 28&ndash;oct 2</span>
         <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Joy</span></span>
         <span class="week-host">with brent freeman</span>
       </span>
@@ -291,7 +293,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
     <a class="week-row" href="../pleasure/" data-track="portal-w3">
       <img class="week-thumb" src="images/emily-fletcher-hero.jpg" alt="Emily Fletcher">
       <span class="week-meta">
-        <span class="num">week three &middot; oct 5&ndash;9</span>
+        <span class="num">wk 3 &middot; oct 5&ndash;9</span>
         <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Pleasure</span></span>
         <span class="week-host">with emily fletcher</span>
       </span>
@@ -301,7 +303,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
     <a class="week-row" href="../expansion/" data-track="portal-w4">
       <img class="week-thumb" src="images/adam-schlender-hero.jpg" alt="Adam Schlender">
       <span class="week-meta">
-        <span class="num">week four &middot; oct 12&ndash;16</span>
+        <span class="num">wk 4 &middot; oct 12&ndash;16</span>
         <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Expansion</span></span>
         <span class="week-host">with adam schlender</span>
       </span>

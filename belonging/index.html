@@ -577,7 +577,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 }
 .host-hero-veil {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(12,13,17,0.52) 0%, rgba(12,13,17,0.08) 30%, rgba(12,13,17,0.10) 48%, rgba(12,13,17,0.55) 76%, rgba(12,13,17,0.86) 100%);
+  background: linear-gradient(180deg, rgba(12,13,17,0.74) 0%, rgba(12,13,17,0.30) 26%, rgba(12,13,17,0.10) 48%, rgba(12,13,17,0.55) 76%, rgba(12,13,17,0.86) 100%);
 }
 .host-hero-top {
   position: absolute; left: 0; right: 0; top: clamp(22px, 4vw, 40px);
@@ -593,7 +593,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   line-height: 1.14;
   text-wrap: balance;
   /* backing glow strong enough that the gradient word survives bright imagery */
-  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.75)) drop-shadow(0 6px 30px rgba(0,0,0,0.45));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.95)) drop-shadow(0 3px 12px rgba(0,0,0,0.8)) drop-shadow(0 8px 32px rgba(0,0,0,0.5));
 }
 .theme-title .theme-word {
   display: inline;
@@ -1272,7 +1272,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .sticky-join .btn--pill { padding: 10px 26px; font-size: 13px; box-shadow: var(--shadow-sm); white-space: nowrap; }
-@media (max-width: 480px) { .sticky-join .sj-text { max-width: 52vw; } }
+@media (max-width: 480px) { .sticky-join .sj-text { display: none; } .sticky-join .sj-weeks { padding: 10px 14px; } }
 
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -1280,6 +1280,16 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   .pulse-ring, .cta-emit::before, .host-photo::after, .kick-presenter .dot { animation: none; }
   .sf-final img { transform: none; transition: none; }
 }
+@media (max-width: 560px) {
+  .ring-still { aspect-ratio: 4 / 3; }
+}
+/* per-week overrides */
+.host-hero { height: clamp(300px, 40vh, 420px); }
+.host-face { object-position: center 60%; }
+.kick-mono { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(155deg, #1E1C13, #0C0D11); color: var(--honey);
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.22em; }
+/* VERIFY: monogram presenter + scene banner until Radha's real photo lands */
 </style>
 </head>
 <body>
@@ -1304,7 +1314,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
     <h1 class="rv rv-d1">Our Weekly <em>Pulse</em></h1>
     <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
     <div class="hero-one rv rv-d2">
-      <span class="ho-week">week one</span>
+      <span class="ho-week">week five</span>
       <span class="ho-title"><span class="ho-herefor">Here for</span> <span class="ho-theme">Belonging</span></span>
       <span class="ho-host">with radha agrawal</span>
     </div>
@@ -1505,7 +1515,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <div class="arc-step rv">
         <div class="num">01 &middot; the first pulse &middot; mon, oct 19</div>
         <!-- VERIFY: generic illustration — no Radha likeness reference on disk -->
-        <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="An illustrated host on a small warm stage, golden ripples spreading as the week opens for a listening circle" loading="lazy">
+        <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="An illustrated circle gathering in a warm evening room, ripples of light through the center" loading="lazy">
         <b>Radha drops us in.</b>
         <p>Monday morning, live. She opens the theme and the one small practice that brings you back to the present. Tune in live, or catch the recording when your day allows.</p>
       </div>
@@ -1590,8 +1600,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <img decoding="async" src="images/zoom-grid.jpg" alt="An illustrated video-call grid: twelve people in their own warm rooms, each raising a hand in greeting" loading="lazy">
       <!-- Radha's presenter window, composited live over the illustrated room -->
       <div class="kick-presenter" aria-label="Radha Agrawal's presenter window">
-        <!-- VERIFY: placeholder host image — swap for the real photo -->
-        <img src="images/full-circle.jpg" alt="Radha Agrawal presenting">
+        <div class="kick-mono" aria-label="Radha Agrawal">RADHA</div>
         <div class="bar"><span class="dot" aria-hidden="true"></span>radha<span class="full"> agrawal</span> &middot; <span class="full">hosting </span>live</div>
       </div>
     </div>
@@ -1783,6 +1792,12 @@ document.querySelectorAll('video[autoplay]').forEach(function (v) {
   var prev = document.querySelector('.vcar-btn.prev'), next = document.querySelector('.vcar-btn.next');
   if (prev) prev.addEventListener('click', function () { car.scrollBy({ left: -step(), behavior: 'smooth' }); });
   if (next) next.addEventListener('click', function () { car.scrollBy({ left: step(), behavior: 'smooth' }); });
+})();
+
+/* ---------- order meter degrades gracefully on template tokens ---------- */
+(function () {
+  var om = document.querySelector('.order-meter');
+  if (om && om.textContent.indexOf('{{') !== -1) om.style.display = 'none';
 })();
 
 /* ---------- copy the code ---------- */
