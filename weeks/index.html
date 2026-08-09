@@ -132,6 +132,28 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
 }
 .next-inner .label--light, .next-host, .next-dates { text-wrap: balance; }
 .next-host { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; color: rgba(249,246,229,0.85); }
+/* host chip: face + one line of who they are (template rule) */
+.next-chip {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; margin-top: 10px;
+}
+.next-chip .chip-mono, .next-chip img {
+  width: 44px; height: 44px; flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(201,162,39,0.65);
+}
+.next-chip .chip-mono {
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(155deg, #1E1C13, #0C0D11);
+  color: var(--honey);
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em;
+}
+.next-chip .chip-bio {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.05em;
+  line-height: 1.5; color: rgba(249,246,229,0.7);
+  text-align: left; max-width: 300px; text-wrap: balance;
+}
 .next-dates { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: rgba(249,246,229,0.6); margin-top: 4px; }
 
 /* the countdown, totality-style */
@@ -256,6 +278,11 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
       <div class="label label--light">up next &middot; week four</div>
       <span class="next-title"><span class="herefor">Here for</span> <span class="themeword themeword--gold">Belonging</span></span>
       <div class="next-host">with radha agrawal</div>
+      <div class="next-chip">
+        <!-- VERIFY: swap monogram for Radha's real photo when it lands -->
+        <div class="chip-mono" aria-hidden="true">RA</div>
+        <span class="chip-bio">co-founder of daybreaker &middot; the belong center &middot; author of belong</span><!-- VERIFY bio -->
+      </div>
       <div class="next-dates">mon, oct 12 &ndash; fri, oct 16 &middot; live, from anywhere</div>
       <div class="next-clock" id="clock" aria-live="off"></div>
       <span class="btn--pill">I&rsquo;m here for it</span>

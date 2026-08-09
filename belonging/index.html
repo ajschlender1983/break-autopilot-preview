@@ -461,6 +461,42 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 38px;
   text-shadow: 0 2px 18px rgba(12,13,17,0.7);
 }
+
+/* host chip: the face + one line of who they are (template rule) */
+.host-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.host-chip img, .host-chip .chip-mono {
+  width: 44px; height: 44px; flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(201,162,39,0.65);
+  filter: sepia(0.28) saturate(1.05) contrast(1.04) brightness(1.03);
+}
+.host-chip .chip-mono {
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(155deg, #1E1C13, #0C0D11);
+  color: var(--honey);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  filter: none;
+}
+.host-chip .chip-bio {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  color: rgba(249,246,229,0.7);
+  text-align: left;
+  max-width: 300px;
+  text-wrap: balance;
+}
+
 .hero-cta-row { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 
 /* countdown strip (from the eclipse template, in Pulse dress) */
@@ -1317,6 +1353,10 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <span class="ho-week">week four</span>
       <span class="ho-title"><span class="ho-herefor">Here for</span> <span class="ho-theme">Belonging</span></span>
       <span class="ho-host">with radha agrawal</span>
+      <div class="host-chip rv rv-d2">
+        <div class="chip-mono" aria-hidden="true">RA</div>
+        <span class="chip-bio">co-founder of daybreaker &middot; the belong center &middot; author of belong</span><!-- VERIFY bio line before publish -->
+      </div>
     </div>
     <div class="hero-cta-row rv rv-d3">
       <span class="cta-emit">
@@ -1514,7 +1554,6 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
     <div class="arc-grid">
       <div class="arc-step rv">
         <div class="num">01 &middot; the first pulse &middot; mon, oct 12</div>
-        <!-- VERIFY: generic illustration — no Radha likeness reference on disk -->
         <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="An illustrated circle gathering in a warm evening room, ripples of light through the center" loading="lazy">
         <b>Radha drops us in.</b>
         <p>Monday morning, live. She opens the theme and the one small practice that brings you back to the present. Tune in live, or catch the recording when your day allows.</p>
