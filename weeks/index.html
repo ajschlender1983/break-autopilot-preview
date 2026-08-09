@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Weekly Pulse &middot; Member Home</title>
+<meta name="description" content="Every week of Our Weekly Pulse: the week that's coming, and every week you've lived. One theme, one host, every Monday.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   OUR WEEKLY PULSE — member home
+   The hub: one card for the week that's coming, one row for
+   every week already lived. Mobile-first; the thumb is the UI.
+   ============================================================ */
+:root {
+  --cream:        #EBE7D4;
+  --cream-warm:   #F9F6E5;
+  --void:         #0C0D11;
+  --ink:          #1A1C22;
+  --brown:        #423D32;
+  --body:         #474234;
+  --accent:       #E3F47D;
+  --accent-text:  #0C0D11;
+  --honey:        #C9A227;
+  --honey-deep:   #8A6D14;
+  --muted:        #6E6857;
+  --shadow-md:    0 18px 44px rgba(66,61,50,0.11);
+  --shadow-sm:    0 10px 26px rgba(66,61,50,0.07);
+  --font: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: "DM Mono", ui-monospace, monospace;
+  --beat: 3s;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { -webkit-tap-highlight-color: rgba(201,162,39,0.18); }
+a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border-radius: 6px; }
+
+.label {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.label--light { color: rgba(249,246,229,0.65); }
+
+.wrap { width: min(680px, 100% - 40px); margin: 0 auto; }
+
+/* ---------- header ---------- */
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 22px 0 18px;
+}
+.logo { font-size: 22px; font-weight: 500; letter-spacing: -0.05em; color: var(--ink); text-decoration: none; }
+.logo span { color: var(--honey); }
+
+/* ---------- theme lockup (template rule) ---------- */
+.herefor {
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+.themeword {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  padding-right: 0.08em;
+}
+.themeword--gold {
+  background: linear-gradient(100deg, var(--cream-warm) 4%, var(--honey) 58%, #E8C86A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.themeword--ink {
+  background: linear-gradient(100deg, var(--honey-deep) 8%, var(--honey) 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- up next: the hero card ---------- */
+.next-card {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--void);
+  color: var(--cream-warm);
+  text-decoration: none;
+  box-shadow: 0 24px 60px rgba(23,23,29,0.28);
+}
+.next-bg {
+  position: absolute; inset: 0;
+  background: url('images/duo-ring.jpg') center 40% / cover no-repeat;
+  opacity: 0.85;
+}
+.next-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(12,13,17,0.66) 0%, rgba(12,13,17,0.28) 42%, rgba(12,13,17,0.82) 100%);
+}
+.next-inner {
+  position: relative;
+  padding: 26px 22px 24px;
+  text-align: center;
+}
+.next-inner .label--light { margin-bottom: 12px; }
+.next-title {
+  display: block;
+  font-size: clamp(30px, 8vw, 44px);
+  line-height: 1.12;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.7));
+  margin-bottom: 6px;
+  color: var(--cream-warm);
+}
+.next-host { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; color: rgba(249,246,229,0.85); }
+.next-dates { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: rgba(249,246,229,0.6); margin-top: 4px; }
+
+/* the countdown, totality-style */
+.next-clock {
+  display: flex; justify-content: center; gap: clamp(14px, 5vw, 26px);
+  margin: 18px 0 4px;
+}
+.next-clock div { text-align: center; min-width: 44px; }
+.next-clock b {
+  display: block;
+  font-size: clamp(24px, 6.4vw, 34px);
+  font-weight: 600;
+  color: var(--honey);
+  text-shadow: 0 0 22px rgba(201,162,39,0.35);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.next-clock i {
+  display: block; font-style: normal;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em;
+  color: rgba(249,246,229,0.5); margin-top: 5px; text-transform: uppercase;
+}
+.btn--pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--accent-text);
+  border-radius: 100px;
+  padding: 14px 42px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform .3s cubic-bezier(.19,1,.22,1), filter .3s ease;
+  margin-top: 16px;
+}
+.btn--pill:hover { filter: brightness(1.06); transform: translateY(-2px); }
+.next-note { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: rgba(249,246,229,0.55); margin-top: 12px; }
+
+/* ---------- past weeks ---------- */
+.past { padding: 34px 0 10px; }
+.past-head { margin-bottom: 14px; }
+.past-head .label { margin-bottom: 4px; }
+.past-head h2 { font-size: clamp(20px, 5vw, 26px); font-weight: 600; letter-spacing: -0.03em; }
+
+.week-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--cream-warm);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(66,61,50,0.06);
+  transition: transform .25s cubic-bezier(.19,1,.22,1), box-shadow .25s ease;
+}
+.week-row:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.week-thumb {
+  width: 58px; height: 58px; flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(201,162,39,0.55);
+  filter: sepia(0.28) saturate(1.05) contrast(1.04) brightness(1.03);
+}
+.week-thumb--illo { object-position: center 30%; }
+.week-meta { flex: 1; min-width: 0; }
+.week-meta .num { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--muted); }
+.week-name { font-size: 18px; line-height: 1.2; margin: 2px 0; }
+.week-name .herefor { color: var(--brown); }
+.week-host { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.week-go {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--honey-deep);
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.35);
+  border-radius: 100px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+/* ---------- footer ---------- */
+.foot {
+  border-top: 1px solid rgba(66,61,50,0.12);
+  margin-top: 26px;
+  padding: 26px 0 44px;
+  text-align: center;
+}
+.foot .label { line-height: 2; }
+
+@media (min-width: 700px) {
+  .next-inner { padding: 40px 30px 34px; }
+  .week-thumb { width: 64px; height: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="logo" href="#" aria-label="Pulse">pulse<span>.</span></a>
+  <div class="label">our weekly pulse &middot; member home</div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= UP NEXT ================= -->
+  <a class="next-card" href="../belonging/" data-track="portal-next">
+    <div class="next-bg" aria-hidden="true"></div>
+    <div class="next-veil" aria-hidden="true"></div>
+    <div class="next-inner">
+      <div class="label label--light">up next &middot; week five &middot; new week every monday</div>
+      <span class="next-title"><span class="herefor">Here for</span> <span class="themeword themeword--gold">Belonging</span></span>
+      <div class="next-host">with radha agrawal &middot; the belong center</div>
+      <div class="next-dates">mon, oct 19 &ndash; fri, oct 23 &middot; live, from anywhere</div>
+      <div class="next-clock" id="clock" aria-live="off"></div>
+      <span class="btn--pill">I&rsquo;m here for it</span>
+      <div class="next-note">included in your membership &middot; live calls + prompts + replays</div>
+    </div>
+  </a>
+
+  <!-- ================= YOUR WEEKS ================= -->
+  <section class="past" aria-label="Past weeks, replays available">
+    <div class="past-head">
+      <div class="label">already lived &middot; replays and prompts, anytime</div>
+      <h2>Your weeks so far.</h2>
+    </div>
+
+    <a class="week-row" href="../one-host/" data-track="portal-w1">
+      <img class="week-thumb" src="images/cory-allen.jpg" alt="Cory Allen">
+      <span class="week-meta">
+        <span class="num">week one &middot; sept 21&ndash;25</span>
+        <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Presence</span></span>
+        <span class="week-host">with cory allen</span>
+      </span>
+      <span class="week-go">replay &rarr;</span>
+    </a>
+
+    <a class="week-row" href="../joy/" data-track="portal-w2">
+      <img class="week-thumb" src="images/brent-freeman-hero.jpg" alt="Brent Freeman">
+      <span class="week-meta">
+        <span class="num">week two &middot; sept 28&ndash;oct 2</span>
+        <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Joy</span></span>
+        <span class="week-host">with brent freeman</span>
+      </span>
+      <span class="week-go">replay &rarr;</span>
+    </a>
+
+    <a class="week-row" href="../pleasure/" data-track="portal-w3">
+      <img class="week-thumb" src="images/emily-fletcher-hero.jpg" alt="Emily Fletcher">
+      <span class="week-meta">
+        <span class="num">week three &middot; oct 5&ndash;9</span>
+        <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Pleasure</span></span>
+        <span class="week-host">with emily fletcher</span>
+      </span>
+      <span class="week-go">replay &rarr;</span>
+    </a>
+
+    <a class="week-row" href="../expansion/" data-track="portal-w4">
+      <img class="week-thumb" src="images/adam-schlender-hero.jpg" alt="Adam Schlender">
+      <span class="week-meta">
+        <span class="num">week four &middot; oct 12&ndash;16</span>
+        <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Expansion</span></span>
+        <span class="week-host">with adam schlender</span>
+      </span>
+      <span class="week-go">replay &rarr;</span>
+    </a>
+  </section>
+
+  <footer class="foot">
+    <div class="label">a new theme, a new guide, every monday</div>
+    <div class="label">pulse &middot; the world&rsquo;s first awareness ring</div>
+  </footer>
+
+</main>
+
+<script>
+/* countdown to the next kickoff — minutes-level, phase-aware */
+(function () {
+  var KICKOFF = Date.parse('2026-10-20T00:00:00Z');   /* PENCILED: Belonging, Mon Oct 19 7pm CT */
+  var CLOSE   = Date.parse('2026-10-24T00:00:00Z');
+  var el = document.getElementById('clock');
+  if (!el || isNaN(KICKOFF)) return;
+  function cell(v, u) {
+    var d = document.createElement('div');
+    var b = document.createElement('b'); b.textContent = v;
+    var i = document.createElement('i'); i.textContent = u;
+    d.appendChild(b); d.appendChild(i); return d;
+  }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var now = Date.now();
+    if (now > CLOSE) { el.replaceChildren(cell('—', 'the circle has closed')); return; }
+    if (now > KICKOFF) { el.replaceChildren(cell('live', 'the week is running')); return; }
+    var d = KICKOFF - now;
+    var days = Math.floor(d / 864e5), h = Math.floor(d % 864e5 / 36e5), m = Math.floor(d % 36e5 / 6e4);
+    el.replaceChildren(cell(days, 'days'), cell(pad(h), 'hrs'), cell(pad(m), 'min'));
+    setTimeout(tick, 30000);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>

@@ -592,6 +592,8 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   font-size: clamp(22px, 4.1vw, 48px);
   line-height: 1.14;
   text-wrap: balance;
+  /* backing glow strong enough that the gradient word survives bright imagery */
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.75)) drop-shadow(0 6px 30px rgba(0,0,0,0.45));
 }
 .theme-title .theme-word {
   display: inline;
@@ -1252,6 +1254,18 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   transition: transform .5s cubic-bezier(.19,1,.22,1);
 }
 .sticky-join.show { transform: none; }
+.sticky-join .sj-weeks {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--honey-deep);
+  text-decoration: none;
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 100px;
+  padding: 6px 11px;
+  white-space: nowrap;
+}
 .sticky-join .sj-text {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em;
   color: var(--brown);
@@ -1645,12 +1659,14 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
 </section>
 
 <footer class="footer">
+  <p><a href="../weeks/" data-track="nav-weeks-footer">all weeks &rarr;</a> &middot; a new theme every monday</p>
   <p>Pulse &middot; Amsterdam &middot; in partnership with Unify</p>
   <p><a href="https://pulsemindfulness.com">pulsemindfulness.com</a> &middot; <a href="{{email_optin_link}}">prefer email? get the week in your inbox</a></p>
 </footer>
 
 <!-- ================= STICKY JOIN ================= -->
 <div class="sticky-join" id="stickyJoin">
+  <a class="sj-weeks" href="../weeks/" data-track="nav-weeks">&#8801; weeks</a>
   <span class="sj-text">be present together &middot; one week with brent freeman</span>
   <a class="btn--pill" href="{{whatsapp_invite_link}}" data-track="join-sticky">I&rsquo;m here for it</a>
 </div>
