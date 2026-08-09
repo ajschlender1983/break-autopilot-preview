@@ -549,7 +549,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
 .filmstrip.turned .cap-a { opacity: 0; }
 .filmstrip.turned .cap-b { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
-  .js .rv .presence-word { opacity: 1; animation: none; }
+  .js .rv .theme-word { opacity: 1; animation: none; }
   .pulse-word { animation: none; }
   .pw-ring { display: none; }
   .filmstrip-track { width: 100%; flex-wrap: wrap; gap: 6px; }
@@ -595,7 +595,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   /* backing glow strong enough that the gradient word survives bright imagery */
   filter: drop-shadow(0 2px 10px rgba(0,0,0,0.75)) drop-shadow(0 6px 30px rgba(0,0,0,0.45));
 }
-.theme-title .presence-word {
+.theme-title .theme-word {
   display: inline;
   font-size: 1em;
   margin-left: 0;
@@ -657,7 +657,7 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   color: rgba(249,246,229,0.75);
   text-shadow: 0 1px 14px rgba(0,0,0,0.6);
 }
-.presence-word {
+.theme-word {
   font-family: "DM Serif Display", Georgia, serif;
   font-style: italic;
   font-weight: 400;
@@ -671,11 +671,11 @@ h2 { font-size: clamp(30px, 4.6vw, 52px); }
   filter: drop-shadow(0 3px 26px rgba(0,0,0,0.55));
 }
 /* the word arrives: blur settles, tracking closes, like a breath landing */
-.js .rv .presence-word { opacity: 0; }
-.js .rv.in .presence-word {
-  animation: presence-in 1.5s cubic-bezier(.19,1,.22,1) 0.25s both;
+.js .rv .theme-word { opacity: 0; }
+.js .rv.in .theme-word {
+  animation: theme-in 1.5s cubic-bezier(.19,1,.22,1) 0.25s both;
 }
-@keyframes presence-in {
+@keyframes theme-in {
   from { opacity: 0; letter-spacing: 0.16em; filter: blur(7px) drop-shadow(0 3px 26px rgba(0,0,0,0.55)); transform: translateY(12px); }
   to   { opacity: 1; letter-spacing: -0.03em; filter: blur(0) drop-shadow(0 3px 26px rgba(0,0,0,0.55)); transform: none; }
 }
@@ -1288,7 +1288,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <span class="amp">&amp;</span>
       <span class="logo">unify</span>
     </div>
-    <div class="label label--light">september 21&ndash;25 &middot; live, from anywhere</div>
+    <div class="label label--light">september 21 &ndash; 25 &middot; live, from anywhere</div>
   </div>
   <div class="hero-inner">
     <div class="hero-lockup rv">BREAK AUTOPILOT</div>
@@ -1368,7 +1368,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <div class="host-hero-veil" aria-hidden="true"></div>
         <div class="host-hero-top">
           <div class="hh-presents"><span class="logo">pulse<span>.</span></span><span class="hh-word">presents</span></div>
-          <div class="theme-title"><span class="hh-herefor">Here for</span> <span class="presence-word">Presence</span></div>
+          <div class="theme-title"><span class="hh-herefor">Here for</span> <span class="theme-word">Presence</span></div>
         </div>
         <div class="host-hero-bottom">
           <h2><span class="hh-with">with</span> Cory Allen</h2>
@@ -1380,7 +1380,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         &ldquo;I spent years trying to think my way into presence. What actually
         worked was smaller: one honest pause, returned to often, until being
         here stopped feeling like an event.&rdquo;
-        <div class="label">cory allen &middot; draft, pending his sign-off</div>
+        <div class="label">cory allen &middot; draft, pending sign-off</div>
       </div>
       <div class="host-body">
         <p>
@@ -1443,7 +1443,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
   <div class="wrap practice-grid">
     <div class="practice-copy">
       <div class="label rv">the practice</div>
-      <h2 class="rv rv-d1 practice-line" aria-label="Becoming Present with Every pulse">Becoming Present with Every <span class="pulse-word pulse-word--ink pulse-word--inline">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span></h2>
+      <h2 class="rv rv-d1 practice-line" aria-label="Feeling Presence with Every pulse">Feeling Presence with Every <span class="pulse-word pulse-word--ink pulse-word--inline">pulse<span class="pw-dot">.</span><span class="pw-ring" aria-hidden="true"></span></span></h2>
       <p class="lead rv rv-d2">
         Each morning, a short prompt from Cory lands where your friends already
         talk. No app, no account, nothing to install. One theme all week, so the practice gets deeper instead of wider.
@@ -1452,7 +1452,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         And all week, one small group sharing their Pulse moments with
         each other. You may find that's the part you look forward to.
       </p>
-      <!-- DRAFT day-one prompt in Cory's voice — for his sign-off -->
+      <!-- DRAFT day-one prompt in Cory's voice — for sign-off -->
       <div class="practice-prompt rv rv-d3">
         &ldquo;Before the first scroll, sit for two minutes and count what's
         already reaching you: the hum of the fridge, light through the blind,

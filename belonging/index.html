@@ -1383,7 +1383,6 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <div class="host-hero-bottom">
           <h2><span class="hh-with">with</span> Radha Agrawal</h2>
           <!-- VERIFY Radha's credential line before publish -->
-          <!-- VERIFY credential line before publish -->
           <div class="label label--light">founder of daybreaker &middot; the belong center &middot; author of belong</div>
         </div>
       </div>
@@ -1449,7 +1448,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         And all week, one small group sharing their Pulse moments with
         each other. You may find that's the part you look forward to.
       </p>
-      <!-- DRAFT day-one prompt in Radha's voice — for his sign-off -->
+      <!-- DRAFT day-one prompt in Radha's voice — for sign-off -->
       <div class="practice-prompt rv rv-d3">
         &ldquo;Today, tell one person about a moment you actually felt. Not an update, a moment. Belonging starts the second someone knows where you really are.&rdquo;
         <div class="label">the first morning prompt &middot; draft</div>
@@ -1505,6 +1504,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
     <div class="arc-grid">
       <div class="arc-step rv">
         <div class="num">01 &middot; the first pulse &middot; mon, oct 19</div>
+        <!-- VERIFY: generic illustration — no Radha likeness reference on disk -->
         <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="An illustrated host on a small warm stage, golden ripples spreading as the week opens for a listening circle" loading="lazy">
         <b>Radha drops us in.</b>
         <p>Monday morning, live. She opens the theme and the one small practice that brings you back to the present. Tune in live, or catch the recording when your day allows.</p>
@@ -1632,7 +1632,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <div class="order-meter">
           <div class="om-label">order by <span class="fill">{{order_by_date}}</span> and it reaches your hand before the kickoff</div>
         </div>
-        <a class="btn--pill btn--ink" style="margin-top: 22px" href="https://{{shop_domain}}/discount/BELONG?redirect=/products/pulse-ring&utm_source=radha&utm_medium=landing&utm_campaign=be-present-together" data-track="ring-buy">Begin your 21 days</a>
+        <a class="btn--pill btn--ink" style="margin-top: 22px" href="https://{{shop_domain}}/discount/BELONG?redirect=/products/pulse-ring&utm_source=belong&utm_medium=landing&utm_campaign=be-present-together" data-track="ring-buy">Begin your 21 days</a>
         <div class="terms">21-day trial &middot; money-back guarantee &middot; free sizing exchanges</div>
         <p class="still-free">And if the free week is all you want, the free week is yours.</p>
       </div>
@@ -1711,7 +1711,7 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (isNaN(kickoff)) {
     /* placeholder date: swap the broken clock for a calm line */
     clock.style.display = 'none';
-    labelEl.innerHTML = '<span class="ho-theme cd-theme">Belonging</span> · late september';
+    labelEl.innerHTML = '<span class="ho-theme cd-theme">Belonging</span> · late october';
     return;
   }
   var STATES = [
