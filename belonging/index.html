@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Weekly Pulse &middot; Week Five: Belonging, with Radha Agrawal</title>
+<title>Our Weekly Pulse &middot; Week Four: Belonging, with Radha Agrawal</title>
 <meta name="description" content="A free live week with Radha Agrawal. One theme, one small practice at a time, together. From Pulse and Unify. No ring required.">
 <!-- PLACEHOLDER: set absolute URLs before publish so shares unfurl -->
-<meta property="og:title" content="Our Weekly Pulse &middot; Week Five: Belonging, hosted live by Radha Agrawal">
+<meta property="og:title" content="Our Weekly Pulse &middot; Week Four: Belonging, hosted live by Radha Agrawal">
 <meta property="og:description" content="One week. One theme. One host. A live kickoff, a practice all week, and a closing circle. Join from anywhere. Free.">
 <meta property="og:image" content="{{page_url}}/images/zoom-grid.jpg">
 <meta property="og:url" content="{{page_url}}">
@@ -1307,14 +1307,14 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
       <span class="amp">&amp;</span>
       <span class="logo">unify</span>
     </div>
-    <div class="label label--light">october 19 &ndash; 23 &middot; live, from anywhere</div>
+    <div class="label label--light">october 12 &ndash; 16 &middot; live, from anywhere</div>
   </div>
   <div class="hero-inner">
     <div class="hero-lockup rv">BREAK AUTOPILOT</div>
     <h1 class="rv rv-d1">Our Weekly <em>Pulse</em></h1>
     <p class="hero-line rv rv-d2">We all run on autopilot, and we can choose.</p>
     <div class="hero-one rv rv-d2">
-      <span class="ho-week">week five</span>
+      <span class="ho-week">week four</span>
       <span class="ho-title"><span class="ho-herefor">Here for</span> <span class="ho-theme">Belonging</span></span>
       <span class="ho-host">with radha agrawal</span>
     </div>
@@ -1325,8 +1325,8 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
     </div>
   </div>
   <!-- countdown strip: kickoff -> week -> full circle, one clock, phase-aware -->
-  <!-- PENCILED proof-of-concept dates: kickoff Monday Oct 19, full circle Friday Oct 23, 7pm CT — confirm before publish -->
-  <div class="strip" data-kickoff="2026-10-20T00:00:00Z" data-close="2026-10-24T00:00:00Z">
+  <!-- PENCILED proof-of-concept dates: kickoff Monday Oct 12, full circle Friday Oct 16, 7pm CT — confirm before publish -->
+  <div class="strip" data-kickoff="2026-10-13T00:00:00Z" data-close="2026-10-17T00:00:00Z">
     <div class="strip-inner">
       <div>
         <p class="strip-kicker" id="cdLabel">Countdown to <span class="ho-theme cd-theme">Belonging</span></p>
@@ -1334,7 +1334,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
           <div><b>&mdash;</b><i>days</i></div>
         </div>
       </div>
-      <p class="strip-where" id="cdWhere">Live on the call, from anywhere<br>October 19 &middot; 7:00 pm CT</p>
+      <p class="strip-where" id="cdWhere">Live on the call, from anywhere<br>October 12 &middot; 7:00 pm CT</p>
     </div>
   </div>
 </header>
@@ -1504,16 +1504,16 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <span class="ws-word ws-word--a">The First Pulse</span>
         <span class="ws-mid">a week of<br>practicing belonging</span>
         <span class="ws-word ws-word--b">The Closing Circle</span>
-        <span class="ws-date ws-date--a">mon &middot; oct 19</span>
+        <span class="ws-date ws-date--a">mon &middot; oct 12</span>
         <span class="ws-note ws-note--a">the week opens, live</span>
-        <span class="ws-date ws-date--b">fri &middot; oct 23</span>
+        <span class="ws-date ws-date--b">fri &middot; oct 16</span>
         <span class="ws-note ws-note--b">share your peak Pulse moments</span>
       </div>
       </div>
           </div>
     <div class="arc-grid">
       <div class="arc-step rv">
-        <div class="num">01 &middot; the first pulse &middot; mon, oct 19</div>
+        <div class="num">01 &middot; the first pulse &middot; mon, oct 12</div>
         <!-- VERIFY: generic illustration — no Radha likeness reference on disk -->
         <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="An illustrated circle gathering in a warm evening room, ripples of light through the center" loading="lazy">
         <b>Radha drops us in.</b>
@@ -1526,7 +1526,7 @@ a.work-tile:hover .work-link { text-decoration-thickness: 2px; }
         <p>All week, Radha drops short prompts and pro tips in the thread. So when your ring taps, you have something to do with the moment, and people doing it right alongside you.</p>
       </div>
       <div class="arc-step rv rv-d2">
-        <div class="num">03 &middot; the closing pulse &middot; fri, oct 23</div>
+        <div class="num">03 &middot; the closing pulse &middot; fri, oct 16</div>
         <img class="arc-img" decoding="async" src="images/full-circle.jpg" alt="The same circle of people in one warm evening room, hands raised, honey ripples spreading through the center" loading="lazy">
         <b>The circle closes.</b>
         <p>On the last evening you return to where you began, share the Pulse moment that stayed with you, and choose what comes with you. Life is always happening right here. The week is how you remember that.</p>
@@ -1720,12 +1720,12 @@ var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (isNaN(kickoff)) {
     /* placeholder date: swap the broken clock for a calm line */
     clock.style.display = 'none';
-    labelEl.innerHTML = '<span class="ho-theme cd-theme">Belonging</span> · late october';
+    labelEl.innerHTML = '<span class="ho-theme cd-theme">Belonging</span> · mid october';
     return;
   }
   var STATES = [
-    { t: kickoff, label: 'Countdown to <span class="ho-theme cd-theme">Belonging</span>', where: 'Live on the call, from anywhere · Monday, October 19, 7:00 pm CT' },
-    { t: isNaN(close) ? kickoff + 6 * 864e5 : close, label: 'The week is running · full circle in', where: 'The circle closes Friday, October 23, 7:00 pm CT' }
+    { t: kickoff, label: 'Countdown to <span class="ho-theme cd-theme">Belonging</span>', where: 'Live on the call, from anywhere · Monday, October 12, 7:00 pm CT' },
+    { t: isNaN(close) ? kickoff + 6 * 864e5 : close, label: 'The week is running · full circle in', where: 'The circle closes Friday, October 16, 7:00 pm CT' }
   ];
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function cell(val, unit) {
