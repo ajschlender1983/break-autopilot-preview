@@ -224,6 +224,15 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
   filter: sepia(0.28) saturate(1.05) contrast(1.04) brightness(1.03);
 }
 .week-thumb--illo { object-position: center 30%; }
+.week-thumb--mono {
+  width: 58px; height: 58px; flex: none;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(155deg, #1E1C13, #0C0D11);
+  color: var(--honey);
+  font-family: var(--mono); font-size: 15px; letter-spacing: 0.08em;
+  border: 2px solid rgba(201,162,39,0.55);
+}
 .week-meta { flex: 1; min-width: 0; }
 .week-meta .num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--muted); white-space: nowrap; }
 .week-name { font-size: 18px; line-height: 1.2; margin: 2px 0; }
@@ -275,7 +284,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
     <div class="next-bg" aria-hidden="true"></div>
     <div class="next-veil" aria-hidden="true"></div>
     <div class="next-inner">
-      <div class="label label--light">up next &middot; week four</div>
+      <div class="label label--light">up next &middot; week five</div>
       <span class="next-title"><span class="herefor">Here for</span> <span class="themeword themeword--gold">Belonging</span></span>
       <div class="next-host">with radha agrawal</div>
       <div class="next-chip">
@@ -283,7 +292,7 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
         <div class="chip-mono" aria-hidden="true">RA</div>
         <span class="chip-bio">co-founder of daybreaker &middot; the belong center &middot; author of belong</span><!-- VERIFY bio -->
       </div>
-      <div class="next-dates">mon, oct 12 &ndash; fri, oct 16 &middot; live, from anywhere</div>
+      <div class="next-dates">mon, oct 19 &ndash; fri, oct 23 &middot; live, from anywhere</div>
       <div class="next-clock" id="clock" aria-live="off"></div>
       <span class="btn--pill">I&rsquo;m here for it</span>
       <div class="next-note">yours as a member &middot; live calls + prompts + replays</div>
@@ -307,20 +316,31 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
       <span class="week-go">replay &rarr;</span>
     </a>
 
-    <a class="week-row" href="../joy/" data-track="portal-w2">
-      <img class="week-thumb" src="images/brent-freeman-hero.jpg" alt="Brent Freeman">
+    <a class="week-row" href="../peace/" data-track="portal-w2">
+      <!-- VERIFY: swap monogram for Patrick's photo; confirm spelling of Kronfli -->
+      <div class="week-thumb--mono" aria-hidden="true">PK</div>
       <span class="week-meta">
         <span class="num">wk 2 &middot; sept 28&ndash;oct 2</span>
+        <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Peace</span></span>
+        <span class="week-host">with patrick kronfli &middot; unify</span>
+      </span>
+      <span class="week-go">replay &rarr;</span>
+    </a>
+
+    <a class="week-row" href="../joy/" data-track="portal-w3">
+      <img class="week-thumb" src="images/brent-freeman-hero.jpg" alt="Brent Freeman">
+      <span class="week-meta">
+        <span class="num">wk 3 &middot; oct 5&ndash;9</span>
         <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Joy</span></span>
         <span class="week-host">with brent freeman</span>
       </span>
       <span class="week-go">replay &rarr;</span>
     </a>
 
-    <a class="week-row" href="../pleasure/" data-track="portal-w3">
+    <a class="week-row" href="../pleasure/" data-track="portal-w4">
       <img class="week-thumb" src="images/emily-fletcher-hero.jpg" alt="Emily Fletcher">
       <span class="week-meta">
-        <span class="num">wk 3 &middot; oct 5&ndash;9</span>
+        <span class="num">wk 4 &middot; oct 12&ndash;16</span>
         <span class="week-name" style="display:block"><span class="herefor">Here for</span> <span class="themeword themeword--ink">Pleasure</span></span>
         <span class="week-host">with emily fletcher</span>
       </span>
@@ -340,8 +360,8 @@ a:focus-visible { outline: 2.5px solid var(--honey); outline-offset: 3px; border
 <script>
 /* countdown to the next kickoff — minutes-level, phase-aware */
 (function () {
-  var KICKOFF = Date.parse('2026-10-13T00:00:00Z');   /* PENCILED: Belonging, Mon Oct 12 7pm CT */
-  var CLOSE   = Date.parse('2026-10-17T00:00:00Z');
+  var KICKOFF = Date.parse('2026-10-20T00:00:00Z');   /* PENCILED: Belonging, Mon Oct 19 7pm CT */
+  var CLOSE   = Date.parse('2026-10-24T00:00:00Z');
   var el = document.getElementById('clock');
   if (!el || isNaN(KICKOFF)) return;
   function cell(v, u) {
