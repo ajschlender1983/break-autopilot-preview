@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse on Purpose · Logotype Workshop</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PULSE ON PURPOSE — logotype + header workshop
+   Four directions, each as a full hero mock, plus copy options.
+   Nothing here ships until Adam picks.
+   ============================================================ */
+:root {
+  --cream:      #EBE7D4;
+  --cream-warm: #F9F6E5;
+  --void:       #0C0D11;
+  --ink:        #1A1C22;
+  --honey:      #C9A227;
+  --honey-hi:   #E8C86A;
+  --honey-deep: #8A6D14;
+  --accent:     #E3F47D;
+  --muted:      #6E6857;
+  --font: "DM Sans", -apple-system, sans-serif;
+  --mono: "DM Mono", ui-monospace, monospace;
+  --serif: "DM Serif Display", Georgia, serif;
+  --beat: 3s;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font); background: var(--cream); color: var(--ink); letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; }
+
+.intro { max-width: 720px; margin: 0 auto; padding: 48px 24px 20px; text-align: center; }
+.intro .k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--muted); text-transform: lowercase; margin-bottom: 10px; }
+.intro h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 600; letter-spacing: -0.04em; }
+.intro p { margin-top: 12px; font-size: 16px; line-height: 1.55; color: #474234; }
+
+.dir { margin: 44px auto 0; max-width: 1080px; padding: 0 18px; }
+.dir-tag { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.dir-tag b { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; background: var(--ink); color: var(--cream-warm); border-radius: 100px; padding: 5px 14px; }
+.dir-tag span { font-size: 15px; color: #474234; }
+
+.hero {
+  position: relative; border-radius: 22px; overflow: hidden;
+  background: var(--void) url('images/hero-ring-poster.jpg') center 38% / cover no-repeat;
+  min-height: 560px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: var(--cream-warm);
+}
+.hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 42%, rgba(12,13,17,0.18), rgba(12,13,17,0.78)); }
+.hero-inner { position: relative; padding: 64px 24px; width: 100%; }
+.kicker { font-family: var(--mono); font-size: 13px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--honey); margin-bottom: 26px; }
+.sub { margin-top: 22px; font-size: clamp(17px, 2.4vw, 21px); font-weight: 300; color: rgba(249,246,229,0.92); letter-spacing: -0.01em; }
+.weekline { margin-top: 30px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.18em; text-transform: lowercase; color: rgba(249,246,229,0.62); }
+
+/* shared beating dot + ripple */
+.pdot { position: relative; display: inline-block; color: var(--honey); }
+.pdot .ring {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 1.6em; height: 1.6em;
+  margin: -0.8em 0 0 -0.8em; border: 1.5px solid rgba(201,162,39,0.8); border-radius: 50%;
+  animation: rip var(--beat) ease-out infinite; pointer-events: none;
+}
+@keyframes rip { 0% { transform: scale(0.24); opacity: 0.9; } 70% { transform: scale(1.5); opacity: 0; } 100% { opacity: 0; } }
+
+/* ---------- A · the living wordmark ---------- */
+.lt-a { font-size: clamp(44px, 7.6vw, 84px); font-weight: 600; letter-spacing: -0.05em; line-height: 1.02; }
+.lt-a .on { font-weight: 300; font-style: italic; color: rgba(249,246,229,0.85); }
+
+/* ---------- B · the serif pivot ---------- */
+.lt-b { font-size: clamp(46px, 8vw, 88px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.04; }
+.lt-b .purpose {
+  font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em;
+  background: linear-gradient(100deg, var(--cream-warm) 2%, var(--honey) 55%, var(--honey-hi) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-right: 0.08em;
+  filter: drop-shadow(0 2px 14px rgba(0,0,0,0.55));
+}
+
+/* ---------- C · the stacked spine ---------- */
+.lt-c { display: inline-flex; flex-direction: column; align-items: center; line-height: 0.98; }
+.lt-c .big { font-size: clamp(52px, 9.4vw, 104px); font-weight: 700; letter-spacing: -0.05em; }
+.lt-c .onrow {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  margin: 0.28em 0; padding: 0 0.06em;
+}
+.lt-c .onrow::before, .lt-c .onrow::after { content: ""; flex: 1; height: 1px; background: rgba(201,162,39,0.55); }
+.lt-c .onrow span { font-family: var(--mono); font-size: clamp(13px, 2vw, 17px); letter-spacing: 0.5em; text-indent: 0.5em; color: var(--honey); }
+.lt-c .big--serif { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.015em;
+  background: linear-gradient(100deg, var(--cream-warm) 2%, var(--honey) 58%, var(--honey-hi) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 0.06em 0.06em; }
+
+/* ---------- D · the ring O ---------- */
+.lt-d { font-size: clamp(42px, 7.2vw, 80px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.05; white-space: nowrap; }
+.ringo {
+  position: relative; display: inline-block; width: 0.92em; height: 0.92em; margin: 0 0.02em;
+  vertical-align: -0.09em;
+}
+.ringo i {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 0.075em solid var(--honey);
+  box-shadow: 0 0 18px rgba(201,162,39,0.45), inset 0 0 10px rgba(201,162,39,0.25);
+}
+.ringo em { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(201,162,39,0.7); animation: rip var(--beat) ease-out infinite; }
+.ringo em:nth-child(3) { animation-delay: 1s; }
+.lt-d .quiet { font-weight: 300; font-style: italic; color: rgba(249,246,229,0.85); }
+
+/* ---------- copy workshop ---------- */
+.copyshop { max-width: 860px; margin: 56px auto 0; padding: 0 18px; }
+.copyshop h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 600; letter-spacing: -0.035em; margin-bottom: 6px; }
+.copyshop .note { color: #474234; font-size: 15.5px; line-height: 1.55; margin-bottom: 20px; }
+.copygrid { display: grid; gap: 12px; }
+.copyrow {
+  background: var(--cream-warm); border: 1px solid rgba(66,61,50,0.09); border-radius: 14px;
+  padding: 16px 18px; display: flex; gap: 14px; align-items: baseline;
+  box-shadow: 0 10px 26px rgba(66,61,50,0.06);
+}
+.copyrow b { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--honey-deep); flex: none; }
+.copyrow div { font-size: 16.5px; line-height: 1.5; }
+.copyrow .why { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+.foot { text-align: center; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.06em; color: var(--muted); padding: 54px 20px 64px; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <div class="k">workshop &middot; nothing ships until you pick</div>
+  <h1>Pulse on Purpose</h1>
+  <p>Four logotype directions, each mocked in the real hero. Below them, kicker and subline options. Reply with a letter and a couple of copy numbers, or mix (&ldquo;B with the C spine for posters, kicker 2, subline 3&rdquo;).</p>
+</div>
+
+<!-- =============== A =============== -->
+<div class="dir">
+  <div class="dir-tag"><b>A</b><span>The living wordmark &mdash; the series inherits the product logotype: the beating honey dot IS the brand.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="lt-a">pulse <span class="on">on</span> purpose<span class="pdot">.<span class="ring"></span></span></div>
+    <div class="sub">A live series for doing life on purpose.</div>
+    <div class="weekline">week two &middot; here for peace &middot; with patrick kronfli</div>
+  </div></div>
+</div>
+
+<!-- =============== B =============== -->
+<div class="dir">
+  <div class="dir-tag"><b>B</b><span>The serif pivot &mdash; &ldquo;Purpose&rdquo; carries the gold serif italic your theme words already wear. The name and the themes become one voice.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="lt-b">Pulse on <span class="purpose">Purpose</span></div>
+    <div class="sub">One small practice a week, felt all the way through.</div>
+    <div class="weekline">week two &middot; here for peace &middot; with patrick kronfli</div>
+  </div></div>
+</div>
+
+<!-- =============== C =============== -->
+<div class="dir">
+  <div class="dir-tag"><b>C</b><span>The stacked spine &mdash; poster energy. &ldquo;on&rdquo; becomes a quiet mono hinge between two big words. Strongest as a mark you could print.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="lt-c">
+      <span class="big">PULSE</span>
+      <span class="onrow"><span>on</span></span>
+      <span class="big big--serif">Purpose</span>
+    </div>
+    <div class="sub">Live every Monday. On purpose all week.</div>
+    <div class="weekline">week two &middot; here for peace &middot; with patrick kronfli</div>
+  </div></div>
+</div>
+
+<!-- =============== D =============== -->
+<div class="dir">
+  <div class="dir-tag"><b>D</b><span>The ring O &mdash; the O of &ldquo;on&rdquo; is the ring itself, pulsing. The product sits inside the name without saying a word.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="lt-d">pulse <span class="ringo"><i></i><em></em><em></em></span><span class="quiet">n</span> purpose</div>
+    <div class="sub">The ring hums. You come back. On purpose.</div>
+    <div class="weekline">week two &middot; here for peace &middot; with patrick kronfli</div>
+  </div></div>
+</div>
+
+<!-- =============== copy =============== -->
+<div class="copyshop">
+  <h2>Kicker options</h2>
+  <p class="note">The small gold line above the name.</p>
+  <div class="copygrid">
+    <div class="copyrow"><b>K1</b><div>BREAK AUTOPILOT<span class="why">the current line; the premise, loudest version</span></div></div>
+    <div class="copyrow"><b>K2</b><div>A LIVE SERIES FROM PULSE &amp; UNIFY<span class="why">plain provenance; lets the name do the talking</span></div></div>
+    <div class="copyrow"><b>K3</b><div>EVERY MONDAY &middot; LIVE, FROM ANYWHERE<span class="why">the promise as the kicker; useful once the series is known</span></div></div>
+  </div>
+</div>
+
+<div class="copyshop">
+  <h2>Subline options</h2>
+  <p class="note">The single sentence under the name.</p>
+  <div class="copygrid">
+    <div class="copyrow"><b>S1</b><div>We all run on autopilot, and we can choose.<span class="why">the current line; problem first</span></div></div>
+    <div class="copyrow"><b>S2</b><div>A live series for doing life on purpose.<span class="why">names the offer, echoes the name</span></div></div>
+    <div class="copyrow"><b>S3</b><div>One theme, one guide, one small practice a week.<span class="why">the format in nine words</span></div></div>
+    <div class="copyrow"><b>S4</b><div>Autopilot is the default. This is the choice.<span class="why">problem and answer in two short beats</span></div></div>
+  </div>
+</div>
+
+<div class="foot">
+  pulse on purpose &middot; logotype workshop &middot; august 2026<br>
+  current pages keep &ldquo;Our Weekly Pulse&rdquo; until a direction is chosen
+</div>
+
+</body>
+</html>
