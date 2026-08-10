@@ -129,6 +129,34 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
 .h-eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.3em; text-transform: lowercase; color: rgba(249,246,229,0.8); margin-bottom: 18px; }
 .h-eyebrow .dot { color: var(--honey); }
 
+/* ---------- round 3: headshot x lifestyle ---------- */
+.hero--life { background-size: cover; background-position: center; min-height: 600px; }
+.hero--left { text-align: left; justify-content: flex-start; }
+.hero--left .hero-inner { max-width: 56%; padding-left: clamp(28px, 5vw, 72px); }
+.hero--left::before { background: linear-gradient(100deg, rgba(12,13,17,0.86) 34%, rgba(12,13,17,0.28) 68%, rgba(12,13,17,0.12) 100%); }
+.hh-portrait {
+  position: absolute; right: clamp(18px, 4vw, 56px); bottom: 0; top: 7%;
+  width: clamp(220px, 30%, 360px); object-fit: cover; object-position: center top;
+  border-radius: 18px 18px 0 0; border: 1px solid rgba(201,162,39,0.35);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+}
+.hh-cameo {
+  width: clamp(110px, 14vw, 150px); height: clamp(110px, 14vw, 150px);
+  border-radius: 50%; object-fit: cover; margin: 0 auto 18px;
+  border: 2.5px solid rgba(201,162,39,0.75); box-shadow: 0 0 0 7px rgba(201,162,39,0.16), 0 22px 50px rgba(0,0,0,0.55);
+}
+.hh-blend {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 52%;
+  object-fit: cover; object-position: center top; opacity: 0.94;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 42%);
+}
+.bg-gallery { max-width: 1080px; margin: 40px auto 0; padding: 0 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.bg-card { background: var(--cream-warm); border: 1px solid rgba(66,61,50,0.09); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm, 0 10px 26px rgba(66,61,50,0.07)); }
+.bg-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.bg-card .bgc-row { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+.bg-card .bgc-row b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 19px; }
+
 /* ---------- copy workshop ---------- */
 .copyshop { max-width: 860px; margin: 56px auto 0; padding: 0 18px; }
 .copyshop h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 600; letter-spacing: -0.035em; margin-bottom: 6px; }
@@ -312,6 +340,65 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
   </div></div>
 </div>
 
+<!-- =============== round 3: headshot x lifestyle =============== -->
+<div class="r2head">
+  <div class="k">round 3 &middot; headshot &times; lifestyle background</div>
+  <h2>The host in the world of the theme.</h2>
+  <p>Real photographic backgrounds, one per theme, warm over deep shadow so the header still reads. Three ways the host&rsquo;s portrait can live against them, each shown with a different week. Vote on the treatments AND the backgrounds below.</p>
+</div>
+
+<div class="dir" data-item="L1">
+  <div class="dir-tag"><b>L1</b><span>Portrait anchor &mdash; text goes left, the honey portrait stands full-height on the right. The host shares the stage with the moment. <i>(shown: Presence &middot; Cory)</i></span></div>
+  <div class="hero hero--life hero--left" style="background-image:url('images/lifestyle-presence.jpg')"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="wm" style="font-size:clamp(34px,5.4vw,60px)">pulse <span class="on">on</span> purpose<span class="dot">.</span></div>
+    <div class="h-sub">Autopilot is the default. This is the choice.</div>
+    <div class="h-theme" style="margin-top:22px"><span class="herefor">Here for</span> <span class="tword">Presence</span></div>
+    <div class="h-meta" style="margin-top:10px">week one &middot; sept 21&ndash;25 &middot; with cory allen</div>
+    <div><span class="h-cta">I&rsquo;m here for it</span></div>
+    <div class="h-whisper">one small reset a week</div>
+  </div>
+  <img class="hh-portrait" src="images/cory-allen.jpg" alt="Cory Allen"></div>
+</div>
+
+<div class="dir" data-item="L2">
+  <div class="dir-tag"><b>L2</b><span>The cameo &mdash; centered layout, the host in one large haloed circle above the theme. Warm, personal, reads instantly at any size. <i>(shown: Joy &middot; Brent)</i></span></div>
+  <div class="hero hero--life" style="background-image:url('images/lifestyle-joy.jpg')"><div class="hero-inner">
+    <div class="h-eyebrow">pulse <span style="font-style:italic">on</span> purpose<span class="dot">.</span> &nbsp;&middot;&nbsp; week three</div>
+    <img class="hh-cameo" src="images/brent-chip.jpg" alt="Brent Freeman">
+    <div class="h-theme" style="font-size:clamp(40px,7vw,76px)"><span class="herefor">Here for</span> <span class="tword">Joy</span></div>
+    <div class="h-sub">Autopilot is the default. This is the choice.</div>
+    <div class="h-meta" style="margin-top:12px">oct 5&ndash;9 &middot; with brent freeman &middot; one small reset a week</div>
+    <div><span class="h-cta">I&rsquo;m here for it</span></div>
+  </div></div>
+</div>
+
+<div class="dir" data-item="L3">
+  <div class="dir-tag"><b>L3</b><span>The blend &mdash; the portrait dissolves into the right edge of the scene, one continuous image. Most cinematic, most editorial. <i>(shown: Peace &middot; Patrick)</i></span></div>
+  <div class="hero hero--life hero--left" style="background-image:url('images/lifestyle-peace.jpg')">
+  <img class="hh-blend" src="images/patrick-kronfli-hero.jpg" alt="Patrick Kronfli">
+  <div class="hero-inner" style="position:relative;z-index:2">
+    <div class="kicker">Break autopilot</div>
+    <div class="wm" style="font-size:clamp(34px,5.4vw,60px)">pulse <span class="on">on</span> purpose<span class="dot">.</span></div>
+    <div class="h-sub">Autopilot is the default. This is the choice.</div>
+    <div class="h-theme" style="margin-top:22px"><span class="herefor">Here for</span> <span class="tword">Peace</span></div>
+    <div class="h-meta" style="margin-top:10px">week two &middot; sept 28&ndash;oct 2 &middot; with patrick kronfli</div>
+    <div><span class="h-cta">I&rsquo;m here for it</span></div>
+  </div></div>
+</div>
+
+<div class="r2head" style="margin-top:44px">
+  <div class="k">the backgrounds &middot; one per theme</div>
+  <h2>Vote the moments too.</h2>
+</div>
+<div class="bg-gallery">
+  <div class="bg-card" data-item="Bpresence"><img src="images/lifestyle-presence.jpg" alt="Hands around a steaming mug at a dawn window"><div class="bgc-row"><b>Presence</b></div></div>
+  <div class="bg-card" data-item="Bpeace"><img src="images/lifestyle-peace.jpg" alt="Curtains breathing at a golden-hour window"><div class="bgc-row"><b>Peace</b></div></div>
+  <div class="bg-card" data-item="Bjoy"><img src="images/lifestyle-joy.jpg" alt="Two friends laughing while pouring coffee"><div class="bgc-row"><b>Joy</b></div></div>
+  <div class="bg-card" data-item="Bpleasure"><img src="images/lifestyle-pleasure.jpg" alt="Sunlight across linen, a book and coffee"><div class="bgc-row"><b>Pleasure</b></div></div>
+  <div class="bg-card" data-item="Bbelonging"><img src="images/lifestyle-belonging.jpg" alt="A dusk table under string lights, cups meeting in a toast"><div class="bgc-row"><b>Belonging</b></div></div>
+</div>
+
 <!-- =============== copy =============== -->
 <div class="copyshop">
   <h2>Kicker options</h2>
@@ -400,6 +487,7 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
       votes.appendChild(b);
     });
     if (host.classList.contains('dir')) host.querySelector('.dir-tag').appendChild(votes);
+    else if (host.classList.contains('bg-card')) host.querySelector('.bgc-row').appendChild(votes);
     else if (!host.classList.contains('gq')) host.appendChild(votes);
   });
 
