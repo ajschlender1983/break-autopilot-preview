@@ -121,18 +121,79 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
 .copyrow .why { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; }
 
 .foot { text-align: center; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.06em; color: var(--muted); padding: 54px 20px 64px; line-height: 1.8; }
+
+/* ---------- review layer ---------- */
+.whobar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(235,231,212,0.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(66,61,50,0.1);
+  padding: 10px 18px; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.whobar label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--muted); }
+.whobar input {
+  font-family: var(--font); font-size: 15px; color: var(--ink);
+  background: var(--cream-warm); border: 1.5px solid rgba(66,61,50,0.18); border-radius: 100px;
+  padding: 7px 16px; width: min(240px, 50vw); outline: none;
+}
+.whobar input:focus { border-color: var(--honey); }
+.whobar .ok { font-family: var(--mono); font-size: 11px; color: var(--honey-deep); min-width: 52px; }
+
+.votes { display: inline-flex; gap: 8px; margin-left: auto; flex: none; }
+.vt {
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.02em;
+  border: 1.5px solid rgba(66,61,50,0.16); background: var(--cream-warm); color: var(--ink);
+  border-radius: 100px; padding: 6px 13px; cursor: pointer; transition: all .18s ease;
+}
+.vt:hover { border-color: var(--honey); }
+.vt[aria-pressed="true"] { background: var(--ink); color: var(--cream-warm); border-color: var(--ink); }
+.vt[aria-pressed="true"].vt-down { background: #7a3b2e; border-color: #7a3b2e; }
+.copyrow .votes { margin-left: auto; align-self: center; }
+.dir-tag { flex-wrap: wrap; }
+
+.thread { margin: 14px 2px 0; }
+.thread .tlist { display: grid; gap: 8px; margin-bottom: 10px; }
+.tc {
+  background: var(--cream-warm); border: 1px solid rgba(66,61,50,0.09); border-radius: 12px;
+  padding: 11px 14px; font-size: 15px; line-height: 1.5;
+}
+.tc .meta { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 3px; display: flex; gap: 8px; align-items: baseline; }
+.tc .qb { background: var(--honey); color: var(--void); border-radius: 5px; padding: 1px 6px; font-size: 10px; letter-spacing: 0.08em; }
+.tform { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tform input[type="text"] {
+  flex: 1; min-width: 220px; font-family: var(--font); font-size: 15px; color: var(--ink);
+  background: var(--cream-warm); border: 1.5px solid rgba(66,61,50,0.16); border-radius: 12px;
+  padding: 10px 14px; outline: none;
+}
+.tform input[type="text"]:focus { border-color: var(--honey); }
+.tform .qtog { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); cursor: pointer; }
+.tform button {
+  font-family: var(--font); font-weight: 600; font-size: 14px;
+  background: var(--accent); color: var(--void); border: none; border-radius: 100px;
+  padding: 10px 20px; cursor: pointer;
+}
+.gq { max-width: 1044px; margin: 56px auto 0; padding: 0 18px; }
+.gq h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 600; letter-spacing: -0.035em; margin-bottom: 6px; }
+.gq .note { color: #474234; font-size: 15.5px; margin-bottom: 16px; }
+.toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); background: var(--ink); color: var(--cream-warm); font-family: var(--mono); font-size: 12.5px; padding: 10px 18px; border-radius: 100px; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 60; }
+.toast.on { opacity: 1; }
 </style>
 </head>
 <body>
 
+<div class="whobar">
+  <label for="who">reviewing as</label>
+  <input id="who" type="text" placeholder="your name" autocomplete="name" maxlength="60">
+  <span class="ok" id="whook"></span>
+</div>
+
 <div class="intro">
-  <div class="k">workshop &middot; nothing ships until you pick</div>
+  <div class="k">workshop &middot; nothing ships until the votes are in</div>
   <h1>Pulse on Purpose</h1>
-  <p>Four logotype directions, each mocked in the real hero. Below them, kicker and subline options. Reply with a letter and a couple of copy numbers, or mix (&ldquo;B with the C spine for posters, kicker 2, subline 3&rdquo;).</p>
+  <p>Four logotype directions, each mocked in the real hero, then kicker and subline options. Put your name in the bar above, thumb what works, and leave comments or questions on any direction. Everything saves and everyone sees it.</p>
 </div>
 
 <!-- =============== A =============== -->
-<div class="dir">
+<div class="dir" data-item="A">
   <div class="dir-tag"><b>A</b><span>The living wordmark &mdash; the series inherits the product logotype: the beating honey dot IS the brand.</span></div>
   <div class="hero"><div class="hero-inner">
     <div class="kicker">Break autopilot</div>
@@ -143,7 +204,7 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
 </div>
 
 <!-- =============== B =============== -->
-<div class="dir">
+<div class="dir" data-item="B">
   <div class="dir-tag"><b>B</b><span>The serif pivot &mdash; &ldquo;Purpose&rdquo; carries the gold serif italic your theme words already wear. The name and the themes become one voice.</span></div>
   <div class="hero"><div class="hero-inner">
     <div class="kicker">Break autopilot</div>
@@ -154,7 +215,7 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
 </div>
 
 <!-- =============== C =============== -->
-<div class="dir">
+<div class="dir" data-item="C">
   <div class="dir-tag"><b>C</b><span>The stacked spine &mdash; poster energy. &ldquo;on&rdquo; becomes a quiet mono hinge between two big words. Strongest as a mark you could print.</span></div>
   <div class="hero"><div class="hero-inner">
     <div class="kicker">Break autopilot</div>
@@ -169,7 +230,7 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
 </div>
 
 <!-- =============== D =============== -->
-<div class="dir">
+<div class="dir" data-item="D">
   <div class="dir-tag"><b>D</b><span>The ring O &mdash; the O of &ldquo;on&rdquo; is the ring itself, pulsing. The product sits inside the name without saying a word.</span></div>
   <div class="hero"><div class="hero-inner">
     <div class="kicker">Break autopilot</div>
@@ -184,9 +245,9 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
   <h2>Kicker options</h2>
   <p class="note">The small gold line above the name.</p>
   <div class="copygrid">
-    <div class="copyrow"><b>K1</b><div>BREAK AUTOPILOT<span class="why">the current line; the premise, loudest version</span></div></div>
-    <div class="copyrow"><b>K2</b><div>A LIVE SERIES FROM PULSE &amp; UNIFY<span class="why">plain provenance; lets the name do the talking</span></div></div>
-    <div class="copyrow"><b>K3</b><div>EVERY MONDAY &middot; LIVE, FROM ANYWHERE<span class="why">the promise as the kicker; useful once the series is known</span></div></div>
+    <div class="copyrow" data-item="K1"><b>K1</b><div>BREAK AUTOPILOT<span class="why">the current line; the premise, loudest version</span></div></div>
+    <div class="copyrow" data-item="K2"><b>K2</b><div>A LIVE SERIES FROM PULSE &amp; UNIFY<span class="why">plain provenance; lets the name do the talking</span></div></div>
+    <div class="copyrow" data-item="K3"><b>K3</b><div>EVERY MONDAY &middot; LIVE, FROM ANYWHERE<span class="why">the promise as the kicker; useful once the series is known</span></div></div>
   </div>
 </div>
 
@@ -194,17 +255,194 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
   <h2>Subline options</h2>
   <p class="note">The single sentence under the name.</p>
   <div class="copygrid">
-    <div class="copyrow"><b>S1</b><div>We all run on autopilot, and we can choose.<span class="why">the current line; problem first</span></div></div>
-    <div class="copyrow"><b>S2</b><div>A live series for doing life on purpose.<span class="why">names the offer, echoes the name</span></div></div>
-    <div class="copyrow"><b>S3</b><div>One theme, one guide, one small practice a week.<span class="why">the format in nine words</span></div></div>
-    <div class="copyrow"><b>S4</b><div>Autopilot is the default. This is the choice.<span class="why">problem and answer in two short beats</span></div></div>
+    <div class="copyrow" data-item="S1"><b>S1</b><div>We all run on autopilot, and we can choose.<span class="why">the current line; problem first</span></div></div>
+    <div class="copyrow" data-item="S2"><b>S2</b><div>A live series for doing life on purpose.<span class="why">names the offer, echoes the name</span></div></div>
+    <div class="copyrow" data-item="S3"><b>S3</b><div>One theme, one guide, one small practice a week.<span class="why">the format in nine words</span></div></div>
+    <div class="copyrow" data-item="S4"><b>S4</b><div>Autopilot is the default. This is the choice.<span class="why">problem and answer in two short beats</span></div></div>
   </div>
+</div>
+
+<div class="gq" data-item="general">
+  <h2>Questions &amp; notes</h2>
+  <p class="note">Anything that isn&rsquo;t about one specific direction.</p>
+  <div class="thread"></div>
 </div>
 
 <div class="foot">
   pulse on purpose &middot; logotype workshop &middot; august 2026<br>
   current pages keep &ldquo;Our Weekly Pulse&rdquo; until a direction is chosen
 </div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  var API = 'https://pop-workshop-feedback.ajschlender.workers.dev';
+  var whoEl = document.getElementById('who');
+  var whook = document.getElementById('whook');
+  var toast = document.getElementById('toast');
+  var state = { events: [] };
+
+  whoEl.value = localStorage.getItem('pop.name') || '';
+  updateWho();
+  whoEl.addEventListener('input', function () {
+    localStorage.setItem('pop.name', whoEl.value.trim()); updateWho();
+  });
+  function updateWho() { whook.textContent = whoEl.value.trim().length >= 2 ? '✓ saved' : ''; }
+  function who() {
+    var n = whoEl.value.trim();
+    if (n.length < 2) {
+      say('add your name in the bar up top first');
+      whoEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      whoEl.focus();
+      return null;
+    }
+    return n;
+  }
+  function say(msg) {
+    toast.textContent = msg; toast.classList.add('on');
+    clearTimeout(say.t); say.t = setTimeout(function () { toast.classList.remove('on'); }, 2600);
+  }
+  // small DOM helper — content always set via textContent (no HTML injection path)
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+
+  // ---------- build vote chips ----------
+  document.querySelectorAll('[data-item]').forEach(function (host) {
+    var item = host.dataset.item;
+    var votes = el('span', 'votes');
+    [['up', '👍'], ['down', '👎']].forEach(function (pair) {
+      var b = el('button', 'vt vt-' + pair[0]);
+      b.type = 'button';
+      b.dataset.v = pair[0];
+      b.setAttribute('aria-pressed', 'false');
+      b.setAttribute('aria-label', 'thumbs ' + pair[0] + ' ' + item);
+      b.appendChild(el('span', 'vt-ico', pair[1] + ' '));
+      b.appendChild(el('span', 'vt-n', '0'));
+      b.addEventListener('click', function () { castVote(item, pair[0]); });
+      votes.appendChild(b);
+    });
+    if (host.classList.contains('dir')) host.querySelector('.dir-tag').appendChild(votes);
+    else if (!host.classList.contains('gq')) host.appendChild(votes);
+  });
+
+  // ---------- build threads ----------
+  ['A', 'B', 'C', 'D'].forEach(function (item) {
+    var dir = document.querySelector('.dir[data-item="' + item + '"]');
+    dir.appendChild(buildThread(item));
+  });
+  var gq = document.querySelector('.gq');
+  gq.replaceChild(buildThread('general'), gq.querySelector('.thread'));
+
+  function buildThread(item) {
+    var thread = el('div', 'thread');
+    thread.dataset.thread = item;
+    thread.appendChild(el('div', 'tlist'));
+    var form = el('form', 'tform');
+    var input = el('input');
+    input.type = 'text'; input.maxLength = 2000;
+    input.placeholder = 'leave a comment or ask a question…';
+    var qlab = el('label', 'qtog');
+    var qbox = el('input'); qbox.type = 'checkbox';
+    qlab.appendChild(qbox);
+    qlab.appendChild(document.createTextNode(' it’s a question'));
+    var btn = el('button', '', 'Post'); btn.type = 'submit';
+    form.appendChild(input); form.appendChild(qlab); form.appendChild(btn);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var n = who(); if (!n) return;
+      var text = input.value.trim(); if (!text) return;
+      post({ kind: 'comment', item: item, name: n, text: text, question: qbox.checked });
+      state.events.push({ kind: 'comment', item: item, name: n, text: text, question: qbox.checked, t: Date.now() });
+      input.value = ''; qbox.checked = false;
+      render();
+    });
+    thread.appendChild(form);
+    return thread;
+  }
+
+  function castVote(item, v) {
+    var n = who(); if (!n) return;
+    post({ kind: 'vote', item: item, name: n, vote: v });
+    state.events.push({ kind: 'vote', item: item, name: n, vote: v, t: Date.now() });
+    render();
+  }
+
+  // serialized post queue: one request at a time, one retry — rapid clicks never race
+  var chain = Promise.resolve();
+  function post(body) {
+    chain = chain.then(function () { return send(body, 1); });
+  }
+  function send(body, retries) {
+    return fetch(API + '/event', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+    }).then(function (r) { if (!r.ok) throw 0; say('saved'); })
+      .catch(function () {
+        if (retries > 0) return new Promise(function (res) { setTimeout(res, 900); }).then(function () { return send(body, retries - 1); });
+        say('could not save, check connection');
+      });
+  }
+
+  // ---------- render ----------
+  function render() {
+    var me = whoEl.value.trim();
+    var latest = {};       // one vote per person per item, last wins
+    state.events.forEach(function (e) {
+      if (e.kind === 'vote') latest[e.item + '|' + e.name] = e;
+    });
+    var tally = {};
+    Object.keys(latest).forEach(function (k) {
+      var e = latest[k]; tally[e.item] = tally[e.item] || { up: [], down: [] };
+      tally[e.item][e.vote].push(e.name);
+    });
+    document.querySelectorAll('[data-item]').forEach(function (host) {
+      var item = host.dataset.item, t = tally[item] || { up: [], down: [] };
+      var up = host.querySelector('.vt-up'), down = host.querySelector('.vt-down');
+      if (!up) return;
+      up.querySelector('.vt-n').textContent = String(t.up.length);
+      down.querySelector('.vt-n').textContent = String(t.down.length);
+      up.title = t.up.join(', '); down.title = t.down.join(', ');
+      up.setAttribute('aria-pressed', String(t.up.indexOf(me) > -1));
+      down.setAttribute('aria-pressed', String(t.down.indexOf(me) > -1));
+    });
+    document.querySelectorAll('.thread').forEach(function (thread) {
+      var item = thread.dataset.thread;
+      var list = thread.querySelector('.tlist');
+      while (list.firstChild) list.removeChild(list.firstChild);
+      state.events.forEach(function (c) {
+        if (c.kind !== 'comment' || c.item !== item) return;
+        var card = el('div', 'tc');
+        var meta = el('div', 'meta');
+        meta.appendChild(el('b', '', c.name));
+        if (c.question) meta.appendChild(el('span', 'qb', 'QUESTION'));
+        meta.appendChild(el('span', '', ago(c.t)));
+        card.appendChild(meta);
+        card.appendChild(document.createTextNode(c.text));
+        list.appendChild(card);
+      });
+    });
+  }
+  function ago(t) {
+    var m = Math.round((Date.now() - t) / 60000);
+    if (m < 1) return 'just now'; if (m < 60) return m + 'm ago';
+    var h = Math.round(m / 60); if (h < 24) return h + 'h ago';
+    return Math.round(h / 24) + 'd ago';
+  }
+
+  function refresh() {
+    fetch(API + '/state').then(function (r) { return r.json(); }).then(function (d) {
+      state = d; render();
+    }).catch(function () {});
+  }
+  refresh();
+  setInterval(refresh, 25000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) refresh(); });
+})();
+</script>
 
 </body>
 </html>
