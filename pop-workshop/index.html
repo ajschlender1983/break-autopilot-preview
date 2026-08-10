@@ -106,6 +106,29 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
 .ringo em:nth-child(3) { animation-delay: 1s; }
 .lt-d .quiet { font-weight: 300; font-style: italic; color: rgba(249,246,229,0.85); }
 
+/* ---------- header round 2 ---------- */
+.r2head { max-width: 1080px; margin: 64px auto 0; padding: 0 18px; }
+.r2head .k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--honey-deep); margin-bottom: 8px; }
+.r2head h2 { font-size: clamp(24px, 4vw, 34px); font-weight: 600; letter-spacing: -0.035em; }
+.r2head p { margin-top: 8px; color: #474234; font-size: 15.5px; line-height: 1.55; max-width: 760px; }
+.wm { font-weight: 600; letter-spacing: -0.05em; }
+.wm .on { font-weight: 300; font-style: italic; color: rgba(249,246,229,0.85); }
+.wm .dot { color: var(--honey); }
+.h-sub { margin-top: 18px; font-size: clamp(16px, 2.2vw, 20px); font-weight: 300; color: rgba(249,246,229,0.92); }
+.h-meta { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.16em; text-transform: lowercase; color: rgba(249,246,229,0.66); }
+.h-theme { font-size: clamp(30px, 5vw, 52px); }
+.h-theme .herefor { font-style: italic; font-weight: 300; }
+.h-theme .tword { font-family: var(--serif); font-style: italic; font-weight: 400;
+  background: linear-gradient(100deg, var(--cream-warm) 4%, var(--honey) 58%, var(--honey-hi) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 0.08em; }
+.h-chiprow { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; }
+.h-chiprow img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid rgba(201,162,39,0.65); }
+.h-cta { display: inline-flex; background: var(--accent); color: var(--void); border-radius: 100px; padding: 13px 38px; font-weight: 600; font-size: 15px; margin-top: 22px; }
+.h-whisper { margin-top: 14px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.22em; color: rgba(201,162,39,0.75); }
+.h-card { display: inline-block; margin-top: 24px; padding: 20px 34px; border: 1px solid rgba(201,162,39,0.35); border-radius: 18px; background: rgba(12,13,17,0.35); backdrop-filter: blur(4px); }
+.h-eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.3em; text-transform: lowercase; color: rgba(249,246,229,0.8); margin-bottom: 18px; }
+.h-eyebrow .dot { color: var(--honey); }
+
 /* ---------- copy workshop ---------- */
 .copyshop { max-width: 860px; margin: 56px auto 0; padding: 0 18px; }
 .copyshop h2 { font-size: clamp(24px, 4vw, 32px); font-weight: 600; letter-spacing: -0.035em; margin-bottom: 6px; }
@@ -241,6 +264,54 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
   </div></div>
 </div>
 
+<!-- =============== header round 2 =============== -->
+<div class="r2head">
+  <div class="k">header round 2 &middot; hierarchy</div>
+  <h2>Same ingredients, three chains of command.</h2>
+  <p>The current hero stacks seven layers and they compete. Each option below keeps the Option A wordmark and the new subline, and picks ONE thing to lead. Thumb and comment as before. Once a layout wins, round 3 brings per-theme lifestyle hero imagery to replace the ring macro.</p>
+</div>
+
+<div class="dir" data-item="H1">
+  <div class="dir-tag"><b>H1</b><span>Brand leads &mdash; the wordmark stays the headline; week, theme and host compress into one quiet line each; the reset line becomes a whisper under the CTA.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="wm" style="font-size:clamp(40px,7vw,78px)">pulse <span class="on">on</span> purpose<span class="dot">.</span></div>
+    <div class="h-sub">Autopilot is the default. This is the choice.</div>
+    <div class="h-theme" style="margin-top:26px"><span class="herefor">Here for</span> <span class="tword">Presence</span></div>
+    <div class="h-meta" style="margin-top:10px">week one &middot; sept 21&ndash;25 &middot; with cory allen</div>
+    <div class="h-chiprow"><img src="images/cory-chip.jpg" alt=""><span class="h-meta" style="letter-spacing:0.05em">meditation teacher &middot; author &middot; host of the astral hustle</span></div>
+    <div><span class="h-cta">I&rsquo;m here for it</span></div>
+    <div class="h-whisper">one small reset a week</div>
+  </div></div>
+</div>
+
+<div class="dir" data-item="H2">
+  <div class="dir-tag"><b>H2</b><span>Theme leads &mdash; the series shrinks to a masthead eyebrow; the week&rsquo;s theme becomes the headline. Every week feels like its own show.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="h-eyebrow">pulse <span style="font-style:italic">on</span> purpose<span class="dot">.</span> &nbsp;&middot;&nbsp; week one</div>
+    <div class="h-theme" style="font-size:clamp(44px,8vw,88px)"><span class="herefor">Here for</span> <span class="tword">Presence</span></div>
+    <div class="h-sub">Autopilot is the default. This is the choice.</div>
+    <div class="h-chiprow"><img src="images/cory-chip.jpg" alt=""><span class="h-meta" style="letter-spacing:0.05em">with cory allen &middot; meditation teacher</span></div>
+    <div class="h-meta" style="margin-top:12px">sept 21&ndash;25 &middot; live, from anywhere &middot; one small reset a week</div>
+    <div><span class="h-cta">I&rsquo;m here for it</span></div>
+  </div></div>
+</div>
+
+<div class="dir" data-item="H3">
+  <div class="dir-tag"><b>H3</b><span>Two zones &mdash; brand zone on top, then the whole week gathered into one framed card. Hierarchy by containment instead of stacking.</span></div>
+  <div class="hero"><div class="hero-inner">
+    <div class="kicker">Break autopilot</div>
+    <div class="wm" style="font-size:clamp(38px,6.6vw,72px)">pulse <span class="on">on</span> purpose<span class="dot">.</span></div>
+    <div class="h-sub">Autopilot is the default. This is the choice.</div>
+    <div class="h-card">
+      <div class="h-meta">week one &middot; one small reset a week</div>
+      <div class="h-theme" style="margin-top:8px"><span class="herefor">Here for</span> <span class="tword">Presence</span></div>
+      <div class="h-chiprow"><img src="images/cory-chip.jpg" alt=""><span class="h-meta" style="letter-spacing:0.05em">with cory allen</span></div>
+      <div><span class="h-cta" style="margin-top:16px">I&rsquo;m here for it</span></div>
+    </div>
+  </div></div>
+</div>
+
 <!-- =============== copy =============== -->
 <div class="copyshop">
   <h2>Kicker options</h2>
@@ -333,9 +404,8 @@ body { font-family: var(--font); background: var(--cream); color: var(--ink); le
   });
 
   // ---------- build threads ----------
-  ['A', 'B', 'C', 'D'].forEach(function (item) {
-    var dir = document.querySelector('.dir[data-item="' + item + '"]');
-    dir.appendChild(buildThread(item));
+  document.querySelectorAll('.dir[data-item]').forEach(function (dir) {
+    dir.appendChild(buildThread(dir.dataset.item));
   });
   var gq = document.querySelector('.gq');
   gq.replaceChild(buildThread('general'), gq.querySelector('.thread'));
